@@ -1,13 +1,12 @@
 # <img src="logo.png" alt="ExamOMatic Logo" width="30" style="vertical-align: middle"/> ExamOMatic
 
-A simple and efficient exam practice application that allows you to import and practice exam questions.
+A simple xam practice application that allows you to import and practice exam questions.
 
 ## Features
 
 - Import questions from JSON or CSV files
 - Multiple exam support
 - Practice mode with immediate feedback
-- Simple and intuitive interface
 - Support for multiple choice questions
 
 ## Prerequisites
