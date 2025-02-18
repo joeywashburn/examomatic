@@ -58,6 +58,14 @@ The script handles:
 
 Press Ctrl+C to stop both services.
 
+## Screenshots
+
+### Practice Mode
+![Practice Mode](images/practice_screenshot.png)
+
+### Exam Mode
+![Exam Mode](images/answers.png)
+
 ## File Formats
 
 ### JSON Format
