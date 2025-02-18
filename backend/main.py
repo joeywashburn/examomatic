@@ -38,6 +38,7 @@ def init_db():
             option_c TEXT NOT NULL,
             option_d TEXT NOT NULL,
             correct_answer TEXT NOT NULL,
+            explanation TEXT,
             FOREIGN KEY (test_bank_id) REFERENCES test_banks(id)
         )
     """)
@@ -57,7 +58,8 @@ def init_db():
                 "option_b": "4",
                 "option_c": "5",
                 "option_d": "6",
-                "correct_answer": "B"
+                "correct_answer": "B",
+                "explanation": "In basic arithmetic, 2 + 2 equals 4. This is a fundamental mathematical fact that forms the basis of addition. The number 4 (option B) represents the sum of adding two and two together."
             },
             {
                 "question": "What color is the sky on a clear day?",
@@ -65,15 +67,16 @@ def init_db():
                 "option_b": "Green",
                 "option_c": "Blue",
                 "option_d": "Yellow",
-                "correct_answer": "C"
+                "correct_answer": "C",
+                "explanation": "The sky appears blue on a clear day due to a phenomenon called Rayleigh scattering. When sunlight travels through the Earth's atmosphere, it collides with gas molecules. These molecules scatter the light in all directions, but they scatter blue light more strongly than other colors because blue light travels in shorter, smaller waves. This is why we see a blue sky during the day."
             }
         ]
 
         for q in sample_questions:
             cursor.execute("""
                 INSERT INTO questions 
-                (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer, explanation)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 test_bank_id,
                 q["question"],
@@ -81,7 +84,8 @@ def init_db():
                 q["option_b"],
                 q["option_c"],
                 q["option_d"],
-                q["correct_answer"]
+                q["correct_answer"],
+                q["explanation"]
             ))
 
     conn.commit()
@@ -96,6 +100,7 @@ class Question(BaseModel):
     option_c: str
     option_d: str
     correct_answer: str
+    explanation: Optional[str]
 
 class Answer(BaseModel):
     question_id: int
@@ -161,7 +166,7 @@ def get_questions(test_bank: str, shuffle: bool = Query(False)):
     bank_id = bank_id[0]
 
     cursor.execute("""
-        SELECT id, question, option_a, option_b, option_c, option_d, correct_answer 
+        SELECT id, question, option_a, option_b, option_c, option_d, correct_answer, explanation 
         FROM questions WHERE test_bank_id = ?
     """, (bank_id,))
     questions = cursor.fetchall()
@@ -173,7 +178,8 @@ def get_questions(test_bank: str, shuffle: bool = Query(False)):
             "id": q[0],
             "question": q[1],
             "options": {"A": q[2], "B": q[3], "C": q[4], "D": q[5]},
-            "correct_answer": q[6]
+            "correct_answer": q[6],
+            "explanation": q[7] if len(q) > 7 else None
         }
         for q in questions
     ]
@@ -196,10 +202,10 @@ def add_question(test_bank: str, question: Question):
     bank_id = bank_id[0]
     
     cursor.execute("""
-        INSERT INTO questions (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO questions (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer, explanation)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     """, (bank_id, question.question, question.option_a, question.option_b, 
-          question.option_c, question.option_d, question.correct_answer))
+          question.option_c, question.option_d, question.correct_answer, question.explanation))
     
     conn.commit()
     conn.close()
@@ -210,16 +216,17 @@ def check_answer(answer: Answer):
     conn = sqlite3.connect("test_engine.db")
     cursor = conn.cursor()
     
-    cursor.execute("SELECT correct_answer FROM questions WHERE id = ?", (answer.question_id,))
+    cursor.execute("SELECT correct_answer, explanation FROM questions WHERE id = ?", (answer.question_id,))
     correct = cursor.fetchone()
     if not correct:
         conn.close()
         raise HTTPException(status_code=404, detail="Question not found.")
     
-    correct = correct[0]
-    is_correct = answer.selected_answer.upper() == correct.upper()
+    correct_answer = correct[0]
+    explanation = correct[1]
+    is_correct = answer.selected_answer.upper() == correct_answer.upper()
     conn.close()
-    return {"correct": is_correct, "correct_answer": correct}
+    return {"correct": is_correct, "correct_answer": correct_answer, "explanation": explanation}
 
 @app.post("/reset_progress")
 def reset_progress():
@@ -253,8 +260,8 @@ async def import_questions(file: UploadFile):
             for q in questions:
                 cursor.execute("""
                     INSERT INTO questions 
-                    (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer, explanation)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     bank_id,
                     q["question"],
@@ -262,7 +269,8 @@ async def import_questions(file: UploadFile):
                     q["option_b"],
                     q["option_c"],
                     q["option_d"],
-                    q["correct_answer"]
+                    q["correct_answer"],
+                    q.get("explanation")
                 ))
         elif file.filename.endswith(".csv"):
             reader = csv.DictReader(content.decode('utf-8').splitlines())
@@ -289,13 +297,14 @@ async def import_questions(file: UploadFile):
                     "option_b": q["option_b"],
                     "option_c": q["option_c"],
                     "option_d": q["option_d"],
-                    "correct_answer": q["correct_answer"]
+                    "correct_answer": q["correct_answer"],
+                    "explanation": q.get("explanation")
                 }
                 cursor.execute("""
-                    INSERT INTO questions (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    INSERT INTO questions (test_bank_id, question, option_a, option_b, option_c, option_d, correct_answer, explanation)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """, (bank_id, q_dict["question"], q_dict["option_a"], q_dict["option_b"], 
-                      q_dict["option_c"], q_dict["option_d"], q_dict["correct_answer"]))
+                      q_dict["option_c"], q_dict["option_d"], q_dict["correct_answer"], q_dict["explanation"]))
         
         conn.commit()
         conn.close()

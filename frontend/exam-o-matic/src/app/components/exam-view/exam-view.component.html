@@ -47,17 +47,8 @@
         <div *ngIf="practiceMode && answerSubmitted" class="mt-3">
             <div class="alert" [ngClass]="{'alert-success': selectedAnswers.sort().join(',') === getCurrentQuestionCorrectAnswers().sort().join(','), 
                                          'alert-danger': selectedAnswers.sort().join(',') !== getCurrentQuestionCorrectAnswers().sort().join(',')}">
-                <strong>Explanation:</strong>
-                <p *ngIf="isMultipleChoice()">
-                    The correct answers are: 
-                    <span *ngFor="let ans of getCurrentQuestionCorrectAnswers(); let last = last">
-                        {{ ans }}) {{ questions[currentQuestionIndex]?.options[ans] }}{{last ? '' : ', '}}
-                    </span>
-                </p>
-                <p *ngIf="!isMultipleChoice()">
-                    The correct answer is: 
-                    {{ getCurrentQuestionCorrectAnswers()[0] }}) {{ questions[currentQuestionIndex]?.options[getCurrentQuestionCorrectAnswers()[0]] }}
-                </p>
+                Explanation:
+                <p>{{ questions[currentQuestionIndex]?.explanation }}</p>
             </div>
         </div>
     </div>

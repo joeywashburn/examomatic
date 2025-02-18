@@ -8,7 +8,8 @@
       "option_b": "Madrid",
       "option_c": "Paris",
       "option_d": "Rome",
-      "correct_answer": "C"
+      "correct_answer": "C",
+      "explanation": "Paris is the capital and largest city of France. It has been the capital since 508 CE and is a major European city and global center for art, fashion, gastronomy, and culture. The city is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral."
     },
     {
       "question": "Which planet is known as the Red Planet?",
@@ -16,7 +17,8 @@
       "option_b": "Mars",
       "option_c": "Jupiter",
       "option_d": "Venus",
-      "correct_answer": "B"
+      "correct_answer": "B",
+      "explanation": "Mars is called the Red Planet because of the reddish color of its surface, which is due to the high concentration of iron oxide (rust) in its soil and atmosphere. It is the fourth planet from the Sun in our solar system and has been a major target for space exploration due to its potential for harboring past or present microbial life."
     },
     {
       "question": "Who wrote 'To Kill a Mockingbird'?",
@@ -24,7 +26,8 @@
       "option_b": "J.K. Rowling",
       "option_c": "Mark Twain",
       "option_d": "Ernest Hemingway",
-      "correct_answer": "A"
+      "correct_answer": "A",
+      "explanation": "Harper Lee wrote 'To Kill a Mockingbird', which was published in 1960. The novel won the Pulitzer Prize and has become a classic of modern American literature. The story addresses issues of racial inequality and injustice in the American South through the eyes of young Scout Finch and her father, lawyer Atticus Finch."
     }
   ]
 }

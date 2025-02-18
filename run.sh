@@ -41,6 +41,12 @@ cd backend
 python -m uvicorn main:app --reload --host 0.0.0.0 --port "$BACKEND_PORT" &
 cd ..
 
+# Wait for backend to be ready
+until curl -s http://localhost:"$BACKEND_PORT" > /dev/null; do
+    echo "Waiting for backend to be ready..."
+    sleep 2
+done
+
 # Start the frontend server
 echo "Starting frontend server..."
 cd frontend/exam-o-matic

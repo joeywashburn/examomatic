@@ -40,6 +40,7 @@ export class ExamViewComponent implements OnInit {
     this.http.get<{ questions: any[] }>(`http://127.0.0.1:8000/questions?test_bank=${this.examName}&shuffle=${this.shuffleQuestions}`)
       .subscribe(data => {
         this.questions = data.questions;
+        console.log('Loaded questions:', this.questions);
       }, error => {
         console.error("Error loading questions:", error);
       });
@@ -67,6 +68,7 @@ export class ExamViewComponent implements OnInit {
 
   checkAnswer(): void {
     this.answerSubmitted = true;
+    console.log('Explanation:', this.questions[this.currentQuestionIndex]?.explanation);
   }
 
   nextQuestion(): void {
