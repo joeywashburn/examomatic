@@ -1,0 +1,30 @@
+{
+  "exam_code": "CLF-C02",
+  "exam_name": "AWS Certified Cloud Practitioner",
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "option_a": "Berlin",
+      "option_b": "Madrid",
+      "option_c": "Paris",
+      "option_d": "Rome",
+      "correct_answer": "C"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "option_a": "Earth",
+      "option_b": "Mars",
+      "option_c": "Jupiter",
+      "option_d": "Venus",
+      "correct_answer": "B"
+    },
+    {
+      "question": "Who wrote 'To Kill a Mockingbird'?",
+      "option_a": "Harper Lee",
+      "option_b": "J.K. Rowling",
+      "option_c": "Mark Twain",
+      "option_d": "Ernest Hemingway",
+      "correct_answer": "A"
+    }
+  ]
+}

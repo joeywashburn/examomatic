@@ -1,0 +1,21 @@
+<div class="d-flex flex-column bg-dark text-white p-3" style="min-height: 100vh; width: 200px;">
+    <h3 class="mb-4">ExamOMatic</h3>
+    
+    <button class="btn btn-light mb-3" (click)="goToExamList()">
+        <i class="bi bi-list-ul"></i> Exams
+    </button>
+    <button class="btn btn-light mb-3" (click)="refresh()">
+        <i class="bi bi-arrow-clockwise"></i> Refresh
+    </button>
+
+    <div class="mb-3">
+        <label for="fileInput" class="form-label">Import Questions</label>
+        <input 
+            type="file" 
+            class="form-control" 
+            id="fileInput" 
+            accept=".json,.csv" 
+            (change)="importQuestions($event)">
+        <div class="form-text">Select a JSON or CSV file to import questions. The file should include the exam code and name.</div>
+    </div>
+</div>

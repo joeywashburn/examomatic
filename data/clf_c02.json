@@ -1,0 +1,79 @@
+{
+  "exam_code": "CLF-C02",
+  "exam_name": "AWS Certified Cloud Practitioner",
+  "questions": [
+    {
+      "question": "Which AWS Cloud Adoption Framework (AWS CAF) capability belongs to the people perspective?",
+      "option_a": "Data architecture",
+      "option_b": "Event management",
+      "option_c": "Cloud fluency",
+      "option_d": "Strategic partnership",
+      "correct_answer": "C"
+    },
+    {
+      "question": "Which AWS service supports a hybrid architecture that gives users the ability to extend AWS infrastructure, AWS services, APIs, and tools to data centers, co-location environments, or on-premises facilities?",
+      "option_a": "AWS Snowmobile",
+      "option_b": "AWS Local Zones",
+      "option_c": "AWS Outposts",
+      "option_d": "AWS Fargate",
+      "correct_answer": "C"
+    },
+    {
+      "question": "A company wants to receive a notification when a specific AWS cost threshold is reached. Which AWS services or tools can the company use to meet this requirement? (Select TWO.)",
+      "option_a": "Amazon Simple Queue Service (Amazon SQS)",
+      "option_b": "AWS Budgets",
+      "option_c": "Cost Explorer",
+      "option_d": "Amazon CloudWatch",
+      "option_e": "AWS Cost and Usage Report",
+      "correct_answer": "B,D"
+    },
+    {
+      "question": "A network engineer needs to build a hybrid cloud architecture connecting on-premises networks to the AWS Cloud using AWS Direct Connect. The company has a few VPCs in a single AWS Region and expects to increase the number of VPCs to hundreds over time. Which AWS service or feature should the engineer use to simplify and scale this connectivity as the VPCs increase in number?",
+      "option_a": "VPC endpoints",
+      "option_b": "AWS Transit Gateway",
+      "option_c": "Amazon Route 53",
+      "option_d": "AWS Secrets Manager",
+      "correct_answer": "B"
+    },
+    {
+      "question": "Which AWS Cloud benefit is shown by an architecture's ability to withstand failures with minimal downtime?",
+      "option_a": "Agility",
+      "option_b": "Elasticity",
+      "option_c": "Scalability",
+      "option_d": "High availability",
+      "correct_answer": "D"
+    },
+    {
+      "question": "A company wants to monitor for misconfigured security groups that are allowing unrestricted access to specific ports. Which AWS service will meet this requirement?",
+      "option_a": "AWS Trusted Advisor",
+      "option_b": "Amazon CloudWatch",
+      "option_c": "Amazon GuardDuty",
+      "option_d": "AWS Health Dashboard",
+      "correct_answer": "A"
+    },
+    {
+      "question": "Which action is a security best practice for access to sensitive data that is stored in an Amazon S3 bucket?",
+      "option_a": "Enable S3 Cross-Region Replication (CRR) on the S3 bucket.",
+      "option_b": "Use IAM roles for applications that require access to the S3 bucket.",
+      "option_c": "Configure AWS WAF to prevent unauthorized access to the S3 bucket.",
+      "option_d": "Configure Amazon GuardDuty to prevent unauthorized access to the S3 bucket.",
+      "correct_answer": "B"
+    },
+    {
+      "question": "A company wants to set up its workloads to perform their intended functions and recover quickly from failure. Which pillar of the AWS Well-Architected Framework aligns with these goals?",
+      "option_a": "Performance efficiency",
+      "option_b": "Sustainability",
+      "option_c": "Reliability",
+      "option_d": "Security",
+      "correct_answer": "C"
+    },
+    {
+      "question": "According to security best practices, how should an Amazon EC2 instance be given access to an Amazon S3 bucket?",
+      "option_a": "Hard code an IAM user's secret key and access key directly in the application, and upload the file.",
+      "option_b": "Store the IAM user's secret key and access key in a text file on the EC2 instance, read the keys, then upload the file.",
+      "option_c": "Have the EC2 instance assume a role to obtain the privileges to upload the file.",
+      "option_d": "Modify the S3 bucket policy so that any service can upload to it at any time.",
+      "correct_answer": "C"
+    }
+  ]
+}
