@@ -154,11 +154,11 @@ def add_test_bank(name: str, exam_code: str):
     return {"message": "Test bank added."}
 
 @app.get("/questions")
-def get_questions(test_bank: str, shuffle: bool = Query(False)):
+def get_questions(test_bank_id: int, shuffle: bool = Query(False)):
     conn = sqlite3.connect("test_engine.db")
     cursor = conn.cursor()
     
-    cursor.execute("SELECT id FROM test_banks WHERE name = ?", (test_bank,))
+    cursor.execute("SELECT id FROM test_banks WHERE id = ?", (test_bank_id,))
     bank_id = cursor.fetchone()
     if not bank_id:
         conn.close()

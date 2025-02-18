@@ -18,7 +18,9 @@ interface WrongAnswer {
   imports: [CommonModule, FormsModule],
 })
 export class ExamViewComponent implements OnInit {
-  @Input() examName: string = '';
+  @Input() examId: number = 0;
+  @Input() examName: string = '';  
+  @Input() examCode: string = '';  
   @Input() practiceMode: boolean = false;  
   @Input() shuffleQuestions: boolean = true;  // Default to true for randomization
   questions: any[] = [];
@@ -37,10 +39,14 @@ export class ExamViewComponent implements OnInit {
   }
 
   loadQuestions() {
-    this.http.get<{ questions: any[] }>(`http://127.0.0.1:8000/questions?test_bank=${this.examName}&shuffle=${this.shuffleQuestions}`)
+    this.http.get<{ questions: any[] }>(`http://127.0.0.1:8000/questions?test_bank_id=${this.examId}&shuffle=${this.shuffleQuestions}`)
       .subscribe(data => {
         this.questions = data.questions;
         console.log('Loaded questions:', this.questions);
+        if (this.questions.length > 0) {
+          console.log('Options for the first question:', this.questions[0].options);
+          console.log('Options for the first question:', this.questions[0].options);
+        }
       }, error => {
         console.error("Error loading questions:", error);
       });

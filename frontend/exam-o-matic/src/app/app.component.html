@@ -19,8 +19,8 @@
             <td>{{ exam.name }}</td>
             <td>{{ exam.notes }}</td>
             <td>
-              <button class="btn btn-success btn-sm me-2" (click)="selectExam(exam.name)">Start Exam</button>
-              <button class="btn btn-warning btn-sm" (click)="practiceExam(exam.name)">Practice</button>
+              <button class="btn btn-success btn-sm me-2" (click)="selectExam(exam.id)">Start Exam</button>
+              <button class="btn btn-warning btn-sm" (click)="practiceExam(exam.id)">Practice</button>
             </td>
           </tr>
         </tbody>
@@ -28,8 +28,10 @@
     </ng-container>
 
     <app-exam-view 
-      *ngIf="selectedExam" 
-      [examName]="selectedExam"
+      *ngIf="selectedExamId" 
+      [examId]="selectedExamId"
+      [examName]="getSelectedExamName()"
+      [examCode]="getSelectedExamCode()"
       [practiceMode]="isPracticeMode"
       [shuffleQuestions]="true">
     </app-exam-view>

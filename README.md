@@ -186,7 +186,50 @@ examomatic/
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Creating Exam Files with AI
+
+You can leverage AI tools like Claude to help create high-quality exam questions. Here's an effective process:
+
+1. **Gather Official Exam Objectives**
+   - Download the official exam objectives from the vendor's website
+   - These objectives typically include domain weightings (e.g., Domain 1: 20%, Domain 2: 30%, etc.)
+
+2. **Generate Questions Using AI**
+   - Share the exam objectives with an AI assistant (like Claude)
+   - Ask it to analyze the objectives and domain weightings
+   - Request multiple-choice questions that align with the objectives and maintain the proper domain distribution
+   - For example: "Please create 65 multiple-choice questions based on these exam objectives, maintaining the specified domain weightings"
+
+3. **Format the Questions**
+   - Ask the AI to format the questions in ExamOMatic's JSON format
+   - Use our sample questions as a template to ensure proper formatting
+   - The JSON structure should follow this format:
+   ```json
+   {
+     "exam_code": "EXAM-001",
+     "exam_name": "Your Exam Name",
+     "questions": [
+       {
+         "question": "Question text here?",
+         "option_a": "First option",
+         "option_b": "Second option",
+         "option_c": "Third option",
+         "option_d": "Fourth option",
+         "correct_answer": "B",
+         "explanation": "Optional explanation of the correct answer"
+       }
+     ]
+   }
+   ```
+
+4. **Review and Import**
+   - Review the generated questions for accuracy and quality
+   - Save the JSON content to a file
+   - Import the file using ExamOMatic's import feature
+
+This process helps create comprehensive practice exams that accurately reflect the real exam's content distribution and objectives.
 
 ## License
 

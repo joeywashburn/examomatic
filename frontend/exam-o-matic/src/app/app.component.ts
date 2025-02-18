@@ -20,7 +20,7 @@ interface TestBank {
 })
 export class AppComponent implements OnInit {
   showTable = true;  
-  selectedExam: string | null = null;
+  selectedExamId: number | null = null;
   isPracticeMode = false;
   exams: {id: number, name: string, exam_code: string, notes: string}[] = [];
 
@@ -48,21 +48,33 @@ export class AppComponent implements OnInit {
     );
   }
 
+  getSelectedExamName(): string {
+    if (!this.selectedExamId) return '';
+    const exam = this.exams.find(e => e.id === this.selectedExamId);
+    return exam?.name || '';
+  }
+
+  getSelectedExamCode(): string {
+    if (!this.selectedExamId) return '';
+    const exam = this.exams.find(e => e.id === this.selectedExamId);
+    return exam?.exam_code || '';
+  }
+
   showExamTable() {
     this.loadExams();
-    this.selectedExam = null;  
+    this.selectedExamId = null;  
     this.showTable = true;
     this.isPracticeMode = false;
   }
 
-  selectExam(exam: string) {
-    this.selectedExam = exam;
+  selectExam(examId: number) {
+    this.selectedExamId = examId;
     this.showTable = false;
     this.isPracticeMode = false;
   }
 
-  practiceExam(exam: string) {
-    this.selectedExam = exam;  
+  practiceExam(examId: number) {
+    this.selectedExamId = examId;  
     this.showTable = false;
     this.isPracticeMode = true;
   }

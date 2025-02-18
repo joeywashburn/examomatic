@@ -48,6 +48,9 @@ yarn-error.log*
 *.sqlite
 *.sqlite3
 
+# Exam files
+exams/
+
 # Logs
 logs/
 *.log

@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <h2 class="text-primary">Exam: {{ examName }}</h2>
+    <h2 class="text-primary">{{ examName }}{{ examCode ? ' (' + examCode + ')' : '' }}</h2>
     <p class="badge" [ngClass]="practiceMode ? 'bg-info' : 'bg-primary'">
         {{ practiceMode ? 'Practice Mode' : 'Exam Mode' }}
     </p>
