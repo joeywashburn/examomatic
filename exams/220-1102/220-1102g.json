@@ -1,0 +1,1105 @@
+{
+    "exam_code": "220-1002-C",
+    "exam_name": "CompTIA A+ Core 2 Practice Exam Pool C",
+    "questions": [
+      {
+        "question_number": 598,
+        "question": "A Windows 10 computer is not installing updates and continues to receive errors even during manual update installations. Which of the following should a technician do to fix the issues? (Select two)",
+        "correct_answer": "B,C",
+        "option_a": "Ensure that the Windows Update Utility is the latest version",
+        "option_b": "Refresh local WSUS settings on the computer",
+        "option_c": "Delete the Windows Update cache",
+        "option_d": "Run the System check to verify system files",
+        "option_e": "Reimage the operating system while retaining user files",
+        "option_f": "Reset WMI and re-register system .dlls",
+        "explanation": "Refreshing local Windows Server Update Services (WSUS) settings and deleting the Windows Update cache are effective steps in resolving issues with Windows 10 not installing updates. These actions help in rectifying any corrupt update files and ensuring that the workstation is properly communicating with the update servers, which can resolve errors during manual and automatic update installations."
+      },
+      {
+        "question_number": 599,
+        "question": "A technician wants to update the local security policies on a Windows machine but is unable to launch the expected snap-in. Which of the following is the most likely reason?",
+        "correct_answer": "A",
+        "option_a": "The computer is running Windows Home",
+        "option_b": "The user did not sign the end user license agreement",
+        "option_c": "The user disabled the User Account Control",
+        "option_d": "An antivirus application is blocking access",
+        "explanation": "The inability to launch the expected security policy snap-in is likely because the computer is running Windows Home edition, which does not include the Group Policy Editor or certain other administrative tools available in Professional, Enterprise, and Education editions. The Home edition is designed for general consumer use and lacks some of the advanced security and management features found in higher editions."
+      },
+      {
+        "question_number": 600,
+        "question": "A user's workstation was infected with a newly discovered virus that the AV system detected. After a full virus scan and a workstation reboot, the virus is still present in the OS. Which of the following actions should the user take to remove the virus?",
+        "correct_answer": "B",
+        "option_a": "Enable the system firewall",
+        "option_b": "Use bootable antivirus media to scan the system",
+        "option_c": "Download software designed to specifically target the virus",
+        "option_d": "Run the operating system update process",
+        "explanation": "Using bootable antivirus media to scan the system is an effective method for removing a persistent virus. Booting from external antivirus media allows the system to scan for and remove malware without the infected operating system running, which can prevent the virus from hiding or resisting removal efforts that might occur within the active OS environment."
+      },
+      {
+        "question_number": 601,
+        "question": "A web developer installs and launches a new external web server. Immediately following the launch, the performance of all traffic traversing the firewall degrades substantially. Which of the following considerations was overlooked?",
+        "correct_answer": "B",
+        "option_a": "OS compatibility",
+        "option_b": "Quality of service",
+        "option_c": "32- vs. 64-bit architecture",
+        "option_d": "Storage requirements",
+        "explanation": "The performance degradation following the launch of a new external web server suggests that Quality of Service (QoS) considerations were overlooked. QoS settings help prioritize traffic to ensure that critical services like web servers receive the bandwidth they need without negatively impacting the overall network performance. Without proper QoS configuration, the new server's traffic could overwhelm the firewall, leading to widespread performance issues."
+      },
+      {
+        "question_number": 602,
+        "question": "Which of the following macOS file types requires mounting before installation?",
+        "correct_answer": "D",
+        "option_a": ".pkg",
+        "option_b": ".zip",
+        "option_c": ".app",
+        "option_d": ".dmg",
+        "explanation": "The .dmg file type in macOS requires mounting before installation. .dmg files are disk image files used to distribute software on macOS. When opened, they mount a virtual disk on the desktop, from which the application can be installed. Other file types like .pkg, .zip, and .app have different processes for installation and do not require mounting in the same way."
+      },
+      {
+        "question_number": 603,
+        "question": "A technician needs to configure security settings on a Windows 10 workstation. Which of the following should the technician configure to limit password attempts?",
+        "correct_answer": "A",
+        "option_a": "Account Lockout Policy",
+        "option_b": "User Access Control",
+        "option_c": "System Protection",
+        "option_d": "Firewall",
+        "explanation": "Configuring the Account Lockout Policy in Windows 10 is the appropriate action to limit password attempts. This security setting determines the number of failed login attempts that will trigger a lockout, preventing unauthorized access due to repeated password guessing. It is an effective measure to enhance security by deterring brute-force attacks."
+      },
+      {
+        "question_number": 604,
+        "question": "A home office user wants to ensure a PC is backed up and protected against local natural disasters and hardware failures. Which of the following would meet the user's requirements?",
+        "correct_answer": "A",
+        "option_a": "Using an agent-based cloud backup solution",
+        "option_b": "Implementing a grandfather-father-son backup rotation",
+        "option_c": "Automating backups to a local network share",
+        "option_d": "Saving files manually to an external drive",
+        "explanation": "For ensuring data protection against local natural disasters and hardware failures, the best approach is to use an off-site solution that provides redundancy and is resilient to local disruptions. Using an agent-based cloud backup solution: This method involves backing up data to a remote cloud server, providing protection against local disasters like floods, fires, or hardware failures since the data is stored off-site and can be accessed from anywhere."
+      },
+      {
+        "question_number": 605,
+        "question": "An administrator received a new shipment of mobile devices. Per company policy, all enterprise-issued devices must have two authentication methods, and the organization has already enforced the use of PIN codes as one method. Which of the following device features should the administrator enable?",
+        "correct_answer": "B",
+        "option_a": "Smart card",
+        "option_b": "Biometrics",
+        "option_c": "Hard token",
+        "option_d": "One-time password",
+        "explanation": "For securing mobile devices with two authentication methods, combining something the user knows (a PIN) with something the user is (biometrics) enhances security by implementing multi-factor authentication. Biometrics: Uses unique biological traits such as fingerprints or facial recognition, providing a convenient and secure second method of authentication."
+      },
+      {
+        "question_number": 606,
+        "question": "A user's work PC has been the target of multiple phishing attacks. Which of the following is a way for the user to prevent further attacks?",
+        "correct_answer": "B",
+        "option_a": "Enabling Windows Firewall",
+        "option_b": "Activating the email spam filter",
+        "option_c": "Using a secure VPN connection",
+        "option_d": "Running vulnerability scans on a schedule",
+        "explanation": "Phishing attacks are typically delivered via email, so the most effective immediate measure is to filter out these malicious emails. Activating the email spam filter: Directly targets phishing attempts by filtering and blocking suspicious emails before they reach the user."
+      },
+      {
+        "question_number": 607,
+        "question": "Which of the following is the weakest wireless security protocol?",
+        "correct_answer": "A",
+        "option_a": "WEP",
+        "option_b": "WPA2",
+        "option_c": "TKIP",
+        "option_d": "AES",
+        "explanation": "WEP (Wired Equivalent Privacy) is known to be the weakest wireless security protocol due to its vulnerabilities and ease of being compromised. WEP: The oldest and weakest protocol, susceptible to various attacks and easily cracked."
+      },
+      {
+        "question_number": 608,
+        "question": "Employees at comptia.org are reporting getting an unusual amount of emails from a coworker. A technician discovers the emails were sent from the following address: john@cOmptia.org. Which of the following social engineering attacks is this an example of?",
+        "correct_answer": "C",
+        "option_a": "Whaling",
+        "option_b": "Insider threat",
+        "option_c": "Phishing",
+        "option_d": "Vishing",
+        "option_e": "Evil twin",
+        "explanation": "Phishing involves tricking individuals into disclosing sensitive information or installing malware through deceptive emails. Phishing: General deceptive emails to trick users into compromising information or installing malware."
+      },
+      {
+        "question_number": 609,
+        "question": "A user is unable to see transaction details on a website, and nothing happens when the user clicks the details button. Which of the following should the user do to fix this issue?",
+        "correct_answer": "B",
+        "option_a": "Clear the browser cache",
+        "option_b": "Disable the pop-up blocker",
+        "option_c": "Configure private browsing",
+        "option_d": "Verify valid certificates",
+        "explanation": "Pop-up blockers can sometimes prevent essential pop-up windows required by websites to display transaction details. Disable the pop-up blocker: The correct solution, as it allows the blocked pop-up to be displayed."
+      },
+      {
+        "question_number": 610,
+        "question": "A technician is adding some Windows 10 workstations to the corporate domain. A script was able to add the majority of the workstations, but failed on a couple. Which of the following menus should the technician check in order to complete the task manually?",
+        "correct_answer": "B",
+        "option_a": "User Accounts",
+        "option_b": "System Properties",
+        "option_c": "Windows Firewall",
+        "option_d": "Network and Sharing",
+        "explanation": "To manually add a workstation to a domain, the technician needs to access the System Properties menu where domain settings are configured. System Properties: The correct place to add or change domain membership settings."
+      },
+      {
+        "question_number": 611,
+        "question": "Users report that they can log in to the web application during business hours, but none of the application's functions are working properly. Company policy does not allow for the server to be rebooted during business hours. Which of the following should a technician do to fix the web application and follow company policy?",
+        "correct_answer": "A",
+        "option_a": "Restart services",
+        "option_b": "Roll back Windows updates",
+        "option_c": "Perform a Windows repair",
+        "option_d": "Add RAM to the server",
+        "explanation": "Restarting services can resolve issues with web applications without requiring a full server reboot, which aligns with the company policy. Restart services: Likely to resolve issues with the web application by refreshing the necessary services."
+      },
+      {
+        "question_number": 612,
+        "question": "An employee lost a smartphone and reported the loss to the help desk. The employee is concerned about the possibility of a breach of private data. Which of the following is the best way for a technician to protect the data on the phone?",
+        "correct_answer": "B",
+        "option_a": "Remote lock",
+        "option_b": "Remote wipe",
+        "option_c": "Remote access",
+        "option_d": "Remote encrypt",
+        "explanation": "When a smartphone is lost, especially one that might contain sensitive or private data, the primary concern is to ensure that any data on the device cannot be accessed by unauthorized persons. Remote wipe: This is the best option as it allows the technician to erase all data from the device remotely, ensuring that sensitive information is not accessible to anyone who finds or steals the device."
+      },
+      {
+        "question_number": 613,
+        "question": "Which of the following operating systems uses the ext4 filesystem type?",
+        "correct_answer": "C",
+        "option_a": "macOS",
+        "option_b": "iOS",
+        "option_c": "Linux",
+        "option_d": "Windows",
+        "explanation": "The ext4 (fourth extended filesystem) is a journaling file system for Linux. It is widely used in many Linux distributions due to its performance, robustness, and advanced features like large file and volume support."
+      },
+      {
+        "question_number": 614,
+        "question": "A Windows user wants a filesystem that protects confidential data from attackers who have physical access to the system. Which of the following should the user choose?",
+        "correct_answer": "D",
+        "option_a": "ext",
+        "option_b": "APFS",
+        "option_c": "FAT",
+        "option_d": "EFS",
+        "explanation": "EFS (Encrypting File System) is a feature of Windows that provides filesystem-level encryption. It is designed to encrypt files and folders to protect them from unauthorized access, even if an attacker has physical access to the computer."
+      },
+      {
+        "question_number": 615,
+        "question": "A user in a SOHO asks an off-site, remote technician to connect securely to the user’s laptop. The technician is able to connect to the VPN but is unable to connect to the user’s laptop. Which of the following settings should the technician review?",
+        "correct_answer": "D",
+        "option_a": "Wireless protocol",
+        "option_b": "DHCP pool",
+        "option_c": "Content filtering",
+        "option_d": "Firewall",
+        "explanation": "When a technician is unable to connect to a laptop over a VPN, one of the most common reasons is that the firewall settings on either the laptop or the network are blocking the connection. Firewall: The correct setting to review, as it may block the necessary ports or services required for remote access."
+      },
+      {
+        "question_number": 616,
+        "question": "A company wants to reduce the negative ecological impacts of its business and has decided to hire an e-waste company to dispose of equipment. Which of the following should the e-waste company provide the business?",
+        "correct_answer": "B",
+        "option_a": "Non-disclosure agreement",
+        "option_b": "Certification of destruction",
+        "option_c": "Low-level formatting",
+        "option_d": "Shredding/drilling",
+        "explanation": "When disposing of e-waste, it is important to ensure that the data on the equipment is securely destroyed and that the disposal process complies with environmental regulations. Certification of destruction: The correct document verifying that the equipment has been disposed of in accordance with regulations and standards, ensuring data is irretrievably destroyed."
+      },
+      {
+        "question_number": 617,
+        "question": "A technician is an administrator on a messaging application for a private work group of mixed departments. One of the technician’s colleagues discloses to the group that their employer recently suffered a major security breach and shared details about the breach to the group. Which of the following should the technician do first?",
+        "correct_answer": "D",
+        "option_a": "Ignore the messages as all of the group members work for the same employer",
+        "option_b": "Remove the colleague from the group and ask members to delete the messages",
+        "option_c": "Message the colleague privately and ask the colleague to delete the messages immediately",
+        "option_d": "Contact the supervisor and report the colleague with screen shots of the messages",
+        "explanation": "In the case of a security breach disclosure, it's crucial to follow proper protocol to handle sensitive information responsibly. Contact the supervisor: The correct action, as it ensures that the incident is handled by higher authorities who can take appropriate measures. Reporting with screenshots ensures that there is evidence of the disclosure."
+      },
+      {
+        "question_number": 619,
+        "question": "A user with a disability needs to be able to press the Ctrl+Alt+Del keyboard sequence one key at a time. Which of the following turns on this Ease of Access feature?",
+        "correct_answer": "A",
+        "option_a": "Press the Shift key five times in a row",
+        "option_b": "Press Ctrl+Alt+Esc simultaneously",
+        "option_c": "Press Ctrl+Alt+Tab simultaneously",
+        "option_d": "Press the Windows key+Tab",
+        "explanation": "The Ease of Access feature in Windows that allows a user to press keyboard shortcuts one key at a time is called 'Sticky Keys.' Press the Shift key five times in a row: This is the quickest method to activate Sticky Keys. When you press the Shift key five times, a dialog box appears, asking if you want to turn on Sticky Keys."
+      },
+      {
+        "question_number": 620,
+        "question": "A user reports that a new, personally owned tablet will not connect to the corporate Wi-Fi network. The user is able to connect to the Wi-Fi network with other devices, and the tablet is running the latest software. Which of the following is the most likely cause of the issue?",
+        "correct_answer": "B",
+        "option_a": "Incorrect encryption settings",
+        "option_b": "Blocked MAC address",
+        "option_c": "Outdated drivers",
+        "option_d": "Disabled location services",
+        "explanation": "When a user reports that a new, personally owned tablet will not connect to the corporate Wi-Fi network, but other devices can connect, and the tablet is running the latest software, the most likely cause of the issue is a blocked MAC address. MAC Filtering: Many corporate networks implement MAC address filtering as a security measure."
+      },
+      {
+        "question_number": 621,
+        "question": "A user's laptop is shutting down every time the laptop lid is closed, which is leading to frequent work interruptions. Which of the following should a help desk specialist do to remediate the issue?",
+        "correct_answer": "C",
+        "option_a": "Configure the sleep settings",
+        "option_b": "Disable hibernation",
+        "option_c": "Edit the power plan",
+        "option_d": "Turn on fast startup",
+        "explanation": "When a user's laptop shuts down every time the lid is closed, it typically means that the power settings are configured to put the laptop into a shutdown state when the lid is closed. Edit the power plan: This involves changing the settings for what happens when the laptop lid is closed."
+      },
+      {
+        "question_number": 622,
+        "question": "Which of the following will automatically map network drives based on Group Policy configuration?",
+        "correct_answer": "A",
+        "option_a": "Log-in scripts",
+        "option_b": "Access control lists",
+        "option_c": "Organizational units",
+        "option_d": "Folder redirection",
+        "explanation": "Network drives can be automatically mapped for users based on Group Policy configuration using log-in scripts. Log-in scripts: These are scripts executed when a user logs in to a domain. They can be configured through Group Policy in Active Directory to map network drives automatically."
+      },
+      {
+        "question_number": 623,
+        "question": "During a routine check, a systems administrator discovers that a user's PC is running slowly and CPU utilization is at 100%. Further investigation shows a large amount of resource usage. Which of the following is the most likely cause of the high resource usage?",
+        "correct_answer": "B",
+        "option_a": "Firewall activities",
+        "option_b": "Botnet attack",
+        "option_c": "DDoS attack",
+        "option_d": "Keylogger attack",
+        "explanation": "When a system administrator discovers a user's PC running slowly with 100% CPU utilization, it often indicates that the system is being used for unauthorized purposes, such as being part of a botnet attack. Botnet attack: Botnets are networks of computers infected with malware and controlled by an attacker."
+      },
+      {
+        "question_number": 624,
+        "question": "A user identified that a program installed in a workstation does not have optional features enabled. Which of the following must the technician do to install the optional features?",
+        "correct_answer": "D",
+        "option_a": "Go to Programs and Features, uninstall the program, and reinstall it",
+        "option_b": "Go to Administrative Tools and edit System Configuration",
+        "option_c": "Go to Administrative Tools and run Disk Cleanup",
+        "option_d": "Go to Programs and Features, select the program, and click on Change",
+        "explanation": "When a user needs to install optional features for a program that is already installed, the technician should go to Programs and Features, select the program, and click on Change. This method is the most efficient and avoids unnecessary reinstallation of the software."
+      },
+      {
+        "question_number": 625,
+        "question": "Which of the following change management practices lists all the changes that are taking place for a project to ensure that no unexpected changes happen?",
+        "correct_answer": "B",
+        "option_a": "Risk analysis",
+        "option_b": "Scope",
+        "option_c": "Rollback plan",
+        "option_d": "Review",
+        "explanation": "In change management, the scope of a project lists all the changes that are taking place. Scope: Defines the project's boundaries and deliverables, including all the planned changes."
+      },
+      {
+        "question_number": 626,
+        "question": "A user receives a message on a PC stating it has been infected by malware. A technician runs a full scan on the user's machine and detects no malware. Later that day, the same message reappears. Which of the following steps should the technician take to restore the system to regular functionality?",
+        "correct_answer": "B",
+        "option_a": "Check for Windows updates",
+        "option_b": "Reimage the computer",
+        "option_c": "Enable Windows Firewall",
+        "option_d": "Run System File Checker",
+        "explanation": "Since the malware warning persists despite a clean scan, it suggests a deeper issue such as a corrupted system or persistent malware not detected by the current AV. Reimaging the computer ensures a clean slate by reinstalling the OS."
+      },
+      {
+        "question_number": 627,
+        "question": "A user's home system has been infected with malware. A technician has isolated the system from the network and disabled System Restore. Which of the following should the technician do next?",
+        "correct_answer": "A",
+        "option_a": "Perform an antivirus scan",
+        "option_b": "Run Windows updates",
+        "option_c": "Reimage the system",
+        "option_d": "Enable System Restore",
+        "explanation": "When dealing with a malware-infected system, isolating the system from the network and disabling System Restore are critical initial steps. Perform an antivirus scan: This helps to identify and remove the malware from the system."
+      },
+      {
+        "question_number": 628,
+        "question": "A technician needs to configure a computer for a user to work from home so the user can still securely access the user's shared files and corporate email. Which of the following tools would best accomplish this task?",
+        "correct_answer": "D",
+        "option_a": "MSRA",
+        "option_b": "FTP",
+        "option_c": "RMM",
+        "option_d": "VPN",
+        "explanation": "To securely access shared files and corporate email from home, the best tool to use is a Virtual Private Network (VPN). VPN: A VPN creates a secure connection over the internet, allowing the user to access the corporate network as if they were on-site."
+      },
+      {
+        "question_number": 629,
+        "question": "Which of the following documents in criminal proceedings must be updated every time a piece of evidence is touched or transferred in order for the evidence to be considered valid?",
+        "correct_answer": "D",
+        "option_a": "Licensing agreement",
+        "option_b": "Regulatory compliance",
+        "option_c": "Incident documentation",
+        "option_d": "Chain of custody",
+        "explanation": "In criminal proceedings, maintaining the integrity of evidence is crucial. Chain of custody: This document tracks the history of the evidence, detailing every person who has handled it and every transfer that has occurred."
+      },
+      {
+        "question_number": 630,
+        "question": "An administrator's change was approved by the change management review board. Which of the following should the administrator do next?",
+        "correct_answer": "C",
+        "option_a": "Perform risk analysis",
+        "option_b": "Assign a change coordinator",
+        "option_c": "Implement the change",
+        "option_d": "Verify testing results",
+        "explanation": "Once a change has been approved by the change management review board, the next step is to implement the change in the system or environment according to the change plan."
+      },
+      {
+        "question_number": 631,
+        "question": "When a user is in the office, web pages are loading slowly on the user's phone. Which of the following best explains this issue?",
+        "correct_answer": "D",
+        "option_a": "Exceeded the data usage limit",
+        "option_b": "Sluggish response time",
+        "option_c": "Degraded network service",
+        "option_d": "High network traffic",
+        "explanation": "When a user experiences slow web page loading on their phone while in the office, the most likely cause is high network traffic, which means more devices are competing for the same bandwidth, causing delays."
+      },
+      {
+        "question_number": 632,
+        "question": "A customer needs to purchase a desktop capable of rendering video. Which of the following should the customer prioritize?",
+        "correct_answer": "C",
+        "option_a": "NIC",
+        "option_b": "USB",
+        "option_c": "GPU",
+        "option_d": "HDMI",
+        "explanation": "For rendering video, the most critical component a customer should prioritize in a desktop is the GPU (Graphics Processing Unit), which is specifically designed to handle complex graphics and video rendering tasks."
+      },
+      {
+        "question_number": 633,
+        "question": "Users report that a network printer intermittently goes offline during the day. Which of the following commands should the technician use to confirm whether the printer has connectivity issues?",
+        "correct_answer": "A",
+        "option_a": "ping",
+        "option_b": "netstat",
+        "option_c": "net",
+        "option_d": "nslookup",
+        "explanation": "To confirm whether a network printer has connectivity issues, the technician should use ping, which checks the connectivity to the printer by sending packets and measuring the response time."
+      },
+      {
+        "question_number": 634,
+        "question": "A user reports the following issues: Their computer is constantly running slowly, the default home page of the web browser has changed to a suspicious search engine, they have been receiving pop-up ads on the screen. Which of the following should a technician do first to address these issues?",
+        "correct_answer": "A",
+        "option_a": "Update the antivirus program and run a full system scan",
+        "option_b": "Uninstall the suspicious search engine and reset the home page",
+        "option_c": "Install the latest updates for the operating system",
+        "option_d": "Block the pop-up ads using the web browser settings",
+        "explanation": "When a user reports slow performance, a changed home page, and pop-up ads, these are classic signs of malware infection. Update the antivirus program and run a full system scan: This helps identify and remove any malware present on the system."
+      },
+      {
+        "question_number": 635,
+        "question": "An employee utilizes a personal smartphone to work remotely. The employee is unable to reach the portal using the company-provided VPN service. Which of the following describes the cause of the issue?",
+        "correct_answer": "C",
+        "option_a": "The application must be purchased by the company",
+        "option_b": "The smartphone is not on the latest OS version",
+        "option_c": "The smartphone is not enrolled in MDM service",
+        "option_d": "The application fails to install and launch",
+        "explanation": "When an employee is unable to access the company portal using a VPN on their personal smartphone, the most likely cause is that the smartphone is not enrolled in MDM service, which often controls access to company resources."
+      },
+      {
+        "question_number": 636,
+        "question": "A systems administrator needs to access a hypervisor that went offline. After doing a port scan, the administrator notices that company policy is blocking the RDP default port. Which of the following ports should the administrator use to access the machine?",
+        "correct_answer": "A",
+        "option_a": "22",
+        "option_b": "23",
+        "option_c": "80",
+        "option_d": "3090",
+        "explanation": "When the default RDP port (3389) is blocked, the administrator can use SSH on port 22, which is commonly used for secure remote access to servers and hypervisors."
+      },
+      {
+        "question_number": 637,
+        "question": "A technician assigns the equivalent of root-level permissions to a user to perform a task. Which of the following user roles within the Windows OS should the technician choose?",
+        "correct_answer": "C",
+        "option_a": "Power",
+        "option_b": "Default",
+        "option_c": "Administrator",
+        "option_d": "Superuser",
+        "explanation": "In the Windows OS, to grant a user permissions equivalent to root-level permissions, the user needs to be given the Administrator role, which provides full control over the system."
+      },
+      {
+        "question_number": 638,
+        "question": "A user reports that a device with a statically defined IP is unable to connect to the internet. The technician runs the ipconfig /all command and sees the following output: IPv4 Address............ 192.168.0.74 Subnet Mask.............255.255.255.255 Default Gateway......... 192.168.0.1. Which of the following is most likely the reason for the issue?",
+        "correct_answer": "D",
+        "option_a": "The default gateway is up",
+        "option_b": "The user has an APIPA IP address",
+        "option_c": "The IP address is on the wrong subnet",
+        "option_d": "The subnet mask is incorrect",
+        "explanation": "The subnet mask being set to 255.255.255.255 specifies a single host subnet, meaning the device cannot communicate with other devices on the network or access the internet. The correct subnet mask should typically be 255.255.255.0."
+      },
+      {
+        "question_number": 639,
+        "question": "An organization's critical database files were attacked with ransomware. The company refuses to pay the ransom for a decryption key. All traces of the infection have been removed from the underlying servers. Which of the following should the company do next?",
+        "correct_answer": "D",
+        "option_a": "Scan all of the infected files with up-to-date, anti-malware cleaning software",
+        "option_b": "Fully patch the server operating systems hosting the fileshares",
+        "option_c": "Change the files to be read-only",
+        "option_d": "Restore critical data from backup",
+        "explanation": "When an organization refuses to pay the ransom after a ransomware attack and all traces of the infection have been removed, the next critical step is to restore critical data from backup, assuming good backup practices are in place."
+      },
+      {
+        "question_number": 640,
+        "question": "After a user upgraded the Windows operating system to the latest feature release, the user notices that one of the legacy applications that was running correctly before the upgrade does not open some windows and is only partially functional. Which of the following actions should the user take to troubleshoot the issue?",
+        "correct_answer": "A",
+        "option_a": "Run the application as Administrator",
+        "option_b": "Raise the User Account Control level",
+        "option_c": "Turn off Windows Defender Firewall",
+        "option_d": "Disable compatibility mode for the application",
+        "explanation": "When a legacy application is not fully functional after upgrading the Windows operating system, the first step to troubleshoot the issue is to run the application as Administrator, as legacy applications often require administrative privileges."
+      },
+      {
+        "question_number": 641,
+        "question": "Which of the following ensures data is unrecoverable on a lost or stolen mobile device?",
+        "correct_answer": "B",
+        "option_a": "Device encryption",
+        "option_b": "Remote wipe",
+        "option_c": "Data backup",
+        "option_d": "Fingerprint reader",
+        "explanation": "To ensure data is unrecoverable on a lost or stolen mobile device, the best solution is remote wipe, which allows the device owner or IT administrator to remotely erase all data on the device."
+      },
+      {
+        "question_number": 642,
+        "question": "A technician is implementing the latest application security updates for endpoints on an enterprise network. Which of the following solutions should the technician use to ensure device security on the network while adhering to industry best practices?",
+        "correct_answer": "A",
+        "option_a": "Automate the patching process",
+        "option_b": "Monitor the firewall configuration",
+        "option_c": "Implement access control lists",
+        "option_d": "Document all changes",
+        "explanation": "To ensure device security on the network while adhering to industry best practices, the technician should automate the patching process, which ensures that all devices receive the latest security updates in a timely manner."
+      },
+      {
+        "question_number": 643,
+        "question": "Employees want their Windows 10 laptops to wirelessly connect when they take them home. Which of the following should the employees configure so the laptops can automatically connect wirelessly?",
+        "correct_answer": "A",
+        "option_a": "Network and Internet settings",
+        "option_b": "Windows Firewall settings",
+        "option_c": "Devices and Printers",
+        "option_d": "Personalization settings",
+        "explanation": "To ensure that Windows 10 laptops can automatically connect to Wi-Fi networks when employees take them home, the appropriate configuration is Network and Internet settings, which allow users to manage Wi-Fi connections."
+      },
+      {
+        "question_number": 644,
+        "question": "A technician, who is completing hardware upgrades at a company, is approached by a user who submitted a computer upgrade request. After checking the list of offices to upgrade, the technician finds that the user's office is not listed for an upgrade. Which of the following actions should the technician take next?",
+        "correct_answer": "B",
+        "option_a": "Ask the company's human resources department to address the issue",
+        "option_b": "Notify the project manager about the user's concern",
+        "option_c": "Tell the user that this request is not on the list to be upgraded",
+        "option_d": "Ask the user's supervisor if the technician should upgrade the computer",
+        "explanation": "When a technician finds that a user's office is not listed for an upgrade but the user has submitted a request, the appropriate action is to notify the project manager about the user's concern, as they oversee the upgrade process."
+      },
+      {
+        "question_number": 645,
+        "question": "A customer is configuring on an old desktop an inexpensive file server to share photos and videos and wants to avoid complicated licensing. Which of the following operating systems should the technician most likely recommend?",
+        "correct_answer": "B",
+        "option_a": "Chrome OS",
+        "option_b": "Linux",
+        "option_c": "macOS",
+        "option_d": "Windows",
+        "explanation": "For an inexpensive file server to share photos and videos while avoiding complicated licensing, the technician should recommend Linux, a free and open-source operating system that is ideal for setting up a file server."
+      },
+      {
+        "question_number": 646,
+        "question": "A user is attempting to access a shared drive from a company-issued laptop while working from home. The user is unable to access any files and notices a red X next to each shared drive. Which of the following needs to be configured in order to restore the user's access to the shared drives?",
+        "correct_answer": "B",
+        "option_a": "IPv6",
+        "option_b": "VPN",
+        "option_c": "IPS",
+        "option_d": "DNS",
+        "explanation": "When a user is unable to access shared drives from a company-issued laptop while working from home, the likely requirement is a VPN (Virtual Private Network), which allows secure access to the company’s network from a remote location."
+      },
+      {
+        "question_number": 647,
+        "question": "The user often hosts meetings from a Windows desktop, and meeting participants ask the user to make the text larger when the user shares the computer screen. When not in meetings, the user wants the text be smaller for work tasks. Which of the following is the most efficient way to change text font size?",
+        "correct_answer": "B",
+        "option_a": "Issuing a laptop to the user with increased font size to be used only for meetings",
+        "option_b": "Using display settings to adjust the text size during meetings",
+        "option_c": "Adding a local user account, which has a larger font size set, for the user to log in to during meetings",
+        "option_d": "Adding a second monitor to the user's desktop and increase the font size for only that display",
+        "explanation": "Changing the text size efficiently for different scenarios can be managed directly through the Windows display settings. Using display settings to adjust the text size during meetings allows for quick changes and can be reverted just as quickly after meetings."
+      },
+      {
+        "question_number": 648,
+        "question": "After a computer upgrade at an imaging lab, the upgraded computers are not able to obtain an IP address. Which of the following is most likely the issue?",
+        "correct_answer": "Not fully provided in document",
+        "option_a": "The switch is o...",
+        "option_b": null,
+        "option_c": null,
+        "option_d": null,
+        "explanation": "The document was truncated and did not provide full options or explanation for this question."
+      },
+      {
+        "question_number": 688,
+        "question": "A company is transitioning to a new firewall and discovers that one of the servers is still sending traffic to the old firewall. Which of the following IP address settings should a technician change to resolve this issue?",
+        "correct_answer": "B",
+        "option_a": "Dynamic",
+        "option_b": "Gateway",
+        "option_c": "NAT",
+        "option_d": "DNS server",
+        "explanation": "The default gateway directs network traffic to external networks. If the traffic is still going to the old firewall, updating the gateway setting will redirect it to the new firewall."
+      },
+      {
+        "question_number": 689,
+        "question": "A user is unable to access the company's network. A technician learns the user's account became inaccessible after multiple unsuccessful login attempts. The user also changed their password before the issue started. Which of the following steps should the technician take to resolve the issue?",
+        "correct_answer": "C",
+        "option_a": "Escalate the user’s issue to the network team",
+        "option_b": "Reset the user's password",
+        "option_c": "Unlock the user's account",
+        "option_d": "Verify the user's login and password",
+        "explanation": "If multiple unsuccessful attempts led to the account being locked, the technician should unlock the account."
+      },
+      {
+        "question_number": 690,
+        "question": "A systems administrator at a small company wants to discretely access user machines and verify patch levels without users noticing. Which of the following remote access technologies should the administrator use?",
+        "correct_answer": "C",
+        "option_a": "RDP",
+        "option_b": "MSRA",
+        "option_c": "SSH",
+        "option_d": "VNC",
+        "explanation": "SSH allows for remote access to systems securely and discretely, suitable for verifying patch levels and other administrative tasks."
+      },
+      {
+        "question_number": 691,
+        "question": "A user reports some single sign-on errors to a help desk technician. Currently, the user is able to sign in to the company's application portal but cannot access a specific SaaS-based tool. Which of the following would the technician most likely suggest as a next step?",
+        "correct_answer": "B",
+        "option_a": "Reenroll the user's mobile device to be used as an MFA token",
+        "option_b": "Use a private browsing window to avoid local session conflicts",
+        "option_c": "Bypass single sign-on by directly authenticating to the application",
+        "option_d": "Reset the device being used to factory defaults",
+        "explanation": "Using a private browsing window can help resolve session conflicts by not relying on cached credentials, which might interfere with single sign-on processes."
+      },
+      {
+        "question_number": 692,
+        "question": "Which of the following is a preventive physical security control?",
+        "correct_answer": "B",
+        "option_a": "Video surveillance system",
+        "option_b": "Bollards",
+        "option_c": "Alarm system",
+        "option_d": "Motion sensors",
+        "explanation": "Bollards are physical barriers that prevent unauthorized vehicle access to certain areas, providing a preventive measure against unauthorized entry and potential threats."
+      },
+      {
+        "question_number": 693,
+        "question": "A technician needs to disable guest log-ins on domain-joined desktop machines. Which of the following should the technician use?",
+        "correct_answer": "A",
+        "option_a": "Group Policy",
+        "option_b": "Firewall",
+        "option_c": "Microsoft Management Control",
+        "option_d": "MSConfig",
+        "explanation": "Disabling guest accounts on domain-joined machines is done through Group Policy, which allows centralized management and configuration of operating systems, applications, and users' settings in an Active Directory environment."
+      },
+      {
+        "question_number": 694,
+        "question": "Which of the following is the most practical method to reduce the number of clicks on phishing emails for a public-facing organization?",
+        "correct_answer": "A",
+        "option_a": "Providing user awareness education",
+        "option_b": "Introducing a BYOD policy",
+        "option_c": "Setting up SMTP filtering rules",
+        "option_d": "Restricting emails from personal email addresses",
+        "explanation": "User awareness education is the most effective method for reducing phishing attacks. Training users to recognize suspicious emails, links, and attachments can prevent them from falling for phishing attempts."
+      },
+      {
+        "question_number": 695,
+        "question": "Which of the following best describes XFS?",
+        "correct_answer": "A",
+        "option_a": "A filesystem used by the Linux OS",
+        "option_b": "A filesystem used by iOS",
+        "option_c": "A filesystem used by the Windows OS",
+        "option_d": "A filesystem used by macOS",
+        "explanation": "XFS is a high-performance filesystem created by Silicon Graphics in 1994 and is commonly used by Linux operating systems. It supports large files and directories and is known for its robustness and scalability."
+      },
+      {
+        "question_number": 696,
+        "question": "A technician is trying to perform an in-place upgrade of a Windows OS from a file. When the technician double-clicks the file, the technician receives a prompt to mount a drive. Which of the following file types did the technician download?",
+        "correct_answer": "B",
+        "option_a": ".msi",
+        "option_b": ".iso",
+        "option_c": ".zip",
+        "option_d": ".exe",
+        "explanation": "The file type ISO is a disk image format that contains everything from a CD, DVD, or Blu-ray disc in a single file. When an ISO file is accessed, the system prompts the user to mount it as a virtual drive."
+      },
+      {
+        "question_number": 697,
+        "question": "After a failed attempt to open an email attachment for an unexpected overdue invoice, a smartphone user experiences abnormal performance when using their mobile browser and other applications. The user restarts the device, but the issue persists. Which of the following actions should the user take next?",
+        "correct_answer": "C",
+        "option_a": "Shut down and cold start the smartphone",
+        "option_b": "Delete the email containing the attachment",
+        "option_c": "Wipe the device and reset it to factory defaults",
+        "option_d": "Uninstall and reinstall the mobile browser",
+        "explanation": "In this case, abnormal behavior after opening a suspicious email suggests malware might have infected the device. A full factory reset is recommended to remove any persistent malware, especially when a restart does not resolve the issue."
+      },
+      {
+        "question_number": 698,
+        "question": "A technician has been tasked with installing a workstation that will be used for point-of-sale transactions. The point-of-sale system will process credit cards and loyalty cards. Which of the following encryption technologies should be used to secure the workstation in case of theft?",
+        "correct_answer": "D",
+        "option_a": "Data-in-transit encryption",
+        "option_b": "File encryption",
+        "option_c": "USB drive encryption",
+        "option_d": "Disk encryption",
+        "explanation": "Disk encryption is the best method for securing a workstation used in financial transactions, such as point-of-sale systems. It ensures that if the workstation is stolen, all data on the disk is encrypted and cannot be accessed without proper credentials."
+      },
+      {
+        "question_number": 699,
+        "question": "A technician is troubleshooting a PC that will not run Windows Defender. Windows Defender has been disabled, and no other antivirus is installed on the PC. Which of the following would have caused this issue?",
+        "correct_answer": "B",
+        "option_a": "Ransomware",
+        "option_b": "Rootkit",
+        "option_c": "Spyware",
+        "option_d": "Keylogger",
+        "explanation": "Rootkits are particularly dangerous because they modify the operating system to hide their presence and can disable antivirus software like Windows Defender."
+      },
+      {
+        "question_number": 700,
+        "question": "Which of the following is used to detect and record access to restricted areas?",
+        "correct_answer": "C",
+        "option_a": "Bollards",
+        "option_b": "Video surveillance",
+        "option_c": "Badge readers",
+        "option_d": "Fence",
+        "explanation": "Badge readers are devices that scan employee or visitor credentials, logging entries and exits from restricted areas."
+      },
+      {
+        "question_number": 701,
+        "question": "A technician is configuring a workstation's security settings, and the following options are available: Account lockout policy, Group policy, Two-factor authentication, Password complexity requirements, Firewalls, User accounts, Access control lists, Antivirus software. Which of the following settings should the technician configure to deploy strong password enforcement across the enterprise?",
+        "correct_answer": "B",
+        "option_a": "Account lockout policy",
+        "option_b": "Group policy",
+        "option_c": "Two-factor authentication",
+        "option_d": "Access control lists",
+        "explanation": "Group Policy in a Windows environment allows administrators to manage various settings, including password policies, at a domain level, enforcing complexity requirements across the enterprise."
+      },
+      {
+        "question_number": 702,
+        "question": "A technician is creating a Windows splash screen that details login expectations. Which of the following should the technician most likely use?",
+        "correct_answer": "D",
+        "option_a": "End-user license agreement",
+        "option_b": "Non-disclosure agreement",
+        "option_c": "Regulatory compliance",
+        "option_d": "Acceptable use policy",
+        "explanation": "Acceptable Use Policy defines the rules for how users should use the system, including login expectations and proper behavior when using company resources."
+      },
+      {
+        "question_number": 703,
+        "question": "A technician is installing an operating system on a new computer. Which of the following is the first step of the process?",
+        "correct_answer": "A",
+        "option_a": "Setting the boot order",
+        "option_b": "Formatting the hard drive",
+        "option_c": "Entering the product key",
+        "option_d": "Selecting the filesystem",
+        "explanation": "The first step in installing an operating system on a new computer is setting the boot order to ensure that the computer can boot from the installation media."
+      },
+      {
+        "question_number": 704,
+        "question": "A customer reports high data usage on a smartphone that reaches its monthly data limit within the first week of each billing cycle. The customer uses the phone primarily for calls and SMS messages with minimal content streaming. A technician troubleshoots the phone and notices that both developer mode and installs from unknown sources are enabled. Which of the following should the technician check next?",
+        "correct_answer": "B",
+        "option_a": "Storage cache",
+        "option_b": "Malicious applications",
+        "option_c": "Privacy settings",
+        "option_d": "Permissions",
+        "explanation": "Since both developer mode and the ability to install apps from unknown sources are enabled, the technician should check for malicious applications that may use excessive background data."
+      },
+      {
+        "question_number": 705,
+        "question": "A developer installed a new software package that has stopped all file server access. Which of the following change management practices should have been followed?",
+        "correct_answer": "D",
+        "option_a": "End-user acceptance",
+        "option_b": "Staff delegation",
+        "option_c": "Appropriate scoping",
+        "option_d": "Sandbox testing",
+        "explanation": "Sandbox testing allows new software to be tested in a controlled environment before implementation, ensuring it does not negatively impact system functionality."
+      },
+      {
+        "question_number": 706,
+        "question": "Which of the following attacks can a hacker use to execute code on a user's computer when the user visits a specially prepared, malicious website?",
+        "correct_answer": "C",
+        "option_a": "DoS",
+        "option_b": "Spoofing",
+        "option_c": "XSS",
+        "option_d": "SQL injection",
+        "explanation": "Cross-site scripting (XSS) allows attackers to inject malicious scripts into web pages viewed by users, potentially allowing code execution."
+      },
+      {
+        "question_number": 707,
+        "question": "Which of the following is protected by government policy for end-user information?",
+        "correct_answer": "D",
+        "option_a": "DRM",
+        "option_b": "EULA",
+        "option_c": "PCI",
+        "option_d": "PII",
+        "explanation": "Personally Identifiable Information (PII) is protected by government regulations, including sensitive data such as names, addresses, and social security numbers."
+      },
+      {
+        "question_number": 708,
+        "question": "A technician received a notification about encrypted production data files and thinks active ransomware is on the network. The technician isolated and removed the suspicious system from the network. Which of the following steps should the technician take next?",
+        "correct_answer": "C",
+        "option_a": "Schedule and perform an antivirus scan and system update",
+        "option_b": "Educate the end user on internet usage",
+        "option_c": "Perform a system scan to remove the malware",
+        "option_d": "Create a system restore point",
+        "explanation": "Since ransomware is suspected, running a comprehensive malware scan can help identify and remove the malicious software after isolating the system."
+      },
+      {
+        "question_number": 709,
+        "question": "Which of the following applications allows a user to create backups in macOS?",
+        "correct_answer": "A",
+        "option_a": "Time Machine",
+        "option_b": "FileVault",
+        "option_c": "Keychain",
+        "option_d": "Mission Control",
+        "explanation": "Time Machine is macOS's built-in backup application, allowing users to automatically back up their entire system."
+      },
+      {
+        "question_number": 710,
+        "question": "A technician is reusing several hard drives to increase local storage on company workstations. The drives contain PII that is no longer needed. Which of the following should the technician do to prevent unauthorized access to the data?",
+        "correct_answer": "C",
+        "option_a": "Degauss the drives",
+        "option_b": "Drill through the drives",
+        "option_c": "Wipe the drives",
+        "option_d": "Reimage the drives",
+        "explanation": "Wiping the drives ensures that all data is securely erased, preventing any possibility of recovery when handling drives containing PII."
+      },
+      {
+        "question_number": 711,
+        "question": "The following error is displayed on a user's computer screen: No operating system found. Which of the following is the first troubleshooting step a technician should complete?",
+        "correct_answer": "A",
+        "option_a": "Disconnect external storage",
+        "option_b": "Flash the BIOS",
+        "option_c": "Replace the SATA cable",
+        "option_d": "Turn on the device in safe mode",
+        "explanation": "The first step is to disconnect external storage, as the system may be attempting to boot from an external drive instead of the internal hard drive."
+      },
+      {
+        "question_number": 712,
+        "question": "A technician is deploying a new Wi-Fi solution for the office and wants to ensure users can log in to the Wi-Fi with their existing network log-in and password. Which of the following methods should the technician use?",
+        "correct_answer": "B",
+        "option_a": "AES",
+        "option_b": "RADIUS",
+        "option_c": "TKIP",
+        "option_d": "WPA3",
+        "explanation": "RADIUS (Remote Authentication Dial-In User Service) allows users to authenticate using their network credentials, typically stored in a central directory like Active Directory."
+      },
+      {
+        "question_number": 713,
+        "question": "A user's PC is performing slowly after the user clicked on a suspicious email attachment. The technician notices that a single process is taking 100% of RAM, CPU, and network resources. Which of the following should the technician do first?",
+        "correct_answer": "A",
+        "option_a": "Disconnect the computer from the network",
+        "option_b": "Run an antivirus scan",
+        "option_c": "Reboot the computer",
+        "option_d": "Educate the user about cybersecurity best practices",
+        "explanation": "The technician should disconnect the computer from the network first to prevent any further spread of the infection or data loss."
+      },
+      {
+        "question_number": 714,
+        "question": "A technician needs to implement password requirements that apply to all domain-joined computers. Which of the following commands should the technician most likely run?",
+        "correct_answer": "A",
+        "option_a": "gpupdate",
+        "option_b": "devmgmt",
+        "option_c": "regedit",
+        "option_d": "resmon",
+        "explanation": "The gpupdate command refreshes Group Policy settings, ensuring that new password requirements set via Group Policy are applied to all domain-joined systems."
+      },
+      {
+        "question_number": 715,
+        "question": "Due to special job responsibilities, an end user needs the ability to edit the properties of Windows system files. The user has already been granted local administrator privileges. Which of the following Control Panel utilities should be used to provide easy access to the files?",
+        "correct_answer": "D",
+        "option_a": "File Explorer Options",
+        "option_b": "Ease of Access",
+        "option_c": "Indexing Options",
+        "option_d": "Administrative Tools",
+        "explanation": "Administrative Tools provides access to several system utilities, including those needed for managing system files and settings."
+      },
+      {
+        "question_number": 716,
+        "question": "A customer reports that an Android phone will not allow the use of contactless electronic payment. Which of the following needs to be enabled to resolve the issue?",
+        "correct_answer": "C",
+        "option_a": "Wi-Fi",
+        "option_b": "Nearby share",
+        "option_c": "NFC",
+        "option_d": "Bluetooth",
+        "explanation": "NFC (Near Field Communication) needs to be enabled to allow contactless payment, as it is the technology used in most mobile payment systems."
+      },
+      {
+        "question_number": 717,
+        "question": "A technician thinks that a computer on the network has been infected with malware. The technician attempts several times to use a malware removal tool, but the issue persists. Which of the following should the technician do next?",
+        "correct_answer": "B",
+        "option_a": "Restore the computer from the last known-good backup",
+        "option_b": "Reboot the computer into safe mode",
+        "option_c": "Purchase a new endpoint protection tool",
+        "option_d": "Use system recovery to prevent further infection",
+        "explanation": "Rebooting the computer into safe mode limits the processes and services that run, helping to isolate and remove persistent malware."
+      },
+      {
+        "question_number": 718,
+        "question": "A technician is setting up a wireless network in a small, crowded office and wants to minimize Wi-Fi access. Which of the following security settings should the technician enable?",
+        "correct_answer": "D",
+        "option_a": "Port forwarding",
+        "option_b": "Unused ports",
+        "option_c": "SSID broadcast",
+        "option_d": "Allow list",
+        "explanation": "Enabling an allow list will limit access to the wireless network by only allowing devices with specified MAC addresses to connect."
+      },
+      {
+        "question_number": 719,
+        "question": "A user's corporate iPhone had issues and was repaired while the user was on vacation. The mobile phone has compared to an identical phone. Which of the following best describes what is happening to the phone?",
+        "correct_answer": "D",
+        "option_a": "APK Source",
+        "option_b": "Connectivity issues",
+        "option_c": "Developer Mode",
+        "option_d": "Jailbreak",
+        "explanation": "A jailbroken iPhone allows users to bypass Apple's restrictions, suggesting the phone may have been compromised or tampered with during repair."
+      },
+      {
+        "question_number": 720,
+        "question": "Which of the following ensures proprietary information on a lost or stolen mobile device cannot be accessed while the device is offline?",
+        "correct_answer": "D",
+        "option_a": "Remote wipe",
+        "option_b": "Mandatory screen locks",
+        "option_c": "Location applications",
+        "option_d": "Device data encryption",
+        "explanation": "Device data encryption ensures that data cannot be accessed without proper credentials, even while offline."
+      },
+      {
+        "question_number": 721,
+        "question": "Internet speeds on a user's Windows 10 device are slow, but other devices on the same network are running at normal speeds. A technician thinks the issue may be related to the proxy settings. Which of the following should the technician check to verify the proxy configuration?",
+        "correct_answer": "B",
+        "option_a": "Network and Sharing Center",
+        "option_b": "Internet Options",
+        "option_c": "Firewall settings",
+        "option_d": "System settings",
+        "explanation": "The correct place to check proxy settings in Windows 10 is under Internet Options, specifically in the 'Connections' tab."
+      },
+      {
+        "question_number": 722,
+        "question": "Which of the following types of malware is designed to enable administrative access to a computer?",
+        "correct_answer": "A",
+        "option_a": "Rootkit",
+        "option_b": "Trojan",
+        "option_c": "Worm",
+        "option_d": "Ransomware",
+        "explanation": "A rootkit is designed to gain administrative (root) access to a system while hiding its presence."
+      },
+      {
+        "question_number": 723,
+        "question": "Which of the following languages would a technician most likely use to automate the setup of various services on multiple systems?",
+        "correct_answer": "C",
+        "option_a": "SQL",
+        "option_b": "HTML",
+        "option_c": "PowerShell",
+        "option_d": "C#",
+        "explanation": "PowerShell is a powerful scripting language used in Windows environments for automating tasks, including the configuration of services across multiple systems."
+      },
+      {
+        "question_number": 724,
+        "question": "A technician is helping a customer connect to a shared drive. The technician notices some unused drives that have already been mapped and wants to disconnect those drives first. Which of the following commands should the technician use?",
+        "correct_answer": "D",
+        "option_a": "format",
+        "option_b": "netstat",
+        "option_c": "diskpart",
+        "option_d": "net use",
+        "option_e": "rmdir",
+        "explanation": "The net use command is used to manage network drives in Windows, allowing the technician to disconnect unused mapped drives."
+      },
+      {
+        "question_number": 725,
+        "question": "A user reported that Windows has crashed several times during the day. A technician needs to check error messages to determine whether the issue pertains to the hardware or an application. Which of the following tools should the technician use?",
+        "correct_answer": "A",
+        "option_a": "Event Viewer",
+        "option_b": "Resource Monitor",
+        "option_c": "Performance Monitor",
+        "option_d": "Device Manager",
+        "explanation": "Event Viewer is the appropriate tool to check for system and application logs, including error messages and crash reports."
+      },
+      {
+        "question_number": 726,
+        "question": "A user has been adding data to the same spreadsheet for several years. After adding a significant amount of data, they are now unable to open the file. Which of the following should a technician do to resolve the issue?",
+        "correct_answer": "B",
+        "option_a": "Revert the spreadsheet to the last restore point",
+        "option_b": "Increase the amount of RAM",
+        "option_c": "Defragment the storage drive",
+        "option_d": "Upgrade the network connection speed",
+        "explanation": "Increasing the amount of RAM can help the system handle large files more effectively, resolving issues with opening the spreadsheet."
+      },
+      {
+        "question_number": 727,
+        "question": "A technician installs a Bluetooth headset for a user. During testing, the sound is still coming from the speaker on the computer. The technician verifies the headset shows up in Device Manager. Which of the following would the technician most likely do to fix this issue?",
+        "correct_answer": "D",
+        "option_a": "Update the drivers for the wireless headset",
+        "option_b": "Replace the battery on the headset, and try again later",
+        "option_c": "Verify that the sound is not muted in the control panel",
+        "option_d": "Change the headset as the default device in sound settings",
+        "explanation": "Changing the headset as the default device in sound settings ensures that audio output is directed to the Bluetooth headset instead of the computer speakers."
+      },
+      {
+        "question_number": 728,
+        "question": "A technician needs to configure laptops so that only administrators can enable virtualization technology if needed. Which of the following should the technician configure?",
+        "correct_answer": "A",
+        "option_a": "BIOS password",
+        "option_b": "Guest account",
+        "option_c": "Screen lock",
+        "option_d": "AutoRun setting",
+        "explanation": "Configuring a BIOS password restricts access to BIOS settings, including virtualization technology, to administrators only."
+      },
+      {
+        "question_number": 729,
+        "question": "After a user recently installs a new scanner and the associated software on a computer, they notice the computer is now starting up very slowly. Which of the following is the best tool to troubleshoot this issue?",
+        "correct_answer": "B",
+        "option_a": "Resource Monitor",
+        "option_b": "Task Manager",
+        "option_c": "Device Manager",
+        "option_d": "Windows Update",
+        "option_e": "Event Viewer",
+        "explanation": "Task Manager is the best tool to troubleshoot slow startup issues, as it can show which processes, including those related to the new scanner software, are consuming resources during boot."
+      },
+      {
+        "question_number": 730,
+        "question": "A company executive is currently attending a major music festival with a large number of attendees and is having trouble accessing a work email account. The email application is not downloading emails and appears to be stuck during connection attempts. Which of the following is most likely causing the disruption?",
+        "correct_answer": "C",
+        "option_a": "The phone has no storage space available",
+        "option_b": "Company firewalls are configured to block remote access to email resources",
+        "option_c": "Too many devices in the same area are trying to connect to the mobile network",
+        "option_d": "The festival organizer prohibits internet usage during the event and has blocked the internet signal",
+        "explanation": "Too many devices trying to connect to the mobile network in a crowded area like a festival can cause network congestion, leading to connectivity issues."
+      },
+      {
+        "question_number": 731,
+        "question": "A user connected a smartphone to a coffee shop’s public Wi-Fi and noticed the smartphone started sending unusual SMS messages and registering strange network activity. A technician thinks a virus or other malware has infected the device. Which of the following should the technician suggest the user do immediately to best address these security and privacy concerns? (Select two)",
+        "correct_answer": "A,C",
+        "option_a": "Enable airplane mode",
+        "option_b": "Stay offline when in public places",
+        "option_c": "Uninstall recently installed applications",
+        "option_d": "Schedule an antivirus scan",
+        "option_e": "Reboot the device",
+        "option_f": "Install all application updates",
+        "explanation": "Enable airplane mode to immediately stop network activity and prevent further damage, and uninstall recently installed applications to remove potential malware sources."
+      },
+      {
+        "question_number": 732,
+        "question": "A systems administrator finds that a Windows client machine with an address of 169.254.124.24 is unable to access network resources. Which of the following should the administrator do to establish connectivity?",
+        "correct_answer": "B",
+        "option_a": "Reinstall the NIC device driver",
+        "option_b": "Assign a static IP",
+        "option_c": "Reconfigure DNS settings",
+        "option_d": "Disable the Windows firewall",
+        "explanation": "The IP address 169.254.124.24 is an APIPA address, indicating the computer failed to obtain an IP from DHCP. Assigning a static IP within the correct network range can restore connectivity."
+      },
+      {
+        "question_number": 733,
+        "question": "A user is unable to access the internet but can still print to network printers. Other users are not experiencing this issue. Which of the following steps should the technician take first to diagnose the issue?",
+        "correct_answer": "D",
+        "option_a": "Validate physical connectivity",
+        "option_b": "Reboot the router",
+        "option_c": "Disable IPv6",
+        "option_d": "Check the DNS settings",
+        "explanation": "When a user can access the local network but not the internet, the issue is often related to DNS resolution. Checking the DNS settings is the first step to diagnose this."
+      },
+      {
+        "question_number": 734,
+        "question": "A technician receives a help desk ticket regarding a software issue on a workstation. The workstation provides the only access to a corporate database, and the technician needs to recover the workstation quickly. Which of the following actions should the technician take?",
+        "correct_answer": "A",
+        "option_a": "Restore the workstation from the last backup",
+        "option_b": "Reinstall the operating system",
+        "option_c": "Run the System File Checker",
+        "option_d": "Run the Hardware Diagnostics tool",
+        "explanation": "Restoring from the last backup is the most efficient way to recover the workstation quickly, reverting it to a known working state."
+      },
+      {
+        "question_number": 735,
+        "question": "A client recently upgraded their Windows 10 machine to Windows 11. The client reports the following message displays when turning the computer on: 'Error loading operating system.' Which of the following should a technician do first to troubleshoot this issue?",
+        "correct_answer": "B",
+        "option_a": "Disable the Secure Boot feature",
+        "option_b": "Use the automated startup recovery",
+        "option_c": "Format the drive",
+        "option_d": "Resize the boot partition",
+        "explanation": "The 'Error loading operating system' message indicates a boot process problem. Using the automated startup recovery tool can diagnose and fix these issues."
+      },
+      {
+        "question_number": 736,
+        "question": "A user is unable to browse a website on a PC. Which of the following commands should a technician use to verify the PC's DNS resolution for the website?",
+        "correct_answer": "A",
+        "option_a": "nslookup",
+        "option_b": "hostname",
+        "option_c": "tracert",
+        "option_d": "netstat",
+        "explanation": "The nslookup command is used to query DNS to verify if a PC can resolve a website's domain name to its IP address."
+      },
+      {
+        "question_number": 737,
+        "question": "A technician is troubleshooting an issue with a computer that contains sensitive information. The technician determines the computer needs to be taken off site for repair. Which of the following should the technician do next?",
+        "correct_answer": "B",
+        "option_a": "Remove the HDD and then send the computer for repair",
+        "option_b": "Check corporate policies for guidance",
+        "option_c": "Delete the sensitive information before the computer leaves the building",
+        "option_d": "Get authorization from the manager",
+        "explanation": "When dealing with sensitive information, checking corporate policies ensures compliance with proper protocols for handling and transporting devices."
+      },
+      {
+        "question_number": 738,
+        "question": "A user's smartphone screen is not rotating. The technician confirms the rotation lock is deactivated. Which of the following steps should the technician perform next?",
+        "correct_answer": "C",
+        "option_a": "Remove the screen protector",
+        "option_b": "Update the smartphone’s software",
+        "option_c": "Restart the smartphone",
+        "option_d": "Replace the smartphone",
+        "explanation": "Restarting a smartphone is a basic troubleshooting step that often resolves temporary software glitches affecting screen rotation."
+      },
+      {
+        "question_number": 739,
+        "question": "A technician is manually updating Windows workstations. Each workstation is currently running Windows Pro in a workgroup environment. Which of the following changes can the technician make to create a more manageable environment?",
+        "correct_answer": "C",
+        "option_a": "Downgrade all workstations from the Pro version to the Home version of the OS",
+        "option_b": "Upgrade all workstations from the Pro version to Pro for Workstations",
+        "option_c": "Create a domain and join the workstations to the domain for management purposes",
+        "option_d": "Make sure all workstations are operating under the same workgroup name",
+        "explanation": "Creating a domain and joining the workstations to it provides centralized management and control over the computers."
+      },
+      {
+        "question_number": 740,
+        "question": "A technician is working at a client office site and the technician's family member repeatedly calls and texts about a non-emergency situation. Which of the following should the technician do?",
+        "correct_answer": "B",
+        "option_a": "Step aside and answer",
+        "option_b": "Put the phone on silent",
+        "option_c": "Text a reply",
+        "option_d": "Ignore the phone and continue working",
+        "explanation": "Putting the phone on silent ensures that the technician stays focused without causing disruptions to their work environment."
+      },
+      {
+        "question_number": 741,
+        "question": "A user’s mobile phone battery does not last long, and navigation is very slow. Which of the following should the technician do first to resolve the issue?",
+        "correct_answer": "B",
+        "option_a": "Uninstall unused programs",
+        "option_b": "Check running applications",
+        "option_c": "Update the mobile OS",
+        "option_d": "Disable network services",
+        "explanation": "Checking running applications is the best first step, as background apps consume CPU, RAM, and battery, affecting performance and battery life."
+      },
+      {
+        "question_number": 742,
+        "question": "A workstation's hard drive is making loud noises, applications are running slowly, and the workstation is rebooting unexpectedly. Which of the following should the technician do first to begin troubleshooting the issue?",
+        "correct_answer": "D",
+        "option_a": "Perform a System Restore",
+        "option_b": "Open Disk Cleanup",
+        "option_c": "Replace the hard drive",
+        "option_d": "Run CHKDSK",
+        "explanation": "Running CHKDSK scans and repairs file system errors and bad sectors on a disk, helping to diagnose whether the hard drive is failing."
+      },
+      {
+        "question_number": 743,
+        "question": "A technician is setting up backup and recovery solutions that must restore quickly. Storage space is not a factor. Which of the following backup methods should the technician implement?",
+        "correct_answer": "C",
+        "option_a": "Differential",
+        "option_b": "Synthetic",
+        "option_c": "Full",
+        "option_d": "Incremental",
+        "explanation": "A Full Backup creates a complete copy of all selected data, ensuring the fastest possible recovery time since all data is in a single backup file."
+      },
+      {
+        "question_number": 744,
+        "question": "A company wants a new software program installed on all company computers, including remote employees’ machines. Which of the following methods should the IT department use to remotely deploy the software?",
+        "correct_answer": "B",
+        "option_a": "Clone",
+        "option_b": "Scripted",
+        "option_c": "In-place",
+        "option_d": "Image",
+        "explanation": "Scripted deployment is the most effective method for remotely installing software across multiple devices, ensuring automation and consistency."
+      },
+      {
+        "question_number": 745,
+        "question": "A technician is working at a client office site, and the technician’s family member repeatedly calls and texts about a non-emergency situation. Which of the following should the technician do?",
+        "correct_answer": "B",
+        "option_a": "Step aside and answer",
+        "option_b": "Put the phone on silent",
+        "option_c": "Text a reply",
+        "option_d": "Ignore the phone and continue working",
+        "explanation": "Putting the phone on silent ensures that the technician stays focused without causing disruptions to their work environment."
+      },
+      {
+        "question_number": 746,
+        "question": "Which of the following file types should be used to install software on a macOS computer? (Select two)",
+        "correct_answer": "B,F",
+        "option_a": ".yum",
+        "option_b": ".pkg",
+        "option_c": ".msi",
+        "option_d": ".ps1",
+        "option_e": ".exe",
+        "option_f": ".dmg",
+        "explanation": "The correct answers are .pkg and .dmg. .pkg is the standard macOS package format for software installations, and .dmg is a macOS disk image file used for software installers."
+      }
+    ]
+  }

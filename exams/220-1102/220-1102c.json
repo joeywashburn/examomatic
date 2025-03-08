@@ -1,0 +1,988 @@
+{
+  "exam_code": "220-1002-C",
+  "exam_name": "CompTIA A+ Core 2 Practice Exam Pool C",
+  "questions": [
+    {
+      "question_number": 194,
+      "question": "A technician needs to provide recommendations about how to upgrade backup solutions for a site in an area that has frequent hurricanes and an unstable power grid. Which of the following should the technician recommend implementing?",
+      "correct_answer": "B",
+      "option_a": "High availability",
+      "option_b": "Regionally diverse backups",
+      "option_c": "On-site backups",
+      "option_d": "Incremental backups",
+      "explanation": "Regionally diverse backups are backups that are stored in different geographic locations, preferably far away from the primary site1. This way, if a disaster such as a hurricane or a power outage affects one location, the backups in another location will still be available and accessible2. Regionally diverse backups can help ensure business continuity and data recovery in case of a disaster3. The other options are not the best backup solutions for a site in an area that has frequent hurricanes and an unstable power grid. High availability is a feature that allows a system to remain operational and accessible even if one or more components fail, but it does not protect against data loss or corruption4. On-site backups are backups that are stored in the same location as the primary site, which means they are vulnerable to the same disasters that can affect the primary site. Incremental backups are backups that only store the changes made since the last backup, which means they require less storage space and bandwidth, but they also depend on previous backups to restore data and may not be sufficient for disaster recovery."
+    },
+    {
+      "question_number": 195,
+      "question": "A technician is troubleshooting application crashes on a Windows workstation. Each time the workstation user tries to open a website in a browser, the following message is displayed: crypt32.dll is missing not found. Which of the following should the technician attempt FIRST?",
+      "correct_answer": "D",
+      "option_a": "Rebuild Windows profiles",
+      "option_b": "Reimage the workstation",
+      "option_c": "Roll back updates",
+      "option_d": "Perform a system file check",
+      "explanation": "If this file is missing or corrupted, it can cause application crashes or errors when trying to open websites in a browser. To fix this, the technician can perform a system file check, which is a utility that scans and repairs corrupted or missing system files1. To perform a system file check, the technician can follow these steps: Open the Command Prompt as an administrator. To do this, type cmd in the search box on the taskbar, right-click on Command Prompt, and select Run as administrator. In the Command Prompt window, type sfc /scannow and hit Enter. This will start the scanning and repairing process, which may take some time. Wait for the process to complete. If any problems are found and fixed, you will see a message saying Windows Resource Protection found corrupt files and successfully repaired them. If no problems are found, you will see a message saying Windows Resource Protection did not find any integrity violations. Restart your computer and check if the issue is resolved."
+    },
+    {
+      "question_number": 196,
+      "question": "A user needs assistance installing software on a Windows PC but will not be in the office. Which of the following solutions would a technician MOST likely use to assist the user without having to install additional software?",
+      "correct_answer": "B",
+      "option_a": "VPN",
+      "option_b": "MSRA",
+      "option_c": "SSH",
+      "option_d": "RDP",
+      "explanation": "MSRA stands for Microsoft Remote Assistance, and it is a feature that allows a technician to remotely view and control another user’s Windows PC with their permission. MSRA is built-in to Windows and does not require any additional software installation. To use MSRA, the technician and the user need to follow these steps: On the user’s PC, type msra in the search box on the taskbar and select Invite someone to connect to your PC and help you, or offer to help someone else. Select Save this invitation as a file and choose a location to save the file. This file contains a password that the technician will need to connect to the user’s PC. Send the file and the password to the technician via email or another secure method. On the technician’s PC, type msra in the search box on the taskbar and select Help someone who has invited you. Select Use an invitation file and browse to the location where the file from the user is saved. Enter the password when prompted. The user will see a message asking if they want to allow the technician to connect to their PC. The user should select Yes. The technician will see the user’s desktop and can request control of their PC by clicking Request control on the top bar. The user should allow this request by clicking Yes. The technician can now view and control the user’s PC and assist them with installing software."
+    },
+    {
+      "question_number": 197,
+      "question": "A technician is upgrading the backup system for documents at a high-volume law firm. The current backup system can retain no more than three versions of full backups before failing. The law firm is not concerned about restore times but asks the technician to retain more versions when possible. Which of the following backup methods should the technician MOST likely implement?",
+      "correct_answer": "C",
+      "option_a": "Full",
+      "option_b": "Mirror",
+      "option_c": "Incremental",
+      "option_d": "Differential",
+      "explanation": "Incremental backup is a backup method that only backs up the files that have changed since the last backup, whether it was a full or an incremental backup. Incremental backup can save storage space and bandwidth, as it does not copy the same files over and over again. Incremental backup can also retain more versions of backups, as it only stores the changes made to the files. However, incremental backup can have longer restore times, as it requires restoring the last full backup and all the subsequent incremental backups in order to recover the data. The law firm is not concerned about restore times but asks the technician to retain more versions when possible, so incremental backup would be a suitable choice for them."
+    },
+    {
+      "question_number": 198,
+      "question": "A technician receives a call from a user who is unable to open Outlook. The user states that Outlook worked fine yesterday, but the computer may have restarted sometime overnight. Which of the following is the MOST likely reason Outlook has stopped functioning?",
+      "correct_answer": "D",
+      "option_a": "Spam filter installation",
+      "option_b": "Invalid registry settings",
+      "option_c": "Malware infection",
+      "option_d": "Operating system update",
+      "explanation": "Operating system updates can sometimes cause compatibility issues with some applications, such as Outlook, that may prevent them from opening or working properly. This can happen if the update changes some system files or settings that Outlook relies on, or if the update conflicts with some Outlook add-ins or extensions. To fix this, the technician can try some of these troubleshooting steps: Start Outlook in safe mode and disable add-ins. Safe mode is a way of starting Outlook without any add-ins or extensions that may interfere with its functionality. To start Outlook in safe mode, press and hold the Ctrl key while clicking on the Outlook icon. You should see a message asking if you want to start Outlook in safe mode. Click Yes. If Outlook works fine in safe mode, it means one of the add-ins is causing the problem. To disable add-ins, go to File > Options > Add-ins. In the Manage drop-down list, select COM Add-ins and click Go. Uncheck any add-ins that you don’t need and click OK. Restart Outlook normally and check if the issue is resolved4. Create a new Outlook profile. A profile is a set of settings and information that Outlook uses to manage your email accounts and data. Sometimes, a profile can get corrupted or damaged and cause Outlook to malfunction. To create a new profile, go to Control Panel > Mail > Show Profiles. Click Add and follow the instructions to set up a new profile with your email account. Make sure to select the option to use the new profile as the default one. Restart Outlook and check if the issue is resolved5. Repair your Outlook data files. Data files are files that store your email messages, contacts, calendar events, and other items on your computer. Sometimes, data files can get corrupted or damaged and cause Outlook to malfunction. To repair your data files, you can use a tool called scanpst.exe, which is located in the same folder where Outlook is installed (usually C:\\Program Files\\Microsoft Office\\root\\Office16). To use scanpst.exe, close Outlook and locate the tool in the folder. Double-click on it and browse to the location of your data file (usually C:\\Users\\username\\AppData\\Local\\Microsoft\\Outlook). Select the file and click Start to begin the scanning and repairing process. When it’s done, restart Outlook and check if the issue is resolved. Run the /resetnavpane command. The navigation pane is the panel on the left side of Outlook that shows your folders and accounts. Sometimes, the navigation pane can get corrupted or damaged and cause Outlook to malfunction. To reset the navigation pane, press Windows key + R to open the Run dialog box, or open the Command Prompt. Type outlook.exe /resetnavpane and hit Enter. This will clear and regenerate the navigation pane settings for Outlook. Restart Outlook and check if the issue is resolved."
+    },
+    {
+      "question_number": 199,
+      "question": "Which of the following editions of Windows 10 requires reactivation every 180 days?",
+      "correct_answer": "A",
+      "option_a": "Enterprise",
+      "option_b": "Pro for Workstation",
+      "option_c": "Home",
+      "option_d": "Pro",
+      "explanation": "Windows 10 Enterprise is an edition of Windows 10 that is designed for large organizations that need advanced security and management features. Windows 10 Enterprise can be activated using different methods, such as Multiple Activation Key (MAK), Active Directory-based Activation (ADBA), or Key Management Service (KMS)1. KMS is a method of activation that uses a local server to activate multiple devices on a network. KMS activations are valid for 180 days and need to be renewed periodically by connecting to the KMS server2. If a device does not renew its activation within 180 days, it will enter a grace period of 30 days, after which it will display a warning message and lose some functionality until it is reactivated3. The other editions of Windows 10 do not require reactivation every 180 days. Windows 10 Pro for Workstation is an edition of Windows 10 that is designed for high-performance devices that need advanced features such as ReFS file system, persistent memory, and faster file sharing. Windows 10 Pro for Workstation can be activated using a digital license or a product key. Windows 10 Home is an edition of Windows 10 that is designed for personal or home use. Windows 10 Home can be activated using a digital license or a product key. Windows 10 Pro is an edition of Windows 10 that is designed for business or professional use. Windows 10 Pro can be activated using a digital license or a product key. None of these editions require reactivation every 180 days unless there are significant hardware changes or other issues that affect the activation status."
+    },
+    {
+      "question_number": 200,
+      "question": "A BSOD appears on a user's workstation monitor. The user immediately presses the power button to shut down the PC, hoping to repair the issue. The user then restarts the PC, and the BSOD reappears, so the user contacts the help desk. Which of the following should the technician use to determine the cause?",
+      "correct_answer": "A",
+      "option_a": "Stop code",
+      "option_b": "Event Viewer",
+      "option_c": "Services",
+      "option_d": "System Configuration",
+      "explanation": "When a Blue Screen of Death (BSOD) appears on a Windows workstation, it indicates that there is a serious problem with the operating system. The stop code displayed on the BSOD can provide valuable information to help determine the cause of the issue. The stop code is a specific error code that is associated with the BSOD, and it can help identify the root cause of the problem. In this scenario, the user has encountered a BSOD and has restarted the PC, only to see the BSOD reappear. This suggests that the problem is persistent and requires further investigation. By analyzing the stop code displayed on the BSOD, a technician can begin to identify the underlying issue and take appropriate actions to resolve it."
+    },
+    {
+      "question_number": 201,
+      "question": "A technician is troubleshooting boot times for a user. The technician attempts to use MSConfig to see which programs are starting with the OS but receives a message that it can no longer be used to view startup items. Which of the following programs can the technician use to view startup items?",
+      "correct_answer": "D",
+      "option_a": "msinfo32",
+      "option_b": "perfmon",
+      "option_c": "regedit",
+      "option_d": "taskmgr",
+      "explanation": "When troubleshooting boot times for a user, a technician may want to check which programs are starting with the operating system to identify any that may be slowing down the boot process. MSConfig is a tool that can be used to view startup items on a Windows system, but it may not always be available or functional. In this scenario, the technician receives a message that MSConfig cannot be used to view startup items. As an alternative, the technician can use Task Manager (taskmgr), which can also display the programs that run at startup. To access the list of startup items in Task Manager, the technician can follow these steps: Open Task Manager by pressing Ctrl+Shift+Esc. Click the 'Startup' tab. The list of programs that run at startup will be displayed."
+    },
+    {
+      "question_number": 202,
+      "question": "A desktop engineer is deploying a master image. Which of the following should the desktop engineer consider when building the master image? (Select TWO).",
+      "correct_answer": "A,C",
+      "option_a": "Device drivers",
+      "option_b": "Keyboard backlight settings",
+      "option_c": "Installed application license keys",
+      "option_d": "Display orientation",
+      "explanation": "A. Device drivers23: Device drivers are software components that enable the operating system to communicate with hardware devices. Different devices may require different drivers, so the desktop engineer should include the appropriate drivers in the master image or configure the deployment process to install them automatically. C. Installed application license keys2: Installed application license keys are codes that activate or authenticate software applications. Some applications may require license keys to be entered during installation or after deployment. The desktop engineer should include the license keys in the master image or configure the deployment process to apply them automatically."
+    },
+    {
+      "question_number": 203,
+      "question": "A technician is setting up a conference room computer with a script that boots the application on login. Which of the following would the technician use to accomplish this task? (Select TWO).",
+      "correct_answer": "B,E",
+      "option_a": "File Explorer",
+      "option_b": "Startup Folder",
+      "option_c": "System Information",
+      "option_d": "Programs and Features",
+      "option_e": "Task Scheduler",
+      "explanation": "B. Startup Folder1: The Startup folder is a special folder that contains shortcuts to programs or scripts that will run automatically when a user logs on. The technician can create a shortcut to the script and place it in the Startup folder for the conference room computer or for all users. E. Task Scheduler23: The Task Scheduler is a tool that allows you to create tasks that run at specified times or events. The technician can create a task that runs the script at logon for the conference room computer or for all users."
+    },
+    {
+      "question_number": 204,
+      "question": "A neighbor successfully connected to a user's Wi-Fi network. Which of the following should the user do after changing the network configuration to prevent the neighbor from being able to connect again?",
+      "correct_answer": "A",
+      "option_a": "Disable the SSID broadcast",
+      "option_b": "Disable encryption settings",
+      "option_c": "Disable DHCP reservations",
+      "option_d": "Disable logging",
+      "explanation": "A. Disable the SSID broadcast1: The SSID broadcast is a feature that allows a Wi-Fi network to be visible to nearby devices. Disabling the SSID broadcast can make the network harder to find by unauthorized users, but it does not prevent them from accessing it if they know the network name and password."
+    },
+    {
+      "question_number": 205,
+      "question": "A technician is troubleshooting a PC that has been performing poorly. Looking at the Task Manager, the technician sees that CPU and memory resources seem fine, but disk throughput is at 100%. Which of the following types of malware is the system MOST likely infected with?",
+      "correct_answer": "C",
+      "option_a": "Keylogger",
+      "option_b": "Rootkit",
+      "option_c": "Ransomware",
+      "option_d": "Trojan",
+      "explanation": "Ransomware is a type of malware that encrypts the files on the victim’s computer and demands a ransom for their decryption. Ransomware can cause high disk throughput by encrypting large amounts of data in a short time."
+    },
+    {
+      "question_number": 206,
+      "question": "A homeowner recently moved and requires a new router for the new ISP to function correctly. The internet service has been installed and has been confirmed as functional. Which of the following is the FIRST step the homeowner should take after installation of all relevant cabling and hardware?",
+      "correct_answer": "D",
+      "option_a": "Convert the PC from a DHCP assignment to a static IP address",
+      "option_b": "Run a speed test to ensure the advertised speeds are met",
+      "option_c": "Test all network sharing and printing functionality the customer uses",
+      "option_d": "Change the default passwords on new network devices",
+      "explanation": "When a homeowner moves and sets up a new router for the new ISP it is important to take appropriate security measures to protect their network from potential security threats. The FIRST step that the homeowner should take after installation of all relevant cabling and hardware is to change the default passwords on new network devices. Most modern routers come with default usernames and passwords that are widely known to potential attackers. If these defaults are not changed, it could make it easier for external attackers to gain unauthorized access to the network. Changing the passwords on new network devices is a simple but effective way to improve the security posture of the network."
+    },
+    {
+      "question_number": 207,
+      "question": "A user rotates a cell phone horizontally to read emails, but the display remains vertical, even though the settings indicate autorotate is on. Which of the following will MOST likely resolve the issue?",
+      "correct_answer": "D",
+      "option_a": "Recalibrating the magnetometer",
+      "option_b": "Recalibrating the compass",
+      "option_c": "Recalibrating the digitizer",
+      "option_d": "Recalibrating the accelerometer",
+      "explanation": "When a user rotates a cell phone horizontally to read emails and the display remains vertical, even though the settings indicate autorotate is on, this is typically due to a problem with the phone's accelerometer. The accelerometer is the sensor that detects changes in the phone's orientation and adjusts the display accordingly. If the accelerometer is not calibrated correctly, the display may not rotate as expected. Recalibrating the accelerometer is the most likely solution to this issue. The process for recalibrating the accelerometer can vary depending on the specific device and operating system, but it typically involves going to the device's settings and finding the option to calibrate or reset the sensor. Users may need to search their device's documentation or online resources to find specific instructions for their device."
+    },
+    {
+      "question_number": 208,
+      "question": "Which of the following is the proper way for a technician to dispose of used printer consumables?",
+      "correct_answer": "A",
+      "option_a": "Proceed with the custom manufacturer's procedure",
+      "option_b": "Proceed with the disposal of consumables in standard trash receptacles",
+      "option_c": "Empty any residual ink or toner from consumables before disposing of them in a standard recycling bin",
+      "option_d": "Proceed with the disposal of consumables in standard recycling bins",
+      "explanation": "When it comes to disposing of used printer consumables, it is important to follow the manufacturer's instructions or guidelines for proper disposal, as different types of consumables may require different disposal procedures. Some manufacturers provide specific instructions for proper disposal, such as sending the used consumables back to the manufacturer or using special recycling programs. Therefore, the proper way for a technician to dispose of used printer consumables is to proceed with the custom manufacturer's procedure, if provided. This option ensures that the disposal is handled in an environmentally friendly and safe manner."
+    },
+    {
+      "question_number": 209,
+      "question": "A large company is selecting a new Windows operating system and needs to ensure it has built-in encryption and endpoint protection. Which of the following Windows versions will MOST likely be selected?",
+      "correct_answer": "D",
+      "option_a": "Home",
+      "option_b": "Pro",
+      "option_c": "Pro for Workstations",
+      "option_d": "Enterprise",
+      "explanation": "When selecting a new Windows operating system for a large company that needs built-in encryption and endpoint protection, the Enterprise edition is the most likely choice. This edition provides advanced security features such as Windows Defender Advanced Threat Protection (ATP), AppLocker, and BitLocker Drive Encryption. These features can help to protect the company's data and endpoints against malware attacks, unauthorized access, and data theft. The Home and Pro editions of Windows do not include some of the advanced security features provided by the Enterprise edition, such as Windows Defender ATP and AppLocker. The Pro for Workstations edition is designed for high-performance and high-end hardware configurations, but it does not provide additional security features beyond those provided by the Pro edition."
+    },
+    {
+      "question_number": 210,
+      "question": "A user tries to access commonly used web pages but is redirected to unexpected websites. Clearing the web browser cache does not resolve the issue. Which of the following should a technician investigate NEXT to resolve the issue?",
+      "correct_answer": "B",
+      "option_a": "Enable firewall ACLs",
+      "option_b": "Examine the localhost file entries",
+      "option_c": "Verify the routing tables",
+      "option_d": "Update the antivirus definitions",
+      "explanation": "A possible cause of the user being redirected to unexpected websites is that the localhost file entries have been modified by malware or hackers to point to malicious or unwanted websites. The localhost file is a text file that maps hostnames to IP addresses and can override DNS settings. By examining the localhost file entries, a technician can identify and remove any suspicious or unauthorized entries that may cause the redirection issue. Enabling firewall ACLs may not resolve the issue if the firewall rules do not block the malicious or unwanted websites. Verifying the routing tables may not resolve the issue if the routing configuration is correct and does not affect the web traffic. Updating the antivirus definitions may help prevent future infections but may not remove the existing malware or changes to the localhost file. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.3"
+    },
+    {
+      "question_number": 211,
+      "question": "A network technician installed a SOHO router for a home office user. The user has read reports about home routers being targeted by malicious actors and then used in DDoS attacks. Which of the following can the technician MOST likely do to defend against this threat?",
+      "correct_answer": "D",
+      "option_a": "Add network content filtering",
+      "option_b": "Disable the SSID broadcast",
+      "option_c": "Configure port forwarding",
+      "option_d": "Change the default credentials",
+      "explanation": "One of the most effective ways to defend against malicious actors targeting home routers for DDoS attacks is to change the default credentials of the router. The default credentials are often well-known or easily guessed by attackers, who can then access and compromise the router settings and firmware. By changing the default credentials to strong and unique ones, a technician can prevent unauthorized access and configuration changes to the router. Adding network content filtering may help block some malicious or unwanted websites but may not prevent attackers from exploiting router vulnerabilities or backdoors. Disabling the SSID broadcast may help reduce the visibility of the wireless network but may not prevent attackers from scanning or detecting it. Configuring port forwarding may help direct incoming traffic to specific devices or services but may not prevent attackers from sending malicious packets or requests to the router. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+    },
+    {
+      "question_number": 212,
+      "question": "A technician is preparing to remediate a Trojan virus that was found on a workstation. Which of the following steps should the technician complete BEFORE removing the virus?",
+      "correct_answer": "A",
+      "option_a": "Disable System Restore",
+      "option_b": "Schedule a malware scan",
+      "option_c": "Educate the end user",
+      "option_d": "Run Windows Update",
+      "explanation": "Before removing a Trojan virus from a workstation, a technician should disable System Restore. System Restore is a feature that allows users to restore their system to a previous state in case of problems or errors. However, System Restore can also restore infected files or registry entries that were removed by antivirus software or manual actions. By disabling System Restore, a technician can ensure that the Trojan virus is completely removed and does not reappear after a system restore operation. Scheduling a malware scan may help detect and remove some malware but may not be effective against all types of Trojan viruses. Educating the end user may help prevent future infections but does not address the current issue of removing the Trojan virus. Running Windows Update may help patch some security vulnerabilities but does not guarantee that the Trojan virus will be removed. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.3"
+    },
+    {
+      "question_number": 213,
+      "question": "A new employee was hired recently. Which of the following documents will the new employee need to sign before being granted login access to the network?",
+      "correct_answer": "D",
+      "option_a": "MSDS",
+      "option_b": "EULA",
+      "option_c": "UAC",
+      "option_d": "AUP",
+      "explanation": "A new employee will need to sign an AUP before being granted login access to the network. An AUP is an Acceptable Use Policy that defines the rules and guidelines for using network resources and services in an organization. An AUP typically covers topics such as security, privacy, ethics, compliance and liability issues related to network usage. An AUP helps protect the organization and its users from legal, regulatory and reputational risks associated with network activities. An MSDS is a Material Safety Data Sheet that provides information about hazardous substances and how to handle them safely. An MSDS is not related to network access or usage. A EULA is an End User License Agreement that specifies the terms and conditions for using a software product or service. A EULA is usually provided by software vendors or developers and does not apply to network access or usage in general. A UAC is a User Account Control that is a security feature that prompts users for permission or confirmation before performing certain actions that require elevated privileges or affect system settings. A UAC is not a document that needs to be signed by users but a mechanism that helps prevent unauthorized changes or malware infections on a system. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 5.1"
+    },
+    {
+      "question_number": 214,
+      "question": "A user lost a company tablet that was used for customer intake at a doctor's office. Which of the following actions would BEST protect against unauthorized access of the data?",
+      "correct_answer": "B",
+      "option_a": "Changing the office's Wi-Fi SSID and password",
+      "option_b": "Performing a remote wipe on the device",
+      "option_c": "Changing the user's password",
+      "option_d": "Enabling remote drive encryption",
+      "explanation": "The best action to protect against unauthorized access of the data on the lost company tablet is to perform a remote wipe on the device. A remote wipe is a feature that allows an administrator or a user to erase all the data and settings on a device remotely, usually through a web portal or an email command. A remote wipe can help prevent the data from being accessed or compromised by anyone who finds or steals the device. Changing the office’s Wi-Fi SSID and password may prevent the device from connecting to the office network but may not prevent the data from being accessed locally or through other networks. Changing the user’s password may prevent the device from logging in to the user’s account but may not prevent the data from being accessed by other means or accounts. Enabling remote drive encryption may protect the data from being read by unauthorized parties but may not be possible if the device is already lost or turned off. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+    },
+    {
+      "question_number": 215,
+      "question": "Which of the following is used to explain issues that may occur during a change implementation?",
+      "correct_answer": "C",
+      "option_a": "Scope change",
+      "option_b": "End-user acceptance",
+      "option_c": "Risk analysis",
+      "option_d": "Rollback plan",
+      "explanation": "Risk analysis is used to explain issues that may occur during a change implementation. Risk analysis is a process of identifying, assessing and prioritizing potential risks that may affect a project or an activity. Risk analysis can help determine the likelihood and impact of various issues that may arise during a change implementation, such as technical errors, compatibility problems, security breaches, performance degradation or user dissatisfaction. Risk analysis can also help plan and prepare for mitigating or avoiding these issues. Scope change is a modification of the original goals, requirements or deliverables of a project or an activity. Scope change is not used to explain issues that may occur during a change implementation but to reflect changes in expectations or needs of the stakeholders. End-user acceptance is a measure of how well the users are satisfied with and adopt a new system or service. End-user acceptance is not used to explain issues that may occur during a change implementation but to evaluate the success and effectiveness of the change. Rollback plan is a contingency plan that describes how to restore a system or service to its previous state in case of a failed or problematic change implementation. Rollback plan is not used to explain issues that may occur during a change implementation but to recover from them. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 5.2"
+    },
+    {
+      "question_number": 216,
+      "question": "Which of the following would MOST likely be deployed to enhance physical security for a building? (Select TWO).",
+      "correct_answer": "B,E",
+      "option_a": "Multifactor authentication",
+      "option_b": "Badge reader",
+      "option_c": "Personal identification number",
+      "option_d": "Firewall",
+      "option_e": "Motion sensor",
+      "explanation": "Badge reader and motion sensor are devices that can be deployed to enhance physical security for a building. A badge reader is a device that scans and verifies an identification card or tag that grants access to authorized personnel only. A badge reader can help prevent unauthorized entry or intrusion into a building or a restricted area. A motion sensor is a device that detects movement and triggers an alarm or an action when motion is detected. A motion sensor can help deter or alert potential intruders or trespassers in a building or an area. Multifactor authentication is a method of verifying identity using two or more factors, such as something you know, something you have or something you are. Multifactor authentication is not a device that can be deployed to enhance physical security for a building but a technique that can be used to enhance logical security for systems or services. Personal identification number is a numeric code that can be used as part of authentication or access control. Personal identification number is not a device that can be deployed to enhance physical security for a building but an example of something you know factor in multifactor authentication. Firewall is a device or software that filters network traffic based on rules and policies. Firewall is not a device that can be deployed to enhance physical security for a building but a device that can be used to enhance network security for systems or services. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+    },
+    {
+      "question_number": 217,
+      "question": "A technician is troubleshooting an issue with a computer that contains sensitive information. The technician determines the computer needs to be taken off site for repair. Which of the following should the technician do NEXT?",
+      "correct_answer": "D",
+      "option_a": "Remove the HDD and then send the computer for repair",
+      "option_b": "Check corporate policies for guidance",
+      "option_c": "Delete the sensitive information before the computer leaves the building",
+      "option_d": "Get authorization from the manager",
+      "explanation": "The next step that the technician should do before taking the computer off site for repair is to get authorization from the manager. Getting authorization from the manager is important because it ensures that the technician has permission and approval to remove the computer from the premises and perform the repair work off site. Getting authorization from the manager can also help document and communicate the reason and duration of the repair and avoid any misunderstanding or conflict with the user or the organization. Removing the HDD and then sending the computer for repair may not be feasible or necessary if the issue is not related to the HDD or if the HDD contains essential data or software for the repair. Checking corporate policies for guidance may be a good step but it does not replace getting authorization from the manager who is responsible for the computer and its data. Deleting the sensitive information before the computer leaves the building may not be possible or advisable if the issue prevents access to the data or if the data is needed for troubleshooting or recovery purposes. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 5.1"
+    },
+    {
+      "question_number": 218,
+      "question": "A technician needs to remotely connect to a Linux desktop to assist a user with troubleshooting. The technician needs to make use of a tool natively designed for Linux. Which of the following tools will the technician MOST likely use?",
+      "correct_answer": "A",
+      "option_a": "VNC",
+      "option_b": "MFA",
+      "option_c": "MSRA",
+      "option_d": "RDP",
+      "explanation": "The tool that the technician will most likely use to remotely connect to a Linux desktop is VNC. VNC stands for Virtual Network Computing and is a protocol that allows remote access and control of a graphical desktop environment over a network. VNC is natively designed for Linux and can also support other operating systems, such as Windows and Mac OS. VNC can be used to assist users with troubleshooting by viewing and interacting with their desktops remotely. MFA stands for Multi-Factor Authentication and is a method of verifying identity using two or more factors, such as something you know, something you have or something you are. MFA is not a tool that can be used to remotely connect to a Linux desktop but a technique that can be used to enhance security for systems or services. MSRA stands for Microsoft Remote Assistance and is a feature that allows remote access and control of a Windows desktop environment over a network. MSRA is not natively designed for Linux and may not be compatible or supported by Linux systems. RDP stands for Remote Desktop Protocol and is a protocol that allows remote access and control of a Windows desktop environment over a network. RDP is not natively designed for Linux and may not be compatible or supported by Linux systems. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+    },
+    {
+      "question_number": 219,
+      "question": "A user receives a call from someone who claims to be from the user's bank and requests information to ensure the user's account is safe. Which of the following social-engineering attacks is the user experiencing?",
+      "correct_answer": "D",
+      "option_a": "Phishing",
+      "option_b": "Smishing",
+      "option_c": "Whaling",
+      "option_d": "Vishing",
+      "explanation": "The user is experiencing a vishing attack. Vishing stands for voice phishing and is a type of social-engineering attack that uses phone calls or voice messages to trick users into revealing personal or financial information. Vishing attackers often pretend to be from legitimate organizations, such as banks, government agencies or service providers, and use various tactics, such as urgency, fear or reward, to persuade users to comply with their requests. Phishing is a type of social-engineering attack that uses fraudulent emails or websites to trick users into revealing personal or financial information. Phishing does not involve phone calls or voice messages. Smishing is a type of social-engineering attack that uses text messages or SMS to trick users into revealing personal or financial information. Smishing does not involve phone calls or voice messages. Whaling is a type of social-engineering attack that targets high-profile individuals, such as executives, celebrities or politicians, to trick them into revealing personal or financial information. Whaling does not necessarily involve phone calls or voice messages. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+    },
+    {
+      "question_number": 220,
+      "question": "A user is trying to use a third-party USB adapter but is experiencing connection issues. Which of the following tools should the technician use to resolve this issue?",
+      "correct_answer": "C",
+      "option_a": "taskschd.msc",
+      "option_b": "eventvwr.msc",
+      "option_c": "devmgmt.msc",
+      "option_d": "diskmgmt.msc",
+      "explanation": "The tool that the technician should use to resolve the connection issues with the third-party USB adapter is devmgmt.msc. Devmgmt.msc is a command that opens the Device Manager, which is a utility that allows users to view and manage the hardware devices and drivers installed on a computer. The technician can use the Device Manager to check the status, properties and compatibility of the USB adapter and its driver, and perform actions such as updating, uninstalling or reinstalling the driver, enabling or disabling the device, or scanning for hardware changes. Taskschd.msc is a command that opens the Task Scheduler, which is a utility that allows users to create and manage tasks that run automatically at specified times or events. The Task Scheduler is not relevant or useful for resolving connection issues with the USB adapter. Eventvwr.msc is a command that opens the Event Viewer, which is a utility that allows users to view and monitor the system logs and events. The Event Viewer may provide some information or clues about the connection issues with the USB adapter, but it does not allow users to manage or troubleshoot the device or its driver directly. Diskmgmt.msc is a command that opens the Disk Management, which is a utility that allows users to view and manage the disk drives and partitions on a computer. The Disk Management is not relevant or useful for resolving connection issues with the USB adapter. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+    },
+    {
+      "question_number": 221,
+      "question": "A technician, who is working at a local office, has found multiple copies of home edition software installed on computers. Which of the following does this MOST likely violate?",
+      "correct_answer": "A",
+      "option_a": "EULA",
+      "option_b": "PII",
+      "option_c": "DRM",
+      "option_d": "Open-source agreement",
+      "explanation": "The installation of home edition software on computers at a local office most likely violates the EULA. EULA stands for End User License Agreement and is a legal contract that specifies the terms and conditions for using a software product or service. EULA typically covers topics such as license scope, duration and limitations, rights and obligations of the parties, warranties and disclaimers, liability and indemnity clauses, and termination procedures. EULA may also restrict the use of home edition software to personal or non-commercial purposes only, and prohibit the use of home edition software in business or professional settings. Violating EULA may result in legal actions or penalties from the software vendor or developer. PII stands for Personally Identifiable Information and is any information that can be used to identify or locate an individual, such as name, address, phone number, email address, social security number or credit card number. PII is not related to software installation or licensing but to data protection and privacy. DRM stands for Digital Rights Management and is a technology that controls or restricts the access and use of digital content, such as music, movies, books or games. DRM is not related to software installation or licensing but to content distribution and piracy prevention. Open-source agreement is a type of license that allows users to access, modify and distribute the source code of a software product or service freely and openly. Open-source agreement does not restrict the use of software to home edition only but encourages collaboration and innovation among developers and users. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 5.1"
+    },
+    {
+      "question_number": 222,
+      "question": "A user reports that the pages flash on the screen two or three times before finally staying open when attempting to access banking web pages. Which of the following troubleshooting steps should the technician perform NEXT to resolve the issue?",
+      "correct_answer": "B",
+      "option_a": "Examine the antivirus logs",
+      "option_b": "Verify the address bar URL",
+      "option_c": "Test the internet connection speed",
+      "option_d": "Check the web service status",
+      "explanation": "The next troubleshooting step that the technician should perform to resolve the issue of pages flashing on the screen before staying open when accessing banking web pages is to verify the address bar URL. The address bar URL is the web address that appears in the browser’s address bar and indicates the location of the web page being accessed. Verifying the address bar URL can help determine if the user is accessing a legitimate or malicious website, as some phishing websites may try to impersonate banking websites by using similar-looking URLs or domains."
+    },
+    {
+      "question_number": 223,
+      "question": "A Windows user recently replaced a computer. The user can access the public internet on the computer; however, an internal site at https://companyintranet.com:8888 is no longer loading. Which of the following should a technician adjust to resolve the issue?",
+      "correct_answer": "D",
+      "option_a": "Default gateway settings",
+      "option_b": "DHCP settings",
+      "option_c": "IP address settings",
+      "option_d": "Firewall settings",
+      "explanation": "The technician should adjust the firewall settings to resolve the issue of not being able to access an internal site at https://companyintranet.com:8888. The firewall settings control how the firewall filters and allows network traffic based on rules and policies. The firewall settings may be blocking or preventing the access to the internal site by mistake or by default, especially if the site uses a non-standard port number such as 8888. The technician should check and modify the firewall settings to allow the access to the internal site or its port number. Default gateway settings determine how a computer connects to other networks or the internet. Default gateway settings are not likely to cause the issue of not being able to access an internal site if the user can access the public internet. DHCP settings determine how a computer obtains its IP address and other network configuration parameters automatically from a DHCP server. DHCP settings are not likely to cause the issue of not being able to access an internal site if the user can access other network resources. IP address settings determine how a computer identifies itself and communicates with other devices on a network. IP address settings are not likely to cause the issue of not being able to access an internal site if the user can access other network resources. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+    },
+    {
+      "question_number": 224,
+      "question": "A technician is securing a new Windows 10 workstation and wants to enable a Screensaver lock. Which of the following options in the Windows settings should the technician use?",
+      "correct_answer": "C",
+      "option_a": "Ease of Access",
+      "option_b": "Privacy",
+      "option_c": "Personalization",
+      "option_d": "Update and Security",
+      "explanation": "The technician should use the Personalization option in the Windows settings to enable a Screensaver lock. The Personalization option allows users to customize the appearance and behavior of their desktop, such as themes, colors, backgrounds, lock screen and screensaver. The technician can enable a Screensaver lock by choosing a screensaver from the drop-down menu, setting a wait time in minutes and checking the box that says “On resume, display logon screen”. This will lock the computer and require a password or PIN to log back in after the screensaver is activated. Ease of Access is an option in the Windows settings that allows users to adjust accessibility features and settings, such as narrator, magnifier, high contrast and keyboard shortcuts. Ease of Access is not related to enabling a Screensaver lock. Privacy is an option in the Windows settings that allows users to manage privacy and security settings, such as location, camera, microphone and app permissions. Privacy is not related to enabling a Screensaver lock. Update and Security is an option in the Windows settings that allows users to check and install updates, troubleshoot problems, backup files and restore system. Update and Security is not related to enabling a Screensaver lock. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.7"
+    },
+    {
+      "question_number": 225,
+      "question": "A user calls the help desk to report that mapped drives are no longer accessible. The technician verifies that clicking on any of the drives on the user's machine results in an error message. Other users in the office are not having any issues. As a first step, the technician would like to remove and attempt to reconnect the drives. Which of the following command-line tools should the technician use?",
+      "correct_answer": "A",
+      "option_a": "net use",
+      "option_b": "set",
+      "option_c": "mkdir",
+      "option_d": "rename",
+      "explanation": "The technician should use net use command-line tool to remove and reconnect mapped drives. Net use is a command that allows users to manage network connections and resources, such as shared folders or printers. Net use can be used to map or unmap network drives by specifying their drive letters and network paths. For example, net use Z: \\\\server\\share maps drive Z: to \\\\server\\share folder, and net use Z: /delete unmaps drive Z:. Set is a command that displays or modifies environment variables for the current user or process. Set is not related to managing mapped drives. Mkdir is a command that creates a new directory or folder in the current or specified location. Mkdir is not related to managing mapped drives. Rename is a command that renames a file or folder in the current or specified location. Rename is not related to managing mapped drives. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+    },
+    {
+      "question_number": 226,
+      "question": "A user has been unable to receive emails or browse the internet from a smartphone while traveling. However, text messages and phone calls are working without issue. Which of the following should a support technician check FIRST?",
+      "correct_answer": "C",
+      "option_a": "User account status",
+      "option_b": "Mobile OS version",
+      "option_c": "Data plan coverage",
+      "option_d": "Network traffic outages",
+      "explanation": "The first thing that a support technician should check to resolve the issue of not being able to receive emails or browse the internet from a smartphone while traveling is the data plan coverage. The data plan coverage determines how much data and where the user can use on the smartphone’s cellular network. The data plan coverage may vary depending on the user’s location, carrier and subscription. The data plan coverage may not include or support certain areas or countries that the user is traveling to, or may charge extra fees or limit the speed or amount of data that the user can use. The data plan coverage does not affect text messages and phone calls, which use different network services and protocols. User account status is not likely to cause the issue of not being able to receive emails or browse the internet from a smartphone while traveling, unless the user account has been suspended or terminated by the carrier or the email provider. Mobile OS version is not likely to cause the issue of not being able to receive emails or browse the internet from a smartphone while traveling, unless the mobile OS has a major bug or compatibility problem with the network or the email app. Network traffic outages may cause the issue of not being able to receive emails or browse the internet from a smartphone while traveling, but they are less likely and less common than data plan coverage issues, and they should also affect text messages and phone calls. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+    },
+    {
+      "question_number": 227,
+      "question": "Which of the following script types is used with the Python language by default?",
+      "correct_answer": "D",
+      "option_a": ".ps1",
+      "option_b": ".vbs",
+      "option_c": ".bat",
+      "option_d": ".py",
+      "explanation": "The script type that is used with the Python language by default is .py. .py is a file extension that indicates a Python script file that contains Python code that can be executed by a Python interpreter or compiler. Python is a high-level, general-purpose and interpreted programming language that can be used for various applications, such as web development, data analysis, machine learning and automation. .ps1 is a file extension that indicates a PowerShell script file that contains PowerShell code that can be executed by a PowerShell interpreter or compiler. PowerShell is a task-based, command-line and scripting language that can be used for system administration and automation on Windows systems. .vbs is a file extension that indicates a VBScript file that contains VBScript code that can be executed by a VBScript interpreter or compiler. VBScript is an Active Scripting language that can be used for web development and automation on Windows systems. .bat is a file extension that indicates a batch file that contains a series of commands that can be executed by a command-line interpreter or shell on Windows systems. Batch files can be used for system administration and automation on Windows systems. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 4.3"
+    },
+    {
+      "question_number": 228,
+      "question": "A user added a second monitor and wants to extend the display to it. In which of the following Windows settings will the user MOST likely be able to make this change?",
+      "correct_answer": "A",
+      "option_a": "System",
+      "option_b": "Devices",
+      "option_c": "Personalization",
+      "option_d": "Accessibility",
+      "explanation": "The user can most likely make the change of extending the display to a second monitor in the System option in the Windows settings. The System option allows users to manage system settings and features, such as display, sound, notifications, power and storage. The user can extend the display to a second monitor by selecting Display from the System option and then choosing Extend these displays from the Multiple displays drop-down menu. This will allow the user to use both monitors as one large desktop area. Devices is an option in the Windows settings that allows users to add and manage devices connected to the computer, such as printers, scanners, mice and keyboards. Devices is not related to extending the display to a second monitor but to configuring device settings and preferences. Personalization is an option in the Windows settings that allows users to customize the appearance and behavior of their desktop, such as themes, colors, backgrounds, lock screen and screensaver."
+    },
+    {
+      "question_number": 229,
+      "question": "Which of the following only has a web browser interface?",
+      "correct_answer": "D",
+      "option_a": "Linux",
+      "option_b": "Microsoft Windows",
+      "option_c": "iOS",
+      "option_d": "Chromium",
+      "explanation": "Chromium is an operating system that only has a web browser interface. Chromium is an open-source project that provides the source code and framework for Chrome OS, which is a Linux-based operating system developed by Google. Chromium and Chrome OS are designed to run web applications and cloud services through the Chrome web browser, which is the only user interface available on the system. Chromium and Chrome OS are mainly used on devices such as Chromebooks, Chromeboxes and Chromebits. Linux is an operating system that does not only have a web browser interface but also a graphical user interface and a command-line interface. Linux is an open-source and customizable operating system that can run various applications and services on different devices and platforms. Linux can also support different web browsers, such as Firefox, Opera and Chromium. Microsoft Windows is an operating system that does not only have a web browser interface but also a graphical user interface and a command-line interface. Microsoft Windows is a proprietary and popular operating system that can run various applications and services on different devices and platforms. Microsoft Windows can also support different web browsers, such as Edge, Internet Explorer and Chrome. iOS is an operating system that does not only have a web browser interface but also a graphical user interface and a voice-based interface. iOS is a proprietary and mobile operating system developed by Apple that can run various applications and services on devices such as iPhone, iPad and iPod Touch. iOS can also support different web browsers, such as Safari, Firefox and Chrome. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.1"
+    },
+    {
+      "question_number": 230,
+      "question": "A kiosk, which is running Microsoft Windows 10, relies exclusively on a numeric keypad to allow customers to enter their ticket numbers but no other information. If the kiosk is idle for four hours, the login screen locks. Which of the following sign-on options would allow any employee the ability to unlock the kiosk?",
+      "correct_answer": "C",
+      "option_a": "Requiring employees to enter their usernames and passwords",
+      "option_b": "Setting up facial recognition for each employee",
+      "option_c": "Using a PIN and providing it to employees",
+      "option_d": "Requiring employees to use their fingerprints",
+      "explanation": "The best sign-on option that would allow any employee the ability to unlock the kiosk that relies exclusively on a numeric keypad is to use a PIN and provide it to employees. A PIN is a Personal Identification Number that is a numeric code that can be used as part of authentication or access control. A PIN can be entered using only a numeric keypad and can be easily shared with employees who need to unlock the kiosk. Requiring employees to enter their usernames and passwords may not be feasible or convenient if the kiosk only has a numeric keypad and no other input devices. Setting up facial recognition for each employee may not be possible or secure if the kiosk does not have a camera or biometric sensor. Requiring employees to use their fingerprints may not be possible or secure if the kiosk does not have a fingerprint scanner or biometric sensor. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+    },
+    {
+      "question_number": 231,
+      "question": "A user calls the help desk to report that Windows installed updates on a laptop and rebooted overnight. When the laptop started up again, the touchpad was no longer working. The technician thinks the software that controls the touchpad might be the issue. Which of the following tools should the technician use to make adjustments?",
+      "correct_answer": "D",
+      "option_a": "eventvwr.msc",
+      "option_b": "perfmon.msc",
+      "option_c": "gpedit.msc",
+      "option_d": "devmgmt.msc",
+      "explanation": "The technician should use devmgmt.msc tool to make adjustments for the touchpad issue after Windows installed updates on a laptop. Devmgmt.msc is a command that opens the Device Manager, which is a utility that allows users to view and manage the hardware devices and drivers installed on a computer. The technician can use the Device Manager to check the status, properties and compatibility of the touchpad device and its driver, and perform actions such as updating, uninstalling or reinstalling the driver, enabling or disabling the device, or scanning for hardware changes. Eventvwr.msc is a command that opens the Event Viewer, which is a utility that allows users to view and monitor the system logs and events. The Event Viewer may provide some information or clues about the touchpad issue, but it does not allow users to manage or troubleshoot the device or its driver directly. Perfmon.msc is a command that opens the Performance Monitor, which is a utility that allows users to measure and analyze the performance of the system"
+    },
+    {
+      "question_number": 232,
+      "question": "A technician installed Windows 10 on a workstation. The workstation only has 3.5GB of usable RAM, even though the technician installed 8GB. Which of the following is the MOST likely reason this system is not utilizing all the available RAM?",
+      "correct_answer": "B",
+      "option_a": "The system is missing updates",
+      "option_b": "The system is utilizing a 32-bit OS",
+      "option_c": "The system's memory is failing",
+      "option_d": "The system requires BIOS updates",
+      "explanation": "The most likely reason that the system is not utilizing all the available RAM is that the system is utilizing a 32-bit OS. A 32-bit OS is an operating system that uses 32 bits to address memory locations and perform calculations. A 32-bit OS can only support up to 4GB of RAM, and some of that RAM may be reserved for hardware devices or system functions, leaving less than 4GB of usable RAM for applications and processes. A 32-bit OS cannot recognize or utilize more than 4GB of RAM, even if more RAM is installed on the system. To utilize all the available RAM, the system needs to use a 64-bit OS, which can support much more RAM than a 32-bit OS. The system missing updates may cause some performance or compatibility issues, but it does not affect the amount of usable RAM on the system. The system’s memory failing may cause some errors or crashes, but it does not affect the amount of usable RAM on the system. The system requiring BIOS updates may cause some configuration or compatibility issues, but it does not affect the amount of usable RAM on the system. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.1"
+    },
+    {
+      "question_number": 233,
+      "question": "A Windows workstation that was recently updated with approved system patches shut down instead of restarting. Upon reboot, the technician notices an alert stating the workstation has malware in the root OS folder. The technician promptly performs a System Restore and reboots the workstation, but the malware is still detected. Which of the following BEST describes why the system still has malware?",
+      "correct_answer": "D",
+      "option_a": "A system patch disabled the antivirus protection and host firewall",
+      "option_b": "The system updates did not include the latest anti-malware definitions",
+      "option_c": "The system restore process was compromised by the malware",
+      "option_d": "The malware was installed before the system restore point was created",
+      "explanation": "The best explanation for why the system still has malware after performing a System Restore is that the malware was installed before the system restore point was created. A system restore point is a snapshot of the system settings and configuration at a certain point in time. A System Restore is a feature that allows users to restore their system to a previous state in case of problems or errors. However, a System Restore does not affect personal files or folders, and it may not remove malware that was already present on the system before the restore point was created."
+    },
+    {
+      "question_number": 234,
+      "question": "Which of the following filesystem formats ensures read and write compatibility of USB flash drives across several generations of Microsoft operating systems?",
+      "correct_answer": "D",
+      "option_a": "APFS",
+      "option_b": "Ext4",
+      "option_c": "NTFS",
+      "option_d": "FAT32",
+      "explanation": "The best filesystem format to ensure read and write compatibility of USB flash drives across several generations of Microsoft operating systems is FAT32. FAT32 stands for File Allocation Table 32-bit and is a filesystem format that organizes and manages files and folders on storage devices using 32-bit clusters. FAT32 is compatible with most Microsoft operating systems since Windows 95 OSR2, as well as other operating systems such as Linux and Mac OS X. FAT32 can support storage devices up to 2TB in size and files up to 4GB in size. APFS stands for Apple File System and is a filesystem format that organizes and manages files and folders on storage devices using encryption, snapshots and cloning features. APFS is compatible with Mac OS X 10.13 High Sierra and later versions but not with Microsoft operating systems natively. Ext4 stands for Fourth Extended File System and is a filesystem format that organizes and manages files and folders on storage devices using journaling, extents and delayed allocation features. Ext4 is compatible with Linux operating systems but not with Microsoft operating systems natively."
+    },
+    {
+      "question_number": 235,
+      "question": "A technician is troubleshooting a mobile device that was dropped. The technician finds that the screen fails to rotate, even though the settings are correctly applied. Which of the following pieces of hardware should the technician replace to resolve the issue?",
+      "correct_answer": "C",
+      "option_a": "LCD",
+      "option_b": "Battery",
+      "option_c": "Accelerometer",
+      "option_d": "Digitizer",
+      "explanation": "The piece of hardware that the technician should replace to resolve the issue of the screen failing to rotate on a mobile device that was dropped is the accelerometer. The accelerometer is a sensor that detects the orientation and movement of the mobile device by measuring the acceleration forces acting on it. The accelerometer allows the screen to rotate automatically according to the position and angle of the device. If the accelerometer is damaged or malfunctioning, the screen may not rotate properly or at all, even if the settings are correctly applied. LCD stands for Liquid Crystal Display and is a type of display that uses liquid crystals and backlight to produce images on the screen. LCD is not related to the screen rotation feature but to the quality and brightness of the display. Battery is a component that provides power to the mobile device by storing and releasing electrical energy. Battery is not related to the screen rotation feature but to the battery life and performance of the device. Digitizer is a component that converts touch inputs into digital signals that can be processed by the mobile device. Digitizer is not related to the screen rotation feature but to the touch sensitivity and accuracy of the display. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+    },
+    {
+      "question_number": 236,
+      "question": "A technician downloads a validated security tool and notes the vendor hash of a58e87a2. When the download is complete, the technician again validates the hash, but the value returns as 2a876a7d3. Which of the following is the MOST likely cause of the issue?",
+      "correct_answer": "C",
+      "option_a": "Private-browsing mode",
+      "option_b": "Invalid certificate",
+      "option_c": "Modified file",
+      "option_d": "Browser cache",
+      "explanation": "The most likely cause of the issue of having different hash values for a downloaded security tool is a modified file. A hash value is a unique and fixed-length string that is generated from an algorithm that processes data or files. A hash value can be used to verify the integrity and authenticity of data or files by comparing it with a known or expected value. If the hash values do not match, it means that the data or file has been altered or corrupted in some way. A modified file may result from intentional or unintentional changes, such as editing, encryption, compression or malware infection. Private-browsing mode is a feature that allows users to browse the web without storing any browsing history, cookies or cache on their browser. Private-browsing mode does not affect the hash value of a downloaded file but only how the browser handles user data. Invalid certificate is an error that occurs when a website or a server does not have a valid or trusted digital certificate that proves its identity and secures its communication. Invalid certificate does not affect the hash value of a downloaded file but only how the browser verifies the website or server’s credibility. Browser cache is a temporary storage that stores copies of web pages, images and other content that users have visited on their browser."
+    },
+    {
+      "question_number": 237,
+      "question": "An implementation specialist is replacing a legacy system at a vendor site that has only one wireless network available. When the specialist connects to Wi-Fi, the specialist realizes the insecure network has open authentication. The technician needs to secure the vendor's sensitive data. Which of the following should the specialist do FIRST to protect the company's data?",
+      "correct_answer": "B",
+      "option_a": "Manually configure an IP address, a subnet mask, and a default gateway",
+      "option_b": "Connect to the vendor's network using a VPN",
+      "option_c": "Change the network location to private",
+      "option_d": "Configure MFA on the network",
+      "explanation": "The first thing that the specialist should do to protect the company’s data on an insecure network with open authentication is to connect to the vendor’s network using a VPN. A VPN stands for Virtual Private Network and is a technology that creates a secure and encrypted connection over a public or untrusted network. A VPN can protect the company’s data by preventing eavesdropping, interception or modification of the network traffic by unauthorized parties. A VPN can also provide access to the company’s internal network and resources remotely. Manually configuring an IP address, a subnet mask and a default gateway may not be necessary or possible if the vendor’s network uses DHCP to assign network configuration parameters automatically. Manually configuring an IP address, a subnet mask and a default gateway does not protect the company’s data from network attacks or threats. Changing the network location to private may not be advisable or effective if the vendor’s network is a public or untrusted network. Changing the network location to private does not protect the company’s data from network attacks or threats. Configuring MFA on the network may not be feasible or sufficient if the vendor’s network has open authentication and does not support or require MFA. Configuring MFA on the network does not protect the company’s data from network attacks or threats. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+    },
+    {
+        "question_number": 238,
+        "question": "A user contacts a technician about an issue with a laptop. The user states applications open without being launched and the browser redirects when trying to go to certain websites. Which of the following is MOST likely the cause of the user's issue?",
+        "correct_answer": "D",
+        "option_a": "Keylogger",
+        "option_b": "Cryptominers",
+        "option_c": "Virus",
+        "option_d": "Malware",
+        "explanation": "The most likely cause of the user’s issue of applications opening without being launched and browser redirects when trying to go to certain websites is malware. Malware is a general term that refers to any software or code that is malicious or harmful to a computer or system. Malware can perform various unwanted or unauthorized actions on a computer or system, such as opening applications, redirecting browsers, displaying ads, stealing data, encrypting files or damaging hardware. Malware can infect a computer or system through various means, such as email attachments, web downloads, removable media or network connections. Keylogger is a type of malware that records and transmits the keystrokes made by a user on a keyboard. Keylogger can be used to steal personal or sensitive information, such as passwords, credit card numbers or chat messages. Keylogger does not typically open applications or redirect browsers but only captures user inputs. Cryptominers are a type of malware that use the computing resources of a computer or system to mine cryptocurrencies without the user’s consent or knowledge. Cryptominers do not typically open applications or redirect browsers but only consume CPU or GPU power. Virus is a type of malware that attaches itself to a legitimate program or file and spreads to other programs or files when executed. Virus can cause various symptoms or damages on a computer or system, but it is a subset of malware and not as broad or specific as malware in this context. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+      },
+      {
+        "question_number": 239,
+        "question": "A user reports a PC is running slowly, and the technician suspects unwanted processes might be running in the background. Which of the following Task Manager tabs should the technician examine FIRST?",
+        "correct_answer": "B",
+        "option_a": "Users",
+        "option_b": "Processes",
+        "option_c": "Performance",
+        "option_d": "Startup",
+        "explanation": "The technician should examine the Processes tab in Task Manager first to identify unwanted processes that might be running in the background and causing the PC to run slowly. The Processes tab displays a list of all the processes that are currently running on the system, along with their CPU, memory, disk, and network usage. The technician can sort the processes by resource usage to pinpoint any that are consuming excessive resources and determine if they are legitimate or unwanted. The Users tab shows the users logged into the system and the resources their processes are using, but it doesn’t provide a detailed breakdown of individual processes. The Performance tab provides an overview of system resource usage (CPU, memory, disk, etc.), but it doesn’t list specific processes. The Startup tab shows programs set to run at system startup, which could contribute to slow performance over time, but it doesn’t show currently running processes. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 240,
+        "question": "A technician is troubleshooting a Windows PC that will not boot properly after a power outage. Which of the following should the technician attempt FIRST?",
+        "correct_answer": "C",
+        "option_a": "Roll back drivers",
+        "option_b": "Perform a full system restore",
+        "option_c": "Boot into Safe Mode",
+        "option_d": "Reinstall the OS",
+        "explanation": "The technician should attempt to boot into Safe Mode first when troubleshooting a Windows PC that will not boot properly after a power outage. Safe Mode is a diagnostic mode that starts Windows with a minimal set of drivers and services, allowing the technician to determine if the issue is related to corrupted drivers, software conflicts, or system files. If the PC boots successfully in Safe Mode, the technician can then investigate further (e.g., checking drivers or system files). Rolling back drivers assumes the system can boot normally to access driver settings, which may not be possible. Performing a full system restore or reinstalling the OS are more drastic steps that should be considered only after less invasive troubleshooting, like Safe Mode, fails. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 241,
+        "question": "A user spilled coffee on a company laptop and now the keyboard does not work. Which of the following is the BEST next step for the technician?",
+        "correct_answer": "A",
+        "option_a": "Replace the keyboard",
+        "option_b": "Dry the keyboard with compressed air",
+        "option_c": "Use an external USB keyboard",
+        "option_d": "Reinstall the keyboard drivers",
+        "explanation": "The best next step for the technician is to replace the keyboard. Spilling coffee on a laptop keyboard can cause physical damage due to liquid intrusion, short-circuiting components, or leaving sticky residue that interferes with key functionality. Replacing the keyboard ensures the issue is resolved reliably, especially for a company laptop where functionality is critical. Drying the keyboard with compressed air might help if the spill was minor and caught immediately, but it’s unlikely to fully resolve damage from coffee (which contains sugars and other residues). Using an external USB keyboard is a temporary workaround, not a solution. Reinstalling drivers won’t fix hardware damage caused by the spill. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 242,
+        "question": "A technician needs to destroy data on a hard drive that contained sensitive customer information before disposing of it. Which of the following methods should the technician use to ensure the data cannot be recovered?",
+        "correct_answer": "D",
+        "option_a": "Quick format",
+        "option_b": "Delete all partitions",
+        "option_c": "Use a data-wiping tool",
+        "option_d": "Physically destroy the drive",
+        "explanation": "The technician should physically destroy the drive to ensure the data cannot be recovered. Physically destroying the hard drive (e.g., by shredding, drilling, or crushing it) renders it completely inoperable and eliminates any possibility of data recovery, which is critical for sensitive customer information. A quick format only removes the file system pointers, leaving data recoverable with specialized tools. Deleting all partitions similarly leaves data intact and recoverable. Using a data-wiping tool (e.g., overwriting the drive with random data) can be effective, but it’s not as foolproof as physical destruction, as advanced recovery techniques might still retrieve remnants. Physical destruction is the most secure method. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 5.3"
+      },
+      {
+        "question_number": 243,
+        "question": "A technician is configuring a SOHO network for a small business owner who wants to connect multiple devices wirelessly. Which of the following should the technician configure to allow the devices to connect?",
+        "correct_answer": "B",
+        "option_a": "WPA2-PSK",
+        "option_b": "SSID",
+        "option_c": "MAC filtering",
+        "option_d": "DHCP",
+        "explanation": "The technician should configure the SSID to allow devices to connect wirelessly to the SOHO network. The SSID (Service Set Identifier) is the network name that devices use to identify and connect to a wireless network. Without configuring and broadcasting the SSID, devices won’t see the network to join it. WPA2-PSK enhances security with encryption but doesn’t enable connection without an SSID. MAC filtering restricts access to specific devices but isn’t required to allow connections. DHCP assigns IP addresses automatically, which is useful but not the primary step for enabling wireless connectivity. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 244,
+        "question": "A user reports that a recently installed application is crashing frequently on a Windows 10 PC. The technician suspects a compatibility issue. Which of the following should the technician do FIRST?",
+        "correct_answer": "C",
+        "option_a": "Reinstall the application",
+        "option_b": "Update the OS",
+        "option_c": "Run the application in compatibility mode",
+        "option_d": "Check the application logs",
+        "explanation": "The technician should first run the application in compatibility mode to address the frequent crashing due to a suspected compatibility issue. Compatibility mode allows an application to run as if it were on an earlier version of Windows, which can resolve issues when an application isn’t fully compatible with Windows 10. This is a quick and targeted step to test the hypothesis. Reinstalling the application might not fix compatibility problems. Updating the OS could help but isn’t specific to the application issue and might not resolve it. Checking application logs is useful for diagnosis but doesn’t directly address the compatibility concern. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 245,
+        "question": "A technician is setting up a new Windows PC for a user and needs to ensure the system is protected against malware. Which of the following should the technician enable?",
+        "correct_answer": "D",
+        "option_a": "User Account Control",
+        "option_b": "BitLocker",
+        "option_c": "Windows Update",
+        "option_d": "Windows Defender",
+        "explanation": "The technician should enable Windows Defender to ensure the system is protected against malware. Windows Defender is Microsoft’s built-in antivirus and antimalware solution, providing real-time protection against threats like viruses, spyware, and ransomware. It’s the most direct option for malware protection. User Account Control (UAC) helps prevent unauthorized changes but doesn’t specifically target malware. BitLocker encrypts drives to protect data but doesn’t detect or remove malware. Windows Update keeps the system patched but isn’t an active malware defense. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.2"
+      },
+      {
+        "question_number": 246,
+        "question": "A user’s smartphone battery drains quickly after a recent OS update. Which of the following should the technician check FIRST?",
+        "correct_answer": "B",
+        "option_a": "Screen brightness",
+        "option_b": "Battery usage stats",
+        "option_c": "Background app refresh",
+        "option_d": "Wi-Fi settings",
+        "explanation": "The technician should check the battery usage stats first to determine why the smartphone battery is draining quickly after an OS update. Battery usage stats (available in the settings of most smartphones) show which apps or processes are consuming the most power, allowing the technician to pinpoint the cause—possibly an app misbehaving post-update. Screen brightness, background app refresh, and Wi-Fi settings can affect battery life, but checking usage stats provides a broader, data-driven starting point to identify the specific issue. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 247,
+        "question": "A technician needs to remotely access a user’s Linux workstation to troubleshoot an issue. Which of the following protocols should the technician use?",
+        "correct_answer": "C",
+        "option_a": "RDP",
+        "option_b": "FTP",
+        "option_c": "SSH",
+        "option_d": "Telnet",
+        "explanation": "The technician should use SSH (Secure Shell) to remotely access a Linux workstation. SSH is a secure protocol widely used for remote command-line access to Linux systems, providing encrypted communication and robust security. RDP (Remote Desktop Protocol) is primarily for Windows remote desktop access and less common on Linux without additional setup. FTP (File Transfer Protocol) is for file transfers, not remote access. Telnet offers remote access but is unencrypted and insecure, making it unsuitable compared to SSH. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.3"
+      },
+      {
+        "question_number": 248,
+        "question": "A user reports that a printer is not responding to print jobs sent from a Windows PC. The printer is powered on and connected via USB. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Printer status in Devices and Printers",
+        "option_b": "Printer driver installation",
+        "option_c": "USB cable connection",
+        "option_d": "Print spooler service",
+        "explanation": "The technician should first check the printer status in Devices and Printers. This step verifies whether the printer is recognized by the Windows PC, online, and ready to accept jobs, providing an immediate indication of the issue (e.g., offline status or errors). Checking the USB cable connection or driver installation comes next if the printer isn’t listed or shows issues. The print spooler service could be a factor, but starting with Devices and Printers is a quicker initial diagnostic step. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 249,
+        "question": "A technician is configuring a backup schedule for a small business server. The business requires daily incremental backups and a full backup every Sunday. Which of the following tools should the technician use on a Windows Server?",
+        "correct_answer": "C",
+        "option_a": "Task Manager",
+        "option_b": "Disk Management",
+        "option_c": "Windows Backup",
+        "option_d": "Event Viewer",
+        "explanation": "The technician should use Windows Backup to configure a backup schedule for a Windows Server with daily incremental backups and a full backup every Sunday. Windows Backup (also known as Windows Server Backup in server editions) allows scheduling of full and incremental backups, meeting the business’s requirements. Task Manager monitors processes but doesn’t handle backups. Disk Management manages drives and partitions, not backup schedules. Event Viewer logs system events but isn’t a backup tool. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.7"
+      },
+      {
+        "question_number": 250,
+        "question": "A user reports that a file saved on a USB drive is not accessible on another computer. The technician suspects a file system issue. Which of the following file systems is MOST likely causing the compatibility problem?",
+        "correct_answer": "C",
+        "option_a": "FAT32",
+        "option_b": "exFAT",
+        "option_c": "NTFS",
+        "option_d": "ext4",
+        "explanation": "The most likely file system causing the compatibility problem is NTFS. While NTFS (New Technology File System) is widely used on Windows and supports advanced features like encryption and large file sizes, it has limited native read/write support on non-Windows systems (e.g., macOS or Linux) without additional software. If the USB drive was formatted as NTFS and the other computer isn’t Windows-based, this could explain the issue. FAT32 and exFAT are more universally compatible across platforms. ext4 is Linux-specific and less likely to be used on a USB drive in a mixed environment. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.2"
+      },
+      {
+        "question_number": 251,
+        "question": "A technician needs to ensure a Windows 10 PC automatically receives security updates. Which of the following should the technician configure?",
+        "correct_answer": "B",
+        "option_a": "Task Scheduler",
+        "option_b": "Windows Update",
+        "option_c": "System Restore",
+        "option_d": "Device Manager",
+        "explanation": "The technician should configure Windows Update to ensure a Windows 10 PC automatically receives security updates. Windows Update is the built-in service that downloads and installs security patches, feature updates, and driver updates automatically when configured to do so (e.g., via Settings > Update & Security). Task Scheduler can automate tasks but isn’t specific to updates. System Restore reverts system changes but doesn’t manage updates. Device Manager handles hardware drivers but not security updates. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.7"
+      },
+      {
+        "question_number": 252,
+        "question": "A user reports that a mobile device is overheating during normal use. Which of the following should the technician check FIRST?",
+        "correct_answer": "C",
+        "option_a": "Battery health",
+        "option_b": "Screen brightness",
+        "option_c": "Running applications",
+        "option_d": "Storage capacity",
+        "explanation": "The technician should first check running applications to determine why the mobile device is overheating during normal use. Overheating is often caused by excessive CPU or GPU usage from resource-intensive apps or background processes. Checking the list of running apps (via settings or a task manager equivalent) can identify culprits to close or uninstall. Battery health might contribute over time but isn’t the immediate cause. Screen brightness and storage capacity can affect power usage but are less directly tied to overheating than app activity. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 253,
+        "question": "A technician is troubleshooting a Windows PC that fails to connect to a corporate Wi-Fi network. Other devices connect successfully. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Wi-Fi adapter status",
+        "option_b": "Network credentials",
+        "option_c": "IP configuration",
+        "option_d": "Firewall settings",
+        "explanation": "The technician should first check the Wi-Fi adapter status to troubleshoot why the Windows PC fails to connect to the corporate Wi-Fi network. Verifying the adapter’s status in Device Manager (e.g., enabled, drivers installed, no errors) ensures the hardware is functional and recognized, a foundational step since other devices connect successfully. Network credentials are important but come after confirming the adapter works. IP configuration and firewall settings are relevant post-connection issues, not initial connectivity. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 254,
+        "question": "A user reports that a shared network printer is printing garbled text from a Windows PC. Which of the following should the technician do FIRST?",
+        "correct_answer": "B",
+        "option_a": "Reinstall the printer software",
+        "option_b": "Update the printer driver",
+        "option_c": "Restart the print spooler",
+        "option_d": "Check the printer cable",
+        "explanation": "The technician should first update the printer driver to resolve the issue of a shared network printer printing garbled text from a Windows PC. Garbled text often indicates a driver mismatch or corruption, and updating to the latest driver from the manufacturer’s site can fix compatibility or communication issues. Reinstalling the printer software is more time-consuming and unnecessary if a driver update suffices. Restarting the print spooler addresses queuing issues, not garbled output. Checking the printer cable is irrelevant for a network printer. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 255,
+        "question": "A technician needs to deploy a software update to multiple Windows PCs across a corporate network. Which of the following tools should the technician use?",
+        "correct_answer": "C",
+        "option_a": "Task Scheduler",
+        "option_b": "Remote Desktop",
+        "option_c": "Group Policy",
+        "option_d": "Device Manager",
+        "explanation": "The technician should use Group Policy to deploy a software update to multiple Windows PCs across a corporate network. Group Policy, part of Active Directory, allows centralized management and deployment of software updates, configurations, and settings to multiple systems efficiently. Task Scheduler can automate tasks on individual PCs but isn’t suited for network-wide deployment. Remote Desktop provides manual remote access, not mass deployment. Device Manager manages hardware, not software updates. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.7"
+      },
+      {
+        "question_number": 256,
+        "question": "A user reports that a Windows laptop takes a long time to shut down. Which of the following should the technician check FIRST?",
+        "correct_answer": "D",
+        "option_a": "Disk errors",
+        "option_b": "Memory usage",
+        "option_c": "CPU performance",
+        "option_d": "Running processes",
+        "explanation": "The technician should first check running processes to determine why the Windows laptop takes a long time to shut down. Processes or applications that fail to close properly during shutdown (e.g., due to errors or prompts) can delay the process. Task Manager’s Processes tab can identify these culprits for termination or further investigation. Disk errors, memory usage, and CPU performance might contribute to general slowness but are less directly tied to shutdown delays than active processes. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 257,
+        "question": "A technician is setting up a new user account on a Windows 10 PC. Which of the following should the technician configure to enhance security?",
+        "correct_answer": "B",
+        "option_a": "Guest account",
+        "option_b": "Strong password",
+        "option_c": "Public profile",
+        "option_d": "Single sign-on",
+        "explanation": "The technician should configure a strong password to enhance security for the new user account on a Windows 10 PC. A strong password (e.g., long, complex, with mixed characters) prevents unauthorized access, a fundamental security measure. Guest accounts reduce privileges but don’t secure the new account. A public profile affects network sharing, not account security. Single sign-on improves convenience but doesn’t inherently enhance security without additional measures like MFA. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+      },
+      {
+        "question_number": 258,
+        "question": "A user reports that a mobile device cannot connect to a known Wi-Fi network. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Wi-Fi signal strength",
+        "option_b": "Network password",
+        "option_c": "Airplane mode",
+        "option_d": "MAC address filtering",
+        "explanation": "The technician should first check the Wi-Fi signal strength to troubleshoot why the mobile device cannot connect to a known Wi-Fi network. Weak or no signal (e.g., due to distance or interference) is a common reason for connectivity failure and can be quickly assessed via the device’s Wi-Fi settings. Network password issues assume a connection attempt fails due to authentication, which comes after signal detection. Airplane mode disables connectivity but is less likely if the user expects to connect. MAC address filtering is a specific restriction checked later. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 259,
+        "question": "A technician needs to recover data from a failed hard drive. Which of the following methods should the technician use?",
+        "correct_answer": "C",
+        "option_a": "Reformat the drive",
+        "option_b": "Run chkdsk",
+        "option_c": "Use data recovery software",
+        "option_d": "Replace the drive",
+        "explanation": "The technician should use data recovery software to recover data from a failed hard drive. Specialized software (e.g., Recuva, EaseUS) can scan the drive and retrieve accessible files, assuming the failure isn’t total physical destruction. Reformatting erases data, making recovery harder. Running chkdsk repairs file system errors but doesn’t guarantee data recovery from a failed drive. Replacing the drive addresses hardware failure but doesn’t recover data without additional steps. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 260,
+        "question": "A user reports that a Windows PC displays a 'low disk space' warning. Which of the following should the technician use to free up space?",
+        "correct_answer": "B",
+        "option_a": "Task Manager",
+        "option_b": "Disk Cleanup",
+        "option_c": "Device Manager",
+        "option_d": "System Restore",
+        "explanation": "The technician should use Disk Cleanup to free up space on a Windows PC displaying a 'low disk space' warning. Disk Cleanup (accessible via File Explorer > Properties > General) removes temporary files, system files, and other unneeded data, directly addressing the issue. Task Manager monitors resources but doesn’t clean storage. Device Manager manages hardware, not disk space. System Restore reverts settings but doesn’t free space and might use more. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 261,
+        "question": "A technician is troubleshooting a Linux server that is not responding to network requests. Which of the following commands should the technician use to check network connectivity?",
+        "correct_answer": "C",
+        "option_a": "ls",
+        "option_b": "df",
+        "option_c": "ping",
+        "option_d": "chmod",
+        "explanation": "The technician should use the ping command to check network connectivity on a Linux server not responding to requests. Ping tests connectivity by sending ICMP packets to a target IP or hostname and measuring responses, helping diagnose network issues. ls lists directory contents, df checks disk space, and chmod changes file permissions—none address network troubleshooting. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.3"
+      },
+      {
+        "question_number": 262,
+        "question": "A user reports that a recently installed Windows update caused a BSOD. Which of the following should the technician do FIRST?",
+        "correct_answer": "B",
+        "option_a": "Reinstall Windows",
+        "option_b": "Boot into Safe Mode",
+        "option_c": "Run System Restore",
+        "option_d": "Update drivers",
+        "explanation": "The technician should first boot into Safe Mode to troubleshoot a BSOD caused by a recent Windows update. Safe Mode loads minimal drivers and services, allowing the technician to determine if the update is the cause and proceed with fixes (e.g., uninstalling the update). Reinstalling Windows is overly drastic as a first step. Running System Restore or updating drivers requires a stable boot, which may not be possible without Safe Mode. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 263,
+        "question": "A technician needs to configure a Windows PC to use a static IP address. Which of the following settings should the technician modify?",
+        "correct_answer": "C",
+        "option_a": "Windows Firewall",
+        "option_b": "Device Manager",
+        "option_c": "Network adapter properties",
+        "option_d": "System Properties",
+        "explanation": "The technician should modify the network adapter properties to configure a Windows PC to use a static IP address. In Control Panel > Network and Sharing Center > Change adapter settings, right-clicking the adapter and selecting Properties > Internet Protocol Version 4 (TCP/IPv4) allows manual entry of a static IP, subnet mask, gateway, and DNS. Windows Firewall controls traffic rules, Device Manager manages hardware, and System Properties adjusts system settings—none configure IP addresses. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 264,
+        "question": "A user reports that a tablet’s touchscreen is unresponsive. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Restart the device",
+        "option_b": "Update the firmware",
+        "option_c": "Replace the digitizer",
+        "option_d": "Recalibrate the screen",
+        "explanation": "The technician should first restart the device to troubleshoot an unresponsive touchscreen on a tablet. A restart can resolve temporary software glitches affecting the touchscreen without invasive steps. Updating firmware or recalibrating the screen assumes a deeper issue, while replacing the digitizer (the hardware sensing touch) is a last resort after ruling out software causes. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 265,
+        "question": "A technician is troubleshooting a Windows PC that is running slowly. Which of the following tools should the technician use to check for disk errors?",
+        "correct_answer": "C",
+        "option_a": "Task Manager",
+        "option_b": "Event Viewer",
+        "option_c": "chkdsk",
+        "option_d": "msconfig",
+        "explanation": "The technician should use chkdsk to check for disk errors on a Windows PC running slowly. chkdsk (Check Disk) is a command-line tool that scans and repairs file system errors and bad sectors on a drive, which can cause performance issues. Task Manager monitors resources, Event Viewer logs events, and msconfig manages startup items—none directly check disk errors. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 266,
+        "question": "A user reports that email attachments are not downloading on a mobile device. Which of the following should the technician check FIRST?",
+        "correct_answer": "B",
+        "option_a": "Email app permissions",
+        "option_b": "Internet connectivity",
+        "option_c": "Storage space",
+        "option_d": "Email server settings",
+        "explanation": "The technician should first check internet connectivity to troubleshoot email attachments not downloading on a mobile device. Without a stable connection (Wi-Fi or cellular), downloads can’t proceed, making it the most fundamental step. Email app permissions, storage space, and server settings are subsequent checks if connectivity is confirmed. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 267,
+        "question": "A technician needs to secure a Windows 10 laptop before it is used off-site. Which of the following should the technician enable?",
+        "correct_answer": "C",
+        "option_a": "Windows Defender",
+        "option_b": "User Account Control",
+        "option_c": "BitLocker",
+        "option_d": "Windows Firewall",
+        "explanation": "The technician should enable BitLocker to secure a Windows 10 laptop before off-site use. BitLocker encrypts the entire drive, protecting data if the laptop is lost or stolen, which is critical for off-site security. Windows Defender protects against malware, UAC prevents unauthorized changes, and Windows Firewall filters network traffic, but none secure data at rest like BitLocker. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.2"
+      },
+      {
+        "question_number": 268,
+        "question": "A user reports that a Windows PC is displaying a 'non-system disk or disk error' message on boot. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Boot order in BIOS",
+        "option_b": "Hard drive connection",
+        "option_c": "System files",
+        "option_d": "Disk partition",
+        "explanation": "The technician should first check the boot order in BIOS to troubleshoot a 'non-system disk or disk error' message on a Windows PC. This error often occurs when the system tries to boot from a non-bootable device (e.g., USB or CD) before the hard drive, which can be corrected by ensuring the hard drive is first in the boot sequence. Hard drive connection, system files, and disk partition issues are secondary if the BIOS isn’t pointing to the correct drive. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 269,
+        "question": "A technician is configuring a new SOHO router. Which of the following should the technician change to improve security?",
+        "correct_answer": "D",
+        "option_a": "SSID broadcast",
+        "option_b": "DHCP pool",
+        "option_c": "Wireless channel",
+        "option_d": "Default admin password",
+        "explanation": "The technician should change the default admin password to improve security on a new SOHO router. Default passwords are widely known and easily exploited by attackers to gain unauthorized access. Changing it to a strong, unique password is a critical first step. Disabling SSID broadcast, adjusting the DHCP pool, or changing the wireless channel can enhance security or performance but are less impactful than securing admin access. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.3"
+      },
+      {
+        "question_number": 270,
+        "question": "A user reports that a Windows PC is infected with ransomware. Which of the following should the technician do FIRST?",
+        "correct_answer": "A",
+        "option_a": "Disconnect the PC from the network",
+        "option_b": "Run an antivirus scan",
+        "option_c": "Restore from a backup",
+        "option_d": "Boot into Safe Mode",
+        "explanation": "The technician should first disconnect the PC from the network to prevent ransomware from spreading to other systems or communicating with command-and-control servers. This containment step is critical in a ransomware incident. Running an antivirus scan, restoring from a backup, or booting into Safe Mode are subsequent actions after isolating the infected system. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+      },
+      {
+        "question_number": 271,
+        "question": "A technician needs to view detailed system information on a Windows PC. Which of the following tools should the technician use?",
+        "correct_answer": "B",
+        "option_a": "Task Manager",
+        "option_b": "System Information",
+        "option_c": "Disk Management",
+        "option_d": "Event Viewer",
+        "explanation": "The technician should use System Information (msinfo32) to view detailed system information on a Windows PC. It provides comprehensive details about hardware, software, and system components. Task Manager focuses on real-time resource usage, Disk Management handles drive configurations, and Event Viewer logs system events—none offer the breadth of System Information. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 272,
+        "question": "A user reports that a mobile device is not charging when plugged in. Which of the following should the technician check FIRST?",
+        "correct_answer": "C",
+        "option_a": "Battery health",
+        "option_b": "Power adapter",
+        "option_c": "Charging cable",
+        "option_d": "Charging port",
+        "explanation": "The technician should first check the charging cable to troubleshoot a mobile device not charging when plugged in. A faulty or damaged cable is a common cause and easy to test by swapping with a known working one. Power adapter, charging port, and battery health are subsequent checks if the cable isn’t the issue. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 273,
+        "question": "A technician is troubleshooting a Windows PC that cannot access a network share. Which of the following commands should the technician use to test connectivity to the server?",
+        "correct_answer": "C",
+        "option_a": "ipconfig",
+        "option_b": "netstat",
+        "option_c": "ping",
+        "option_d": "tracert",
+        "explanation": "The technician should use the ping command to test connectivity to the server hosting the network share. Ping checks if the server is reachable by sending ICMP packets and awaiting responses, providing a quick connectivity test. ipconfig displays local IP settings, netstat shows active connections, and tracert traces the route—none are as direct for initial connectivity testing as ping. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.3"
+      },
+      {
+        "question_number": 274,
+        "question": "A user reports that a Windows PC is displaying pop-up ads even when the browser is closed. Which of the following should the technician do FIRST?",
+        "correct_answer": "B",
+        "option_a": "Update the browser",
+        "option_b": "Run an antivirus scan",
+        "option_c": "Disable extensions",
+        "option_d": "Clear the cache",
+        "explanation": "The technician should first run an antivirus scan to address pop-up ads appearing on a Windows PC even when the browser is closed. This suggests adware or malware infection beyond browser control, requiring immediate detection and removal. Updating the browser, disabling extensions, or clearing the cache target browser-specific issues, not system-wide pop-ups. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+      },
+      {
+        "question_number": 275,
+        "question": "SIMULATION: A technician needs to configure a basic script on a Windows PC to automate a daily backup of a folder to an external drive. Provide the steps or commands the technician should use.",
+        "correct_answer": "N/A",
+        "option_a": "N/A",
+        "option_b": "N/A",
+        "option_c": "N/A",
+        "option_d": "N/A",
+        "explanation": "To configure a basic script for a daily folder backup on a Windows PC to an external drive, the technician can use a batch file with the xcopy command and schedule it via Task Scheduler. Steps: 1. Open Notepad and create a script (e.g., backup.bat) with: xcopy \"C:\\SourceFolder\" \"E:\\BackupFolder\" /D /E /C /I /Y (where C:\\SourceFolder is the source and E:\\BackupFolder is the external drive path; /D copies new/changed files, /E includes empty folders, /C continues on errors, /I assumes destination is a folder, /Y suppresses overwrite prompts). 2. Save the file with a .bat extension. 3. Open Task Scheduler (taskschd.msc), create a new task, set a daily trigger (e.g., 9:00 PM), and under Actions, select 'Start a program,' pointing to backup.bat. 4. Test the script manually by double-clicking it to ensure it works. This automates the backup daily. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 4.3"
+      },
+      {
+        "question_number": 276,
+        "question": "A technician is troubleshooting a Windows PC that fails to boot, displaying a 'missing operating system' error. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Hard drive connection",
+        "option_b": "BIOS settings",
+        "option_c": "System files",
+        "option_d": "Boot loader",
+        "explanation": "The technician should first check the hard drive connection to troubleshoot a 'missing operating system' error on a Windows PC. This error often indicates the system can’t detect the drive due to a loose or failed connection, a common and quick fix to verify. BIOS settings (e.g., boot order), system files, and the boot loader are subsequent checks if the drive is connected properly. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 277,
+        "question": "A user reports that a smartphone’s GPS is not working. Which of the following should the technician check FIRST?",
+        "correct_answer": "C",
+        "option_a": "Wi-Fi connection",
+        "option_b": "Bluetooth settings",
+        "option_c": "Location services",
+        "option_d": "Cellular data",
+        "explanation": "The technician should first check location services to troubleshoot a smartphone’s GPS not working. Location services must be enabled in the device settings for GPS to function, making it the most direct initial check. Wi-Fi and cellular data can assist GPS but aren’t required. Bluetooth settings are unrelated to GPS functionality. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 278,
+        "question": "A technician needs to remove a virus from a Windows PC. Which of the following should the technician do FIRST?",
+        "correct_answer": "B",
+        "option_a": "Run System Restore",
+        "option_b": "Boot into Safe Mode",
+        "option_c": "Update antivirus definitions",
+        "option_d": "Reinstall the OS",
+        "explanation": "The technician should first boot into Safe Mode to remove a virus from a Windows PC. Safe Mode starts the system with minimal drivers and services, reducing the virus’s ability to run or interfere with removal efforts, allowing the technician to run antivirus tools effectively. System Restore might not remove the virus if it predates the restore point. Updating antivirus definitions and reinstalling the OS are steps taken after Safe Mode if needed. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 3.1"
+      },
+      {
+        "question_number": 279,
+        "question": "A user reports that a Windows PC is not recognizing a USB device. Which of the following should the technician check FIRST?",
+        "correct_answer": "C",
+        "option_a": "USB driver",
+        "option_b": "USB port power",
+        "option_c": "Device Manager",
+        "option_d": "BIOS settings",
+        "explanation": "The technician should first check Device Manager to troubleshoot a Windows PC not recognizing a USB device. Device Manager shows if the device is listed, has errors (e.g., yellow triangle), or needs driver updates, providing a starting point for diagnosis. USB driver and port power checks follow based on Device Manager findings. BIOS settings are less likely the issue unless USB support is disabled, which is rare. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 280,
+        "question": "A technician is configuring a wireless printer on a Windows PC. Which of the following should the technician ensure is enabled on the network?",
+        "correct_answer": "D",
+        "option_a": "Static IP",
+        "option_b": "MAC filtering",
+        "option_c": "WEP encryption",
+        "option_d": "DHCP",
+        "explanation": "The technician should ensure DHCP (Dynamic Host Configuration Protocol) is enabled on the network to configure a wireless printer on a Windows PC. DHCP automatically assigns IP addresses to devices like the printer, simplifying connectivity without manual configuration. Static IP is an option but less practical for initial setup. MAC filtering restricts access but isn’t required for basic functionality. WEP encryption is outdated and unrelated to IP assignment. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 281,
+        "question": "A user reports that a Windows PC is running out of virtual memory. Which of the following should the technician adjust?",
+        "correct_answer": "C",
+        "option_a": "RAM speed",
+        "option_b": "Disk quota",
+        "option_c": "Page file size",
+        "option_d": "CPU priority",
+        "explanation": "The technician should adjust the page file size to address a Windows PC running out of virtual memory. The page file (swap file) on the hard drive supplements physical RAM; increasing its size (via System Properties > Advanced > Virtual Memory) can resolve the issue. RAM speed, disk quota, and CPU priority don’t directly manage virtual memory allocation. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 282,
+        "question": "A technician needs to troubleshoot a Linux system that is not starting a specific service on boot. Which of the following commands should the technician use?",
+        "correct_answer": "B",
+        "option_a": "ps",
+        "option_b": "systemctl",
+        "option_c": "top",
+        "option_d": "grep",
+        "explanation": "The technician should use systemctl to troubleshoot a Linux system not starting a specific service on boot. systemctl manages system services in systemd-based Linux distributions, allowing the technician to check status (e.g., systemctl status <service>), enable, or start services. ps lists processes, top monitors performance, and grep searches text—none manage service startup. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.3"
+      },
+      {
+        "question_number": 283,
+        "question": "A user reports that a Windows PC is not saving files to a network drive. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Network connection",
+        "option_b": "Drive mapping",
+        "option_c": "File permissions",
+        "option_d": "Disk space",
+        "explanation": "The technician should first check the network connection to troubleshoot a Windows PC not saving files to a network drive. Without connectivity, the PC can’t access the drive, making it the most fundamental step. Drive mapping, file permissions, and disk space are subsequent checks if the network is confirmed operational. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 284,
+        "question": "A technician is troubleshooting a mobile device that drops Wi-Fi connections frequently. Which of the following should the technician check FIRST?",
+        "correct_answer": "B",
+        "option_a": "Wi-Fi password",
+        "option_b": "Signal strength",
+        "option_c": "Network interference",
+        "option_d": "Firmware version",
+        "explanation": "The technician should first check signal strength to troubleshoot a mobile device dropping Wi-Fi connections frequently. Weak signal (e.g., due to distance or obstacles) is a common cause of intermittent connectivity, easily checked via Wi-Fi settings. Password issues would prevent connection entirely, not cause drops. Network interference and firmware version are secondary considerations after signal strength. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 285,
+        "question": "A user reports that a Windows PC is displaying a 'file system error' message. Which of the following should the technician use to repair the issue?",
+        "correct_answer": "C",
+        "option_a": "sfc",
+        "option_b": "diskpart",
+        "option_c": "chkdsk",
+        "option_d": "format",
+        "explanation": "The technician should use chkdsk to repair a 'file system error' on a Windows PC. chkdsk (Check Disk) scans and fixes file system errors and bad sectors on a drive (e.g., chkdsk C: /f). sfc (System File Checker) repairs corrupted system files, not file system errors. diskpart manages partitions, and format erases data—neither directly fixes file system issues. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 286,
+        "question": "A technician needs to configure a Windows PC to boot from a USB drive. Which of the following should the technician modify?",
+        "correct_answer": "B",
+        "option_a": "Windows Boot Manager",
+        "option_b": "BIOS/UEFI settings",
+        "option_c": "Device Manager",
+        "option_d": "Task Scheduler",
+        "explanation": "The technician should modify BIOS/UEFI settings to configure a Windows PC to boot from a USB drive. The BIOS/UEFI controls the boot order, and setting the USB as the first boot device ensures it’s prioritized. Windows Boot Manager manages OS selection post-BIOS, Device Manager handles hardware, and Task Scheduler automates tasks—none adjust boot priority. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.4"
+      },
+      {
+        "question_number": 287,
+        "question": "A user reports that a smartphone’s camera is not working. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "App permissions",
+        "option_b": "Camera hardware",
+        "option_c": "OS updates",
+        "option_d": "Storage space",
+        "explanation": "The technician should first check app permissions to troubleshoot a smartphone’s camera not working. If the camera app lacks permission to access the camera (e.g., denied in settings), it won’t function, a common and quick fix. Camera hardware, OS updates, and storage space are subsequent checks if permissions are correct. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.5"
+      },
+      {
+        "question_number": 288,
+        "question": "A technician is troubleshooting a Windows PC that is not printing to a network printer. Which of the following should the technician check FIRST?",
+        "correct_answer": "A",
+        "option_a": "Network connectivity",
+        "option_b": "Printer driver",
+        "option_c": "Print queue",
+        "option_d": "Printer IP address",
+        "explanation": "The technician should first check network connectivity to troubleshoot a Windows PC not printing to a network printer. Without a connection to the network, the PC can’t communicate with the printer, making it the most fundamental step. Printer driver, print queue, and IP address issues are secondary if connectivity fails. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 2.2"
+      },
+      {
+        "question_number": 289,
+        "question": "A user reports that a Windows PC is displaying a 'DLL file missing' error. Which of the following should the technician do FIRST?",
+        "correct_answer": "C",
+        "option_a": "Reinstall the application",
+        "option_b": "Restore from backup",
+        "option_c": "Run sfc /scannow",
+        "option_d": "Update Windows",
+        "explanation": "The technician should first run sfc /scannow to troubleshoot a 'DLL file missing' error on a Windows PC. The System File Checker (sfc) scans and repairs corrupted or missing system files, including DLLs, which are often the cause. Reinstalling the application or updating Windows might help but isn’t as direct. Restoring from backup is more invasive and unnecessary initially. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      },
+      {
+        "question_number": 290,
+        "question": "A technician needs to ensure a Windows PC’s data is backed up before a hardware upgrade. Which of the following tools should the technician use?",
+        "correct_answer": "B",
+        "option_a": "Disk Cleanup",
+        "option_b": "Windows Backup",
+        "option_c": "System Restore",
+        "option_d": "Task Manager",
+        "explanation": "The technician should use Windows Backup to ensure a Windows PC’s data is backed up before a hardware upgrade. Windows Backup (or File History in Windows 10) creates a copy of user files to an external or network location, protecting data during upgrades. Disk Cleanup frees space, System Restore reverts settings, and Task Manager monitors resources—none perform backups. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.7"
+      },
+      {
+        "question_number": 291,
+        "question": "A user reports that a Windows PC is not shutting down properly, hanging on the 'shutting down' screen. Which of the following should the technician check FIRST?",
+        "correct_answer": "D",
+        "option_a": "Disk errors",
+        "option_b": "Windows updates",
+        "option_c": "Power settings",
+        "option_d": "Event Viewer",
+        "explanation": "The technician should first check Event Viewer to troubleshoot a Windows PC hanging on the 'shutting down' screen. Event Viewer logs system events and errors (e.g., under System or Application logs), providing clues about processes or drivers causing the delay. Disk errors, Windows updates, and power settings might contribute but are less immediate than diagnostic logs. Reference: CompTIA A+ Core 2 (220-1002) Certification Exam Objectives Version 4.0, Domain 1.6"
+      }
+    ]
+  }

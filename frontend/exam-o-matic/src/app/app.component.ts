@@ -78,4 +78,23 @@ export class AppComponent implements OnInit {
     this.showTable = false;
     this.isPracticeMode = true;
   }
+
+  deleteExam(examId: number) {
+    if (confirm('Are you sure you want to delete this exam? This action cannot be undone.')) {
+      this.http.delete(`http://127.0.0.1:8000/test_banks/${examId}`).subscribe(
+        () => {
+          // Refresh the exam list after successful deletion
+          this.loadExams();
+          // If the deleted exam was selected, clear the selection
+          if (this.selectedExamId === examId) {
+            this.selectedExamId = null;
+          }
+        },
+        (error) => {
+          console.error('Failed to delete exam:', error);
+          alert('Failed to delete exam. Please try again.');
+        }
+      );
+    }
+  }
 }

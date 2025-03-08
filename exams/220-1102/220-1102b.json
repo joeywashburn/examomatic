@@ -1,0 +1,972 @@
+{
+    "exam_code": "220-1102-B",
+    "exam_name": "CompTIA A+ Core 2 Practice Exam Pool B",
+    "questions": [
+      {
+        "question_number": 99,
+        "question": "A bank would like to enhance building security in order to prevent vehicles from driving into the building while also maintaining easy access for customers. Which of the following BEST addresses this need?",
+        "correct_answer": "B",
+        "option_a": "Guards",
+        "option_b": "Bollards",
+        "option_c": "Motion sensors",
+        "option_d": "Access control vestibule",
+        "explanation": "Bollards are the best solution to enhance building security in order to prevent vehicles from driving into the building while also maintaining easy access for customers. Reference: https://en.wikipedia.org/wiki/Bollard"
+      },
+      {
+        "question_number": 100,
+        "question": "A technician is working to resolve a Wi-Fi network issue at a doctor's office that is located next to an apartment complex. The technician discovers that employees and patients are not the only people on the network. Which of the following should the technician do to BEST minimize this issue?",
+        "correct_answer": "C",
+        "option_a": "Disable unused ports",
+        "option_b": "Remove the guest network",
+        "option_c": "Add a password to the guest network",
+        "option_d": "Change the network channel",
+        "explanation": "Adding a password to the guest network is the best solution to minimize the issue of unauthorized people accessing the Wi-Fi network. Note: The provided explanation incorrectly states 'Changing the network channel' as the best solution, but based on the context of securing access, 'Add a password to the guest network' (C) is correct. Reference: https://www.techtarget.com/searchsecurity/quiz/Sample-CompTIA-Security-exam-questions-and-answers"
+      },
+      {
+        "question_number": 101,
+        "question": "A technician just completed a Windows 10 installation on a PC that has a total of 16GB of RAM. The technician notices the Windows OS has only 4GB of RAM available for use. Which of the following explains why the OS can only access 4GB of RAM?",
+        "correct_answer": "D",
+        "option_a": "The UEFI settings need to be changed",
+        "option_b": "The RAM has compatibility issues with Windows 10",
+        "option_c": "Some of the RAM is defective",
+        "option_d": "The newly installed OS is x86",
+        "explanation": "The newly installed OS is x86. The x86 (32-bit) version of Windows 10 can only use up to 4GB of RAM, whereas the x64 (64-bit) version can use up to 2TB of RAM."
+      },
+      {
+        "question_number": 102,
+        "question": "Which of the following is a data security standard for protecting credit cards?",
+        "correct_answer": "C",
+        "option_a": "PHI",
+        "option_b": "NIST",
+        "option_c": "PCI",
+        "option_d": "GDPR",
+        "explanation": "The Payment Card Industry Data Security Standard (PCI DSS) is a set of security standards designed to ensure that ALL companies that accept, process, store or transmit credit card information maintain a secure environment."
+      },
+      {
+        "question_number": 103,
+        "question": "Which of the following should be used to control security settings on an Android phone in a domain environment?",
+        "correct_answer": "A",
+        "option_a": "MDM",
+        "option_b": "MFA",
+        "option_c": "ACL",
+        "option_d": "SMS",
+        "explanation": "The best answer to control security settings on an Android phone in a domain environment is to use 'Mobile Device Management (MDM)'. MDM is a type of software that is used to manage and secure mobile devices such as smartphones and tablets. MDM can be used to enforce security policies, configure settings, and remotely wipe data from devices."
+      },
+      {
+        "question_number": 104,
+        "question": "A user is being directed by the help desk to look up a Windows PC's network name so the help desk can use a remote administration tool to assist the user. Which of the following commands would allow the user to give the technician the correct information? (Select TWO).",
+        "correct_answer": "B,E",
+        "option_a": "ipconfig /all",
+        "option_b": "hostname",
+        "option_c": "netstat /?",
+        "option_d": "nslookup localhost",
+        "option_e": "arp —a",
+        "option_f": "ping:: 1",
+        "explanation": "The user can use the following commands to give the technician the correct information: 'hostname' and 'arp —a'. The 'hostname' command displays the name of the computer. The 'arp —a' command can also help identify network information, though 'ipconfig /all' (A) is typically more comprehensive for network details including the hostname. Note: The explanation in the text incorrectly lists 'ipconfig /all' instead of 'arp —a', but based on the answer key, B and E are correct."
+      },
+      {
+        "question_number": 105,
+        "question": "A user created a file on a shared drive and wants to prevent its data from being accidentally deleted by others. Which of the following applications should the technician use to assist the user with hiding the file?",
+        "correct_answer": "C",
+        "option_a": "Device Manager",
+        "option_b": "Indexing Options",
+        "option_c": "File Explorer",
+        "option_d": "Administrative Tools",
+        "explanation": "The technician should use the File Explorer application to assist the user with hiding the file. The user can right-click the file, select Properties, and check the Hidden attribute to prevent it from being easily seen or accidentally deleted."
+      },
+      {
+        "question_number": 106,
+        "question": "A developer is creating a shell script to automate basic tasks in Linux. Which of the following file types are supported by default?",
+        "correct_answer": "D",
+        "option_a": ".py",
+        "option_b": ".js",
+        "option_c": ".vbs",
+        "option_d": ".sh",
+        "explanation": "The '.sh' file type is supported by default for shell scripts in Linux. Reference: https://www.educba.com/shell-scripting-in-linux/"
+      },
+      {
+        "question_number": 107,
+        "question": "Before leaving work, a user wants to see the traffic conditions for the commute home. Which of the following tools can the user employ to schedule the browser to automatically launch a traffic website at 4:45 p.m.?",
+        "correct_answer": "A",
+        "option_a": "taskschd.msc",
+        "option_b": "perfmon.msc",
+        "option_c": "lusrmgr.msc",
+        "option_d": "Eventvwr.msc",
+        "explanation": "The user can use the Task Scheduler (taskschd.msc) to schedule the browser to automatically launch a traffic website at 4:45 p.m. Task Scheduler allows users to automate tasks at specified times."
+      },
+      {
+        "question_number": 108,
+        "question": "A technician is installing a new business application on a user's desktop computer. The machine is running Windows 10 Enterprise 32-bit operating system. Which of the following files should the technician execute in order to complete the installation?",
+        "correct_answer": "D",
+        "option_a": "Installer_x64.exe",
+        "option_b": "Installer_Files.zip",
+        "option_c": "Installer_32.msi",
+        "option_d": "Installer_x86.exe",
+        "option_e": "Installer_Win10Enterprise.dmg",
+        "explanation": "The 32-bit operating system can only run 32-bit applications, so the technician should execute the 'Installer_x86.exe' file, where 'x86' refers to the 32-bit architecture. Reference: https://www.digitaltrends.com/computing/32-bit-vs-64-bit-operating-systems/"
+      },
+      {
+        "question_number": 109,
+        "question": "A user is having issues with document-processing software on a Windows workstation. Other users that log in to the same device do not have the same issue. Which of the following should a technician do to remediate the issue?",
+        "correct_answer": "D",
+        "option_a": "Roll back the updates",
+        "option_b": "Increase the page file",
+        "option_c": "Update the drivers",
+        "option_d": "Rebuild the profile",
+        "explanation": "The issue is specific to the user’s profile, so the technician should rebuild the profile to create a new profile and transfer the user’s data, resolving the software issue."
+      },
+      {
+        "question_number": 110,
+        "question": "Which of the following is an example of MFA?",
+        "correct_answer": "A",
+        "option_a": "Fingerprint scan and retina scan",
+        "option_b": "Password and PIN",
+        "option_c": "Username and password",
+        "option_d": "Smart card and password",
+        "explanation": "Fingerprint scan and retina scan is an example of multi-factor authentication (MFA), requiring two biometric factors. Note: The text incorrectly states 'Smart card and password' as 2FA only, but 'A' is the correct MFA example per the answer key."
+      },
+      {
+        "question_number": 111,
+        "question": "Which of the following command-line tools will delete a directory?",
+        "correct_answer": "D",
+        "option_a": "md",
+        "option_b": "del",
+        "option_c": "dir",
+        "option_d": "rd",
+        "option_e": "cd",
+        "explanation": "The 'rd' (remove directory) command deletes a directory in Windows. Use '/s' to remove files and subdirectories, and '/q' for quiet mode."
+      },
+      {
+        "question_number": 112,
+        "question": "A police officer often leaves a workstation for several minutes at a time. Which of the following is the BEST way the officer can secure the workstation quickly when walking away?",
+        "correct_answer": "A",
+        "option_a": "Use a key combination to lock the computer when leaving",
+        "option_b": "Ensure no unauthorized personnel are in the area",
+        "option_c": "Configure a screensaver to lock the computer automatically after approximately 30 minutes of inactivity",
+        "option_d": "Turn off the monitor to prevent unauthorized visibility of information",
+        "explanation": "Using a key combination (e.g., Windows + L) to lock the computer is the quickest and most effective way to secure it when stepping away."
+      },
+      {
+        "question_number": 113,
+        "question": "A call center handles inquiries into billing issues for multiple medical facilities. A security analyst notices that call center agents often walk away from their workstations, leaving patient data visible for anyone to see. Which of the following should a network administrator do to BEST prevent data theft within the call center?",
+        "correct_answer": "B",
+        "option_a": "Encrypt the workstation hard drives",
+        "option_b": "Lock the workstations after five minutes of inactivity",
+        "option_c": "Install privacy screens",
+        "option_d": "Log off the users when their workstations are not in use",
+        "explanation": "Locking workstations after five minutes of inactivity prevents unauthorized access to visible patient data, effectively reducing the risk of data theft."
+      },
+      {
+        "question_number": 114,
+        "question": "A technician is setting up a backup method on a workstation that only requires two sets of tapes to restore. Which of the following would BEST accomplish this task?",
+        "correct_answer": "D",
+        "option_a": "Differential backup",
+        "option_b": "Off-site backup",
+        "option_c": "Incremental backup",
+        "option_d": "Full backup",
+        "explanation": "A full backup only requires two sets of tapes to restore because it backs up all data each time, unlike differential or incremental backups which require multiple sets."
+      },
+      {
+        "question_number": 115,
+        "question": "A help desk team lead contacts a systems administrator because the technicians are unable to log in to a Linux server that is used to access tools. When the administrator tries to use remote desktop to log in to the server, the administrator sees the GUI is crashing. Which of the following methods can the administrator use to troubleshoot the server effectively?",
+        "correct_answer": "C",
+        "option_a": "SFTP",
+        "option_b": "SSH",
+        "option_c": "VNC",
+        "option_d": "MSRA",
+        "explanation": "Virtual Network Computing (VNC) allows the administrator to remotely control the desktop of a Linux server, effectively troubleshooting GUI crashes."
+      },
+      {
+        "question_number": 116,
+        "question": "A user turns on a new laptop and attempts to log in to specialized software, but receives a message stating that the address is already in use. The user logs on to the old desktop and receives the same message. A technician checks the account and sees a comment that the user requires a specifically allocated address before connecting to the software. Which of the following should the technician do to MOST likely resolve the issue?",
+        "correct_answer": "C",
+        "option_a": "Bridge the LAN connection between the laptop and the desktop",
+        "option_b": "Set the laptop configuration to DHCP to prevent conflicts",
+        "option_c": "Remove the static IP configuration from the desktop",
+        "option_d": "Replace the network card in the laptop, as it may be defective",
+        "explanation": "Removing the static IP configuration from the desktop resolves the conflict, as the new laptop needs the specifically allocated address previously assigned to the desktop."
+      },
+      {
+        "question_number": 117,
+        "question": "Which of the following should be done NEXT?",
+        "correct_answer": "D",
+        "option_a": "Send an email to Telecom to inform them of the issue and prevent reoccurrence",
+        "option_b": "Close the ticket out",
+        "option_c": "Tell the user to take time to fix it themselves next time",
+        "option_d": "Educate the user on the solution that was performed",
+        "explanation": "Educating the user on the solution that was performed helps prevent future issues and empowers the user to handle similar problems."
+      },
+      {
+        "question_number": 118,
+        "question": "A user calls the help desk and reports a workstation is infected with malicious software. Which of the following tools should the help desk technician use to remove the malicious software? (Select TWO).",
+        "correct_answer": "A,E",
+        "option_a": "File Explorer",
+        "option_b": "User Account Control",
+        "option_c": "Windows Backup and Restore",
+        "option_d": "Windows Firewall",
+        "option_e": "Windows Defender",
+        "option_f": "Network Packet Analyzer",
+        "explanation": "Windows Defender is a built-in antivirus program that can detect and remove malicious software. File Explorer can be used to locate and delete associated files."
+      },
+      {
+        "question_number": 119,
+        "question": "A technician has just used an anti-malware removal tool to resolve a user's malware issue on a corporate laptop. Which of the following BEST describes what the technician should do before returning the laptop to the user?",
+        "correct_answer": "D",
+        "option_a": "Educate the user on malware removal",
+        "option_b": "Educate the user on how to reinstall the laptop OS",
+        "option_c": "Educate the user on how to access recovery mode",
+        "option_d": "Educate the user on common threats and how to avoid them",
+        "explanation": "Educating the user on common threats and how to avoid them helps prevent future infections and is the best step before returning the laptop."
+      },
+      {
+        "question_number": 120,
+        "question": "While assisting a customer with an issue, a support representative realizes the appointment is taking longer than expected and will cause the next customer meeting to be delayed by five minutes. Which of the following should the support representative do NEXT?",
+        "correct_answer": "A",
+        "option_a": "Send a quick message regarding the delay to the next customer",
+        "option_b": "Cut the current customer's time short and rush to the next customer",
+        "option_c": "Apologize to the next customer when arriving late",
+        "option_d": "Arrive late to the next meeting without acknowledging the time",
+        "explanation": "Sending a quick message regarding the delay informs the next customer and helps manage expectations effectively."
+      },
+      {
+        "question_number": 121,
+        "question": "A company discovered that numerous computers from multiple geographic locations are sending a very high number of connection requests which is causing the company’s web server to become unavailable to the general public. Which of the following attacks is occurring?",
+        "correct_answer": "D",
+        "option_a": "Zero day",
+        "option_b": "SQL injection",
+        "option_c": "Cross-site scripting",
+        "option_d": "Distributed denial of service",
+        "explanation": "A distributed denial of service (DDoS) attack involves multiple systems overwhelming a server with connection requests, making it unavailable."
+      },
+      {
+        "question_number": 122,
+        "question": "While browsing a website, a staff member received a message that the website could not be trusted. Shortly afterward, several other colleagues reported the same issue across numerous other websites. Remote users who were not connected to corporate resources did not have any issues. Which of the following is MOST likely the cause of this issue?",
+        "correct_answer": "B",
+        "option_a": "A bad antivirus signature update was installed",
+        "option_b": "A router was misconfigured and was blocking traffic",
+        "option_c": "An upstream internet service provider was flapping",
+        "option_d": "The time or date was not in sync with the website",
+        "explanation": "A misconfigured router blocking traffic explains why only corporate users faced issues while remote users did not."
+      },
+      {
+        "question_number": 123,
+        "question": "Security software was accidentally uninstalled from all servers in the environment. After requesting the same version of the software be reinstalled, the security analyst learns that a change request will need to be filled out. Which of the following is the BEST reason to follow the change management process in this scenario?",
+        "correct_answer": "D",
+        "option_a": "Owners can be notified a change is being made and can monitor it for performance impact",
+        "option_b": "A risk assessment can be performed to determine if the software is needed",
+        "option_c": "End users can be aware of the scope of the change",
+        "option_d": "A rollback plan can be implemented in case the software breaks an application",
+        "explanation": "A rollback plan ensures that if the reinstallation causes issues, the system can be reverted, making it the best reason for change management."
+      },
+      {
+        "question_number": 124,
+        "question": "Which of the following is the MOST basic version of Windows that includes BitLocker?",
+        "correct_answer": "D",
+        "option_a": "Home",
+        "option_b": "Pro",
+        "option_c": "Enterprise",
+        "option_d": "Pro for Workstations",
+        "explanation": "Windows Pro is the most basic version that includes BitLocker, but 'Pro for Workstations' also includes it with additional features. Note: The text suggests 'Pro' is sufficient, but 'D' is marked correct."
+      },
+      {
+        "question_number": 125,
+        "question": "A user receives a notification indicating the data plan on the user's corporate phone has reached its limit. The user has also noted the performance of the phone is abnormally slow. A technician discovers a third-party GPS application was installed on the phone. Which of the following is the MOST likely cause?",
+        "correct_answer": "B",
+        "option_a": "The GPS application is installing software updates",
+        "option_b": "The GPS application contains malware",
+        "option_c": "The GPS application is updating its geospatial map data",
+        "option_d": "The GPS application is conflicting with the built-in GPS",
+        "explanation": "The GPS application likely contains malware, causing slow performance and high data usage. The user should uninstall it and run a malware scan."
+      },
+      {
+        "question_number": 126,
+        "question": "A technician is troubleshooting a lack of outgoing audio on a third-party Windows 10 VoIP application. The PC uses a USB microphone connected to a powered hub. The technician verifies the microphone works on the PC using Voice Recorder. Which of the following should the technician do to solve the issue?",
+        "correct_answer": "B",
+        "option_a": "Remove the microphone from the USB hub and plug it directly into a USB port on the PC",
+        "option_b": "Enable the microphone under Windows Privacy settings to allow desktop applications to access it",
+        "option_c": "Delete the microphone from Device Manager and scan for new hardware",
+        "option_d": "Replace the USB microphone with one that uses a traditional 3.5mm plug",
+        "explanation": "Enabling the microphone in Windows Privacy settings ensures the VoIP app has access, resolving the audio issue."
+      },
+      {
+        "question_number": 127,
+        "question": "A technician is setting up a new laptop for an employee who travels. Which of the following is the BEST security practice for this scenario?",
+        "correct_answer": "C",
+        "option_a": "PIN-based login",
+        "option_b": "Quarterly password changes",
+        "option_c": "Hard drive encryption",
+        "option_d": "A physical laptop lock",
+        "explanation": "Hard drive encryption protects data if the laptop is lost or stolen, making it the best security practice for a traveling employee."
+      },
+      {
+        "question_number": 128,
+        "question": "A user in a corporate office reports the inability to connect to any network drives. No other users have reported this issue. Which of the following is the MOST likely reason the user is having this issue?",
+        "correct_answer": "A",
+        "option_a": "The user is not connected to the VPN",
+        "option_b": "The file server is offline",
+        "option_c": "A low battery is preventing the connection",
+        "option_d": "The log-in script failed",
+        "explanation": "The user not being connected to the VPN is the most likely reason, as it’s user-specific and network drives often require VPN access."
+      },
+      {
+        "question_number": 129,
+        "question": "A user received the following error upon visiting a banking website: The security presented by website was issued a different website's address. A technician should instruct the user to:",
+        "correct_answer": "A",
+        "option_a": "clear the browser cache and contact the bank",
+        "option_b": "close out of the site and contact the bank",
+        "option_c": "continue to the site and contact the bank",
+        "option_d": "update the browser and contact the bank",
+        "explanation": "Clearing the browser cache and contacting the bank resolves potential caching issues and ensures the site’s legitimacy."
+      },
+      {
+        "question_number": 130,
+        "question": "A user is attempting to browse the internet using Internet Explorer. When trying to load a familiar web page, the user is unexpectedly redirected to an unfamiliar website. Which of the following would MOST likely solve the issue?",
+        "correct_answer": "C",
+        "option_a": "Updating the operating system",
+        "option_b": "Changing proxy settings",
+        "option_c": "Reinstalling the browser",
+        "option_d": "Enabling port forwarding",
+        "explanation": "Reinstalling the browser removes potential malware or corrupted settings causing the redirection."
+      },
+      {
+        "question_number": 131,
+        "question": "A technician is tasked with configuring a computer for a visually impaired user. Which of the following utilities should the technician use?",
+        "correct_answer": "C",
+        "option_a": "Device Manager",
+        "option_b": "System",
+        "option_c": "Ease of Access Center",
+        "option_d": "Programs and Features",
+        "explanation": "The Ease of Access Center provides tools like high contrast and screen readers for visually impaired users."
+      },
+      {
+        "question_number": 132,
+        "question": "An analyst needs GUI access to server software running on a macOS server. Which of the following options provides the BEST way for the analyst to access the macOS server from the Windows workstation?",
+        "correct_answer": "B",
+        "option_a": "RDP through RD Gateway",
+        "option_b": "Apple Remote Desktop",
+        "option_c": "SSH access with SSH keys",
+        "option_d": "VNC with username and password",
+        "explanation": "Apple Remote Desktop provides GUI access to macOS servers from Windows, supporting secure control and file transfers."
+      },
+      {
+        "question_number": 133,
+        "question": "The findings from a security audit indicate the risk of data loss from lost or stolen laptops is high. The company wants to reduce this risk with minimal impact to users who want to use their laptops when not on the network. Which of the following would BEST reduce this risk for Windows laptop users?",
+        "correct_answer": "D",
+        "option_a": "Requiring strong passwords",
+        "option_b": "Disabling cached credentials",
+        "option_c": "Requiring MFA to sign on",
+        "option_d": "Enabling BitLocker on all hard drives",
+        "explanation": "Enabling BitLocker encrypts drives, protecting data if laptops are lost or stolen, with minimal user impact."
+      },
+      {
+        "question_number": 134,
+        "question": "A technician has been asked to set up a new wireless router with the best possible security. Which of the following should the technician implement?",
+        "correct_answer": "C",
+        "option_a": "WPS",
+        "option_b": "TKIP",
+        "option_c": "WPA3",
+        "option_d": "WEP",
+        "explanation": "WPA3 is the latest and most secure wireless encryption protocol, offering the best protection."
+      },
+      {
+        "question_number": 135,
+        "question": "A field technician applied a Group Policy setting to all the workstations in the network. This setting forced the workstations to use a specific SNTP server. Users are unable to log in now. Which of the following is the MOST likely cause of this issue?",
+        "correct_answer": "D",
+        "option_a": "The SNTP server is offline",
+        "option_b": "A user changed the time zone on a local machine",
+        "option_c": "The Group Policy setting has disrupted domain authentication on the system",
+        "option_d": "The workstations and the authentication server have a system clock difference",
+        "explanation": "A system clock difference between workstations and the authentication server due to the SNTP setting can prevent logins."
+      },
+      {
+        "question_number": 136,
+        "question": "A desktop support technician is tasked with migrating several PCs from Windows 7 Pro to Windows 10 Pro. The technician must ensure files and user preferences are retained, must perform the operation locally, and should migrate one station at a time. Which of the following methods would be MOST efficient?",
+        "correct_answer": "C",
+        "option_a": "Golden image",
+        "option_b": "Remote network install",
+        "option_c": "In-place upgrade",
+        "option_d": "Clean install",
+        "explanation": "An in-place upgrade retains files and preferences, is done locally, and can be performed one station at a time efficiently."
+      },
+      {
+        "question_number": 137,
+        "question": "A suite of security applications was installed a few days ago on a user's home computer. The user reports that the computer has been running slowly since the installation. The user notices the hard drive activity light is constantly solid. Which of the following should be checked FIRST?",
+        "correct_answer": "C",
+        "option_a": "Services in Control Panel to check for overutilization",
+        "option_b": "Performance Monitor to check for resource utilization",
+        "option_c": "System File Checker to check for modified Windows files",
+        "option_d": "Event Viewer to identify errors",
+        "explanation": "System File Checker (SFC) should be checked first to detect and fix corrupted system files that might be causing the slowdown."
+      },
+      {
+        "question_number": 138,
+        "question": "A Windows user reported that a pop-up indicated a security issue. During inspection, an antivirus system identified malware from a recent download, but it was unable to remove the malware. Which of the following actions would be BEST to remove the malware while also preserving the user's files?",
+        "correct_answer": "C",
+        "option_a": "Run the virus scanner in an administrative mode",
+        "option_b": "Reinstall the operating system",
+        "option_c": "Reboot the system in safe mode and rescan",
+        "option_d": "Manually delete the infected files",
+        "explanation": "Rebooting in safe mode and rescanning limits malware activity, allowing the antivirus to remove it while preserving files."
+      },
+      {
+        "question_number": 139,
+        "question": "A macOS user reports seeing a spinning round cursor on a program that appears to be frozen. Which of the following methods does the technician use to force the program to close in macOS?",
+        "correct_answer": "D",
+        "option_a": "The technician presses the Ctrl+Alt+Del keys to open the Force Quit menu, selects the frozen application in the list, and clicks Force Quit",
+        "option_b": "The technician clicks on the frozen application and presses and holds the Esc key on the keyboard for 10 seconds which causes the application to force quit",
+        "option_c": "The technician opens Finder, navigates to the Applications folder, locates the application that is frozen in the list, right-clicks on the application, and selects the Force Quit option",
+        "option_d": "The technician opens the Apple icon menu, selects Force Quit, selects the frozen application in the list, and clicks Force Quit",
+        "explanation": "Opening the Apple menu, selecting Force Quit, and choosing the frozen application is the standard method to close it in macOS."
+      },
+      {
+        "question_number": 140,
+        "question": "Which of the following is a consequence of end-of-life operating systems?",
+        "correct_answer": "C",
+        "option_a": "Operating systems void the hardware warranty",
+        "option_b": "Operating systems cease to function",
+        "option_c": "Operating systems no longer receive updates",
+        "option_d": "Operating systems are unable to migrate data to the new operating system",
+        "explanation": "End-of-life operating systems no longer receive updates, leaving them vulnerable to security threats."
+      },
+      {
+        "question_number": 141,
+        "question": "Which of the following data is MOST likely to be regulated?",
+        "correct_answer": "B",
+        "option_a": "Name in a Phone book",
+        "option_b": "Name on a medical diagnosis",
+        "option_c": "Name on a job application",
+        "option_d": "Name on a employer's website",
+        "explanation": "A name on a medical diagnosis is protected health information (PHI) regulated by laws like HIPAA."
+      },
+      {
+        "question_number": 142,
+        "question": "Which of the following file extensions are commonly used to install applications on a macOS machine? (Select THREE).",
+        "correct_answer": "B,D,G",
+        "option_a": ".mac",
+        "option_b": ".pkg",
+        "option_c": ".deb",
+        "option_d": ".dmg",
+        "option_e": ".msi",
+        "option_f": ".appx",
+        "option_g": ".app",
+        "option_h": ".apk",
+        "explanation": ".pkg, .dmg, and .app are commonly used to install applications on macOS. Reference: https://support.microsoft.com/en-us/windows/common-file-name-extensions-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01"
+      },
+      {
+        "question_number": 143,
+        "question": "A help desk technician runs the following script: Inventory.py. The technician receives the following error message: How do you want to Open this file? Which of the following is the MOST likely reason this script is unable to run?",
+        "correct_answer": "D",
+        "option_a": "Scripts are not permitted to run",
+        "option_b": "The script was not built for Windows",
+        "option_c": "The script requires administrator privileges",
+        "option_d": "The runtime environment is not installed",
+        "explanation": "The error suggests the Python runtime environment is not installed, preventing the .py script from running."
+      },
+      {
+        "question_number": 144,
+        "question": "A technician downloaded software from the Internet that required the technician to scroll through a text box and at the end of the text box, click a button labeled Accept Which of the following agreements IS MOST likely in use?",
+        "correct_answer": "C",
+        "option_a": "DRM",
+        "option_b": "NDA",
+        "option_c": "EULA",
+        "option_d": "MOU",
+        "explanation": "An End User License Agreement (EULA) is a legal contract requiring acceptance before software use, matching the scenario."
+      },
+      {
+        "question_number": 145,
+        "question": "A technician is reimaging a desktop PC. The technician connects the PC to the network and powers it on. The technician attempts to boot the computer via the NIC to image the computer, but this method does not work. Which of the following is the MOST likely reason the computer is unable to boot into the imaging system via the network?",
+        "correct_answer": "C",
+        "option_a": "The computer's CMOS battery failed",
+        "option_b": "The computer's NIC is faulty",
+        "option_c": "The PXE boot option has not been enabled",
+        "option_d": "The Ethernet cable the technician is using to connect the desktop to the network is faulty",
+        "explanation": "The PXE (Preboot Execution Environment) boot option must be enabled in BIOS for network booting to work."
+      },
+      {
+        "question_number": 146,
+        "question": "An organization's Chief Financial Officer (CFO) is concerned about losing access to very sensitive, legacy unmaintained PII on a workstation if a ransomware outbreak occurs. The CFO has a regulatory requirement to retain this data for many years. Which of the following backup methods would BEST meet the requirements?",
+        "correct_answer": "C",
+        "option_a": "A daily, incremental backup that is saved to the corporate file server",
+        "option_b": "An additional, secondary hard drive in a mirrored RAID configuration",
+        "option_c": "A full backup of the data that is stored off site in cold storage",
+        "option_d": "Weekly, differential backups that are stored in a cloud-hosting provider",
+        "explanation": "A full backup stored off-site in cold storage protects against ransomware and meets long-term retention needs."
+      },
+      {
+        "question_number": 147,
+        "question": "A technician connects an additional monitor to a PC using a USB port. The original HDMI monitor is mounted to the left of the new monitor. When moving the mouse to the right from the original monitor to the new monitor, the mouse stops at the end of the screen on the original monitor. Which of the following will allow the mouse to correctly move to the new monitor?",
+        "correct_answer": "B",
+        "option_a": "Rearranging the monitor's position in display settings",
+        "option_b": "Swapping the cables for the monitors",
+        "option_c": "Using the Ctrl+Alt+> to correct the display orientation",
+        "option_d": "Updating the display drivers for the video card",
+        "explanation": "Swapping the cables aligns the physical monitor setup with the system’s display configuration. Note: 'A' could also work, but 'B' is marked correct."
+      },
+      {
+        "question_number": 148,
+        "question": "A technician receives a call from a user who is on vacation. The user provides the necessary credentials and asks the technician to log in to the user's account and read a critical email that the user has been expecting. The technician refuses because this is a violation of the:",
+        "correct_answer": "A",
+        "option_a": "acceptable use policy",
+        "option_b": "regulatory compliance requirements",
+        "option_c": "non-disclosure agreement",
+        "option_d": "incident response procedures",
+        "explanation": "Logging into a user’s account violates the acceptable use policy, which governs appropriate system use."
+      },
+      {
+        "question_number": 149,
+        "question": "A new service desk is having a difficult time managing the volume of requests. Which of the following is the BEST solution for the department?",
+        "correct_answer": "A",
+        "option_a": "Implementing a support portal",
+        "option_b": "Creating a ticketing system",
+        "option_c": "Commissioning an automated callback system",
+        "option_d": "Submitting tickets through email",
+        "explanation": "A support portal allows self-service and request management, reducing the service desk’s workload."
+      },
+      {
+        "question_number": 150,
+        "question": "An IT services company that supports a large government contract replaced the Ethernet cards on several hundred desktop machines to comply with regulatory requirements. Which of the following disposal methods for the non-compliant cards is the MOST environmentally friendly?",
+        "correct_answer": "D",
+        "option_a": "Incineration",
+        "option_b": "Resale",
+        "option_c": "Physical destruction",
+        "option_d": "Dumpster for recycling plastics",
+        "explanation": "Recycling plastics in a dumpster reduces waste and environmental impact. Reference: https://sustainability.yale.edu/blog/how-sustainably-dispose-your-technological-waste"
+      },
+      {
+        "question_number": 151,
+        "question": "A systems administrator needs to reset a users password because the user forgot it. The systems administrator creates the new password and wants to further protect the user's account Which of the following should the systems administrator do?",
+        "correct_answer": "A",
+        "option_a": "Require the user to change the password at the next log-in",
+        "option_b": "Disallow the user from changing the password",
+        "option_c": "Disable the account",
+        "option_d": "Choose a password that never expires",
+        "explanation": "Requiring a password change at next log-in ensures the user sets a secure, personal password."
+      },
+      {
+        "question_number": 152,
+        "question": "A technician received a call stating that all files in a user's documents folder appear to be Changed, and each of the files now has a lock file extension Which of the following actions is the FIRST step the technician should take?",
+        "correct_answer": "D",
+        "option_a": "Run a live disk clone",
+        "option_b": "Run a full antivirus scan",
+        "option_c": "Use a batch file to rename the files",
+        "option_d": "Disconnect the machine from the network",
+        "explanation": "Disconnecting the machine from the network prevents ransomware from spreading or communicating with attackers."
+      },
+      {
+        "question_number": 153,
+        "question": "An administrator has received approval for a change request for an upcoming server deployment. Which of the following steps should be completed NEXT?",
+        "correct_answer": "A",
+        "option_a": "Perform a risk analysis",
+        "option_b": "Implement the deployment",
+        "option_c": "Verify end user acceptance",
+        "option_d": "Document the lessons learned",
+        "explanation": "Performing a risk analysis assesses potential issues before deployment, ensuring a smoother process."
+      },
+      {
+        "question_number": 154,
+        "question": "A technician is troubleshooting a customer's PC and receives a phone call. The technician does not take the call and sets the phone to silent. Which of the following BEST describes the technician's actions?",
+        "correct_answer": "A",
+        "option_a": "Avoid distractions",
+        "option_b": "Deal appropriately with customer's confidential material",
+        "option_c": "Adhere to user privacy policy",
+        "option_d": "Set and meet timelines",
+        "explanation": "Setting the phone to silent avoids distractions, allowing focus on troubleshooting."
+      },
+      {
+        "question_number": 155,
+        "question": "A manager reports that staff members often forget the passwords to their mobile devices and applications. Which of the following should the systems administrator do to reduce the number of help desk tickets submitted?",
+        "correct_answer": "A",
+        "option_a": "Enable multifactor authentication",
+        "option_b": "Increase the failed log-in threshold",
+        "option_c": "Remove complex password requirements",
+        "option_d": "Implement a single sign-on with biometrics",
+        "explanation": "Enabling multifactor authentication (MFA) adds security layers, reducing password reset requests."
+      },
+      {
+        "question_number": 156,
+        "question": "A Microsoft Windows PC needs to be set up for a user at a large corporation. The user will need access to the corporate domain to access email and shared drives. Which of the following versions of Windows would a technician MOST likely deploy for the user?",
+        "correct_answer": "B",
+        "option_a": "Windows Enterprise Edition",
+        "option_b": "Windows Professional Edition",
+        "option_c": "Windows Server Standard Edition",
+        "option_d": "Windows Home Edition",
+        "explanation": "Windows Professional Edition supports domain access, suitable for corporate use."
+      },
+      {
+        "question_number": 157,
+        "question": "A small business owner wants to install newly purchased software on all networked PCs. The network is not configured as a domain, and the owner wants to use the easiest method possible. Which of the following is the MOST efficient way for the owner to install the application?",
+        "correct_answer": "B",
+        "option_a": "Use a network share to share the installation files",
+        "option_b": "Save software to an external hard drive to install",
+        "option_c": "Create an imaging USB for each PC",
+        "option_d": "Install the software from the vendor's website",
+        "explanation": "Saving to an external hard drive is the easiest method for a non-domain network, though 'A' could also be efficient."
+      },
+      {
+        "question_number": 158,
+        "question": "A user is setting up a computer for the first time and would like to create a secondary login with permissions that are different than the primary login. The secondary login will need to be protected from certain content such as games and websites. Which of the following Windows settings should the user utilize to create the secondary login?",
+        "correct_answer": "B",
+        "option_a": "Privacy",
+        "option_b": "Accounts",
+        "option_c": "Personalization",
+        "option_d": "Shared resources",
+        "explanation": "The Accounts setting allows creating a new user with different permissions and restrictions."
+      },
+      {
+        "question_number": 159,
+        "question": "Which of the following is MOST likely contained in an EULA?",
+        "correct_answer": "D",
+        "option_a": "Chain of custody",
+        "option_b": "Backup of software code",
+        "option_c": "Personally identifiable information",
+        "option_d": "Restrictions of use",
+        "explanation": "An EULA typically includes restrictions of use, detailing how the software can be used. Reference: https://www.termsfeed.com/blog/eula-vs-terms-conditions/"
+      },
+      {
+        "question_number": 160,
+        "question": "A user installed a new application that automatically starts each time the user logs in to a Windows 10 system. The user does not want this to happen and has asked for this setting to be changed. Which of the following tools would the technician MOST likely use to safely make this change?",
+        "correct_answer": "B",
+        "option_a": "Registry Editor",
+        "option_b": "Task Manager",
+        "option_c": "Event Viewer",
+        "option_d": "Local Users and Groups",
+        "explanation": "Task Manager allows disabling startup applications safely and easily."
+      },
+      {
+        "question_number": 161,
+        "question": "A laptop user is visually impaired and requires a different cursor color. Which of the following OS utilities is used to change the color of the cursor?",
+        "correct_answer": "C",
+        "option_a": "Keyboard",
+        "option_b": "Touch pad",
+        "option_c": "Ease of Access Center",
+        "option_d": "Display settings",
+        "explanation": "The Ease of Access Center allows changing the cursor color for accessibility."
+      },
+      {
+        "question_number": 162,
+        "question": "A user is attempting to make a purchase at a store using a phone. The user places the phone on the payment pad, but the device does not recognize the phone. The user attempts to restart the phone but still has the same results. Which of the following should the user do to resolve the issue?",
+        "correct_answer": "B",
+        "option_a": "Turn off airplane mode while at the register",
+        "option_b": "Verify that NFC is enabled",
+        "option_c": "Connect to the store's Wi-Fi network",
+        "option_d": "Enable Bluetooth on the phone",
+        "explanation": "Verifying that NFC (Near Field Communication) is enabled is necessary for contactless payments."
+      },
+      {
+        "question_number": 163,
+        "question": "A junior administrator is responsible for deploying software to a large group of computers in an organization. The administrator finds a script on a popular coding website to automate this distribution but does not understand the scripting language. Which of the following BEST describes the risks in running this script?",
+        "correct_answer": "C",
+        "option_a": "The instructions from the software company are not being followed",
+        "option_b": "Security controls will treat automated deployments as malware",
+        "option_c": "The deployment script is performing unknown actions",
+        "option_d": "Copying scripts off the internet is considered plagiarism",
+        "explanation": "Unknown actions in the script pose a risk of unintended consequences or malware deployment."
+      },
+      {
+        "question_number": 164,
+        "question": "A user reports a workstation has been performing strangely after a suspicious email was opened on it earlier in the week. Which of the following should the technician perform FIRST?",
+        "correct_answer": "B",
+        "option_a": "Escalate the ticket to Tier 2",
+        "option_b": "Run a virus scan",
+        "option_c": "Utilize a Windows restore point",
+        "option_d": "Reimage the computer",
+        "explanation": "Running a virus scan first identifies potential malware from the suspicious email."
+      },
+      {
+        "question_number": 165,
+        "question": "Each time a user tries to go to the selected web search provider, a different website opens. Which of the following should the technician check FIRST?",
+        "correct_answer": "C",
+        "option_a": "System time",
+        "option_b": "IP address",
+        "option_c": "DNS servers",
+        "option_d": "Windows updates",
+        "explanation": "Checking DNS servers first addresses potential hijacking causing website redirection."
+      },
+      {
+        "question_number": 166,
+        "question": "Which of the following is the STRONGEST wireless configuration?",
+        "correct_answer": "B",
+        "option_a": "WPS",
+        "option_b": "WPA3",
+        "option_c": "WEP",
+        "option_d": "WMN",
+        "explanation": "WPA3 is the strongest wireless configuration, offering the latest security features. Reference: https://www.makeuseof.com/tag/wep-wpa-wpa2-wpa3-explained/"
+      },
+      {
+        "question_number": 167,
+        "question": "A technician has an external SSD. The technician needs to read and write to an external SSD on both Macs and Windows PCs. Which of the following filesystems is supported by both OS types?",
+        "correct_answer": "D",
+        "option_a": "NTFS",
+        "option_b": "APFS",
+        "option_c": "ext4",
+        "option_d": "exFAT",
+        "explanation": "exFAT is supported by both macOS and Windows for read/write access. Reference: https://www.diskpart.com/articles/file-system-for-mac-and-windows-0310.html"
+      },
+      {
+        "question_number": 168,
+        "question": "A user's system is infected with malware. A technician updates the anti-malware software and runs a scan that removes the malware. After the user reboots the system, it once again becomes infected with malware. Which of the following will MOST likely help to permanently remove the malware?",
+        "correct_answer": "B",
+        "option_a": "Enabling System Restore",
+        "option_b": "Educating the user",
+        "option_c": "Booting into safe mode",
+        "option_d": "Scheduling a scan",
+        "explanation": "Educating the user on safe practices prevents reinfection, addressing the root cause."
+      },
+      {
+        "question_number": 169,
+        "question": "A user connected a laptop to a wireless network and was tricked into providing login credentials for a website. Which of the following threats was used to carry out the attack?",
+        "correct_answer": "B",
+        "option_a": "Zero day",
+        "option_b": "Vishing",
+        "option_c": "DDoS",
+        "option_d": "Evil twin",
+        "explanation": "Vishing (voice phishing) involves tricking users into providing credentials, matching the scenario."
+      },
+      {
+        "question_number": 170,
+        "question": "Which of the following change management documents includes how to uninstall a patch?",
+        "correct_answer": "B",
+        "option_a": "Purpose of change",
+        "option_b": "Rollback plan",
+        "option_c": "Scope of change",
+        "option_d": "Risk analysis",
+        "explanation": "A rollback plan includes steps to uninstall a patch if issues arise."
+      },
+      {
+        "question_number": 171,
+        "question": "A network administrator is deploying a client certificate to be used for Wi-Fi access for all devices in an organization. The certificate will be used in conjunction with the user's existing username and password. Which of the following BEST describes the security benefits realized after this deployment?",
+        "correct_answer": "B",
+        "option_a": "Multifactor authentication will be forced for Wi-Fi",
+        "option_b": "All Wi-Fi traffic will be encrypted in transit",
+        "option_c": "Eavesdropping attempts will be prevented",
+        "option_d": "Rogue access points will not connect",
+        "explanation": "Client certificates ensure all Wi-Fi traffic is encrypted in transit, enhancing security."
+      },
+      {
+        "question_number": 172,
+        "question": "In which of the following scenarios would remote wipe capabilities MOST likely be used? (Select TWO).",
+        "correct_answer": "E,F",
+        "option_a": "A new IT policy requires users to set up a lock screen PIN",
+        "option_b": "A user is overseas and wants to use a compatible international SIM Card",
+        "option_c": "A user left the phone at home and wants to prevent children from gaining access to the phone",
+        "option_d": "A user traded in the company phone for a cell carrier upgrade by mistake",
+        "option_e": "A user cannot locate the phone after attending a play at a theater",
+        "option_f": "A user forgot the phone in a taxi, and the driver called the company to return the device",
+        "explanation": "Remote wipe is used when a phone is lost (E) or left in an uncontrolled location (F) to protect data."
+      },
+      {
+        "question_number": 173,
+        "question": "Sensitive data was leaked from a user's smartphone. A technician discovered an unapproved application was installed, and the user has full access to the device's command shell. Which of the following is the NEXT step the technician should take to find the cause of the leaked data?",
+        "correct_answer": "B",
+        "option_a": "Restore the device to factory settings",
+        "option_b": "Uninstall the unapproved application",
+        "option_c": "Disable the ability to install applications from unknown sources",
+        "option_d": "Ensure the device is connected to the corporate WiFi network",
+        "explanation": "Uninstalling the unapproved application is the next step to investigate if it caused the data leak."
+      },
+      {
+        "question_number": 174,
+        "question": "A technician is attempting to mitigate micro power outages, which occur frequently within the area of operation. The outages are usually short, with the longest occurrence lasting five minutes. Which of the following should the technician use to mitigate this issue?",
+        "correct_answer": "B",
+        "option_a": "Surge suppressor",
+        "option_b": "Battery backup",
+        "option_c": "CMOS battery",
+        "option_d": "Generator backup",
+        "explanation": "A battery backup (UPS) provides power during short outages, mitigating micro power interruptions."
+      },
+      {
+        "question_number": 175,
+        "question": "A user has a license for an application that is in use on a personal home laptop. The user approaches a systems administrator about using the same license on multiple computers on the corporate network. Which of the following BEST describes what the systems administrator should tell the user?",
+        "correct_answer": "B",
+        "option_a": "Use the application only on the home laptop because it contains the initial license",
+        "option_b": "Use the application at home and contact the vendor regarding a corporate license",
+        "option_c": "Use the application on any computer since the user has a license",
+        "option_d": "Use the application only on corporate computers",
+        "explanation": "The user should use the app at home and contact the vendor for a corporate license to comply with licensing terms."
+      },
+      {
+        "question_number": 176,
+        "question": "A technician is setting up a new laptop. The company's security policy states that users cannot install virtual machines. Which of the following should the technician implement to prevent users from enabling virtual technology on their laptops?",
+        "correct_answer": "B",
+        "option_a": "UEFI password",
+        "option_b": "Secure boot",
+        "option_c": "Account lockout",
+        "option_d": "Restricted user permissions",
+        "explanation": "Secure Boot prevents unauthorized firmware changes, including enabling virtual technology."
+      },
+      {
+        "question_number": 177,
+        "question": "The web browsing speed on a customer's mobile phone slows down every few weeks and then returns to normal after three or four days. Restarting the device does not usually restore performance. Which of the following should a technician check FIRST to troubleshoot this issue?",
+        "correct_answer": "B",
+        "option_a": "Data usage limits",
+        "option_b": "Wi-Fi connection speed",
+        "option_c": "Status of airplane mode",
+        "option_d": "System uptime",
+        "explanation": "Checking Wi-Fi connection speed first addresses potential network issues affecting browsing performance."
+      },
+      {
+        "question_number": 178,
+        "question": "Following a recent power outage, several computers have been receiving errors when booting. The technician suspects file corruption has occurred. Which of the following steps should the technician try FIRST to correct the issue?",
+        "correct_answer": "D",
+        "option_a": "Rebuild the Windows profiles",
+        "option_b": "Restore the computers from backup",
+        "option_c": "Reimage the computers",
+        "option_d": "Run the System File Checker",
+        "explanation": "Running System File Checker (SFC) first repairs corrupted system files caused by the outage."
+      },
+      {
+        "question_number": 179,
+        "question": "A user is unable to access a website, which is widely used across the organization, and receives the following error message: The security certificate presented by this website has expired or is not yet valid. The technician confirms the website works when accessing it from another computer but not from the user's computer. Which of the following should the technician perform NEXT to troubleshoot the issue?",
+        "correct_answer": "D",
+        "option_a": "Reboot the computer",
+        "option_b": "Reinstall the OS",
+        "option_c": "Configure a static IP",
+        "option_d": "Check the computer's date and time",
+        "explanation": "Checking the computer’s date and time resolves certificate validation issues due to incorrect system clocks."
+      },
+      {
+        "question_number": 180,
+        "question": "A company has just refreshed several desktop PCs. The hard drives contain PII. Which of the following is the BEST method to dispose of the drives?",
+        "correct_answer": "D",
+        "option_a": "Drilling",
+        "option_b": "Degaussing",
+        "option_c": "Low-level formatting",
+        "option_d": "Erasing/wiping",
+        "explanation": "Erasing/wiping securely removes PII from hard drives before disposal."
+      },
+      {
+        "question_number": 181,
+        "question": "After a company installed a new SOHO router customers were unable to access the company-hosted public website. Which of the following will MOST likely allow customers to access the website?",
+        "correct_answer": "B",
+        "option_a": "Port forwarding",
+        "option_b": "Firmware updates",
+        "option_c": "IP filtering",
+        "option_d": "Content filtering",
+        "explanation": "Firmware updates can resolve router bugs preventing website access. Note: 'A' (Port forwarding) could also apply but 'B' is marked correct."
+      },
+      {
+        "question_number": 182,
+        "question": "A new spam gateway was recently deployed at a small business However; users still occasionally receive spam. The management team is concerned that users will open the messages and potentially infect the network systems. Which of the following is the MOST effective method for dealing with this Issue?",
+        "correct_answer": "D",
+        "option_a": "Adjusting the spam gateway",
+        "option_b": "Updating firmware for the spam appliance",
+        "option_c": "Adjusting AV settings",
+        "option_d": "Providing user training",
+        "explanation": "Providing user training on recognizing and avoiding spam is the most effective way to prevent infections."
+      },
+      {
+        "question_number": 183,
+        "question": "A user reports a PC is running slowly. The technician suspects high disk I/O. Which of the following should the technician perform NEXT?",
+        "correct_answer": "A",
+        "option_a": "resmon.exe",
+        "option_b": "dfrgui.exe",
+        "option_c": "msinfo32.exe",
+        "option_d": "msconfig.exe",
+        "explanation": "Resource Monitor (resmon.exe) provides detailed disk I/O information to diagnose the issue."
+      },
+      {
+        "question_number": 184,
+        "question": "DRAG DROP A customer recently experienced a power outage at a SOHO. The customer does not think the components are connected properly. A print job continued running for several minutes after the power failed, but the customer was not able to interact with the computer. Once the UPS stopped beeping, all functioning devices also turned off. In case of a future power failure, the customer wants to have the most time available to save cloud documents and shut down the computer without losing any data.",
+        "correct_answer": "N/A",
+        "option_a": "UPS > Surge protector = Computer, wifi router, cable modem",
+        "option_b": "Surge protector = wallOutlet, printer and scanner",
+        "option_c": "",
+        "option_d": "",
+        "explanation": "Correct setup: UPS to surge protector with computer, Wi-Fi router, and modem; surge protector to wall with printer and scanner for maximum uptime."
+      },
+      {
+        "question_number": 185,
+        "question": "A macOS user needs to create another virtual desktop space. Which of the following applications will allow the user to accomplish this task?",
+        "correct_answer": "C",
+        "option_a": "Dock",
+        "option_b": "Spotlight",
+        "option_c": "Mission Control",
+        "option_d": "Launchpad",
+        "explanation": "Mission Control allows creating additional virtual desktop spaces in macOS."
+      },
+      {
+        "question_number": 186,
+        "question": "A technician is troubleshooting a computer with a suspected short in the power supply. Which of the following is the FIRST step the technician should take?",
+        "correct_answer": "B",
+        "option_a": "Put on an ESD strap",
+        "option_b": "Disconnect the power before servicing the PC",
+        "option_c": "Place the PC on a grounded workbench",
+        "option_d": "Place components on an ESD mat",
+        "explanation": "Disconnecting the power first ensures safety when troubleshooting a power supply short."
+      },
+      {
+        "question_number": 187,
+        "question": "A team of support agents will be using their workstations to store credit card data. Which of the following should the IT department enable on the workstations in order to remain compliant with common regulatory controls? (Select TWO).",
+        "correct_answer": "A,F",
+        "option_a": "Encryption",
+        "option_b": "Antivirus",
+        "option_c": "AutoRun",
+        "option_d": "Guest accounts",
+        "option_e": "Default passwords",
+        "option_f": "Backups",
+        "explanation": "Encryption protects credit card data, and backups ensure data availability, both required for PCI DSS compliance."
+      },
+      {
+        "question_number": 188,
+        "question": "A user is unable to log in to the network. The network uses 802.1X with EAP-TLS to authenticate on the wired network. The user has been on an extended leave and has not logged in to the computer in several months. Which of the following is causing the login issue?",
+        "correct_answer": "A",
+        "option_a": "Expired certificate",
+        "option_b": "OS update failure",
+        "option_c": "Service not started",
+        "option_d": "Application crash",
+        "option_e": "Profile rebuild needed",
+        "explanation": "An expired certificate due to extended leave prevents EAP-TLS authentication."
+      },
+      {
+        "question_number": 189,
+        "question": "A company is deploying mobile phones on a one-to-one basis, but the IT manager is concerned that users will root/jailbreak their phones. Which of the following technologies can be implemented to prevent this issue?",
+        "correct_answer": "D",
+        "option_a": "Signed system images",
+        "option_b": "Antivirus",
+        "option_c": "SSO",
+        "option_d": "MDM",
+        "explanation": "Mobile Device Management (MDM) can enforce policies to prevent rooting/jailbreaking."
+      },
+      {
+        "question_number": 190,
+        "question": "A technician is troubleshooting an issue that requires a user profile to be rebuilt. The technician is unable to locate Local Users and Groups in the MMC console. Which of the following is the NEXT step the technician should take to resolve the issue?",
+        "correct_answer": "B",
+        "option_a": "Run the antivirus scan",
+        "option_b": "Add the required snap-in",
+        "option_c": "Restore the system backup",
+        "option_d": "Use the administrator console",
+        "explanation": "Adding the Local Users and Groups snap-in to MMC allows profile management."
+      },
+      {
+        "question_number": 191,
+        "question": "A technician needs to manually set an IP address on a computer that is running macOS. Which of the following commands should the technician use?",
+        "correct_answer": "B",
+        "option_a": "ipconfig",
+        "option_b": "ifconfig",
+        "option_c": "arpa",
+        "option_d": "ping",
+        "explanation": "The 'ifconfig' command configures network settings, including IP addresses, on macOS."
+      },
+      {
+        "question_number": 192,
+        "question": "A mobile phone user has downloaded a new payment application that allows payments to be made with a mobile device. The user attempts to use the device at a payment terminal but is unable to do so successfully. The user contacts a help desk technician to report the issue. Which of the following should the technician confirm NEXT as part of the troubleshooting process?",
+        "correct_answer": "C",
+        "option_a": "If airplane mode is enabled",
+        "option_b": "If Bluetooth is disabled",
+        "option_c": "If NFC is enabled",
+        "option_d": "If WiFi is enabled",
+        "option_e": "If location services are disabled",
+        "explanation": "Confirming NFC is enabled is critical for mobile payment functionality."
+      },
+      {
+        "question_number": 193,
+        "question": "Antivirus software indicates that a workstation is infected with ransomware that cannot be quarantined. Which of the following should be performed FIRST to prevent further damage to the host and other systems?",
+        "correct_answer": "A",
+        "option_a": "Power off the machine",
+        "option_b": "Run a full antivirus scan",
+        "option_c": "Remove the LAN card",
+        "option_d": "Install a different endpoint solution",
+        "explanation": "Powering off the machine isolates it, preventing ransomware from causing further damage."
+      }
+    ]
+  }
