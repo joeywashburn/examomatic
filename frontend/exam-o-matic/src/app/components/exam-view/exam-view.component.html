@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <h2 class="text-primary">{{ examName }}{{ examCode ? ' (' + examCode + ')' : '' }}</h2>
-    <span class="badge" [ngClass]="practiceMode ? 'bg-info' : 'bg-primary'">
-        {{ practiceMode ? 'Practice Mode' : 'Exam Mode' }}
+    <span class="badge" [ngClass]="isPracticeMode ? 'bg-info' : 'bg-primary'">
+        {{ isPracticeMode ? 'Practice Mode' : 'Exam Mode' }}
     </span>
 
     <div *ngIf="loading" class="text-center mt-4">
@@ -29,13 +29,13 @@
                                    [value]="option"
                                    [checked]="isMultipleChoice() ? selectedAnswers.includes(option) : currentAnswer === option"
                                    (change)="toggleAnswer(option)"
-                                   [disabled]="practiceMode && answerSubmitted">
+                                   [disabled]="isPracticeMode && answerSubmitted">
                             <label class="form-check-label" [ngClass]="{
-                                'text-success fw-bold': practiceMode && answerSubmitted && isAnswerCorrect(option),
-                                'text-danger': practiceMode && answerSubmitted && !isAnswerCorrect(option) && (selectedAnswers.includes(option) || currentAnswer === option)
+                                'text-success fw-bold': isPracticeMode && answerSubmitted && isAnswerCorrect(option),
+                                'text-danger': isPracticeMode && answerSubmitted && !isAnswerCorrect(option) && (selectedAnswers.includes(option) || currentAnswer === option)
                             }">
                                 {{ option }}) {{ currentOptions[option] || 'Option text missing' }}
-                                <span *ngIf="practiceMode && answerSubmitted && isAnswerCorrect(option)" class="text-success">✓</span>
+                                <span *ngIf="isPracticeMode && answerSubmitted && isAnswerCorrect(option)" class="text-success">✓</span>
                             </label>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                 </ng-template>
 
                 <div class="mt-3">
-                    <button *ngIf="practiceMode && !answerSubmitted"
+                    <button *ngIf="isPracticeMode && !answerSubmitted"
                             class="btn btn-info"
                             [disabled]="selectedAnswers.length === 0"
                             (click)="checkAnswer()">
@@ -53,14 +53,14 @@
                     </button>
 
                     <button class="btn btn-primary ms-2"
-                            *ngIf="!practiceMode || (practiceMode && answerSubmitted)"
+                            *ngIf="!isPracticeMode || (isPracticeMode && answerSubmitted)"
                             [disabled]="selectedAnswers.length === 0"
                             (click)="nextQuestion()">
                         {{ currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish' }}
                     </button>
                 </div>
 
-                <div *ngIf="practiceMode && answerSubmitted" class="mt-3">
+                <div *ngIf="isPracticeMode && answerSubmitted" class="mt-3">
                     <div class="alert" [ngClass]="{
                         'alert-success': isCurrentAnswerCorrect(),
                         'alert-danger': !isCurrentAnswerCorrect()

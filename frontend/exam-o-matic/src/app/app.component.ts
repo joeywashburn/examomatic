@@ -9,6 +9,7 @@ interface TestBank {
   name: string;
   exam_code: string;
   question_count: number;
+  last_score: number | null; // Ensure this is defined
 }
 
 @Component({
@@ -19,10 +20,10 @@ interface TestBank {
   imports: [CommonModule, HttpClientModule, ExamListComponent, ExamViewComponent],
 })
 export class AppComponent implements OnInit {
-  showTable = true;  
+  showTable = true;
   selectedExamId: number | null = null;
   isPracticeMode = false;
-  exams: {id: number, name: string, exam_code: string, notes: string}[] = [];
+  exams: { id: number; name: string; exam_code: string; notes: string; last_score: number | null }[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -31,15 +32,16 @@ export class AppComponent implements OnInit {
   }
 
   loadExams() {
-    this.http.get<{test_banks: TestBank[]}>('http://127.0.0.1:8000/test_banks').subscribe(
+    this.http.get<{ test_banks: TestBank[] }>('http://127.0.0.1:8000/test_banks').subscribe(
       (response) => {
         this.exams = response.test_banks.map(bank => ({
           id: bank.id,
           name: bank.name,
           exam_code: bank.exam_code || 'N/A',
-          notes: bank.name === 'Default Exam' 
-            ? 'This is a sample exam.' 
-            : `Contains ${bank.question_count} questions`
+          notes: bank.name === 'Default Exam'
+            ? 'This is a sample exam.'
+            : `Contains ${bank.question_count} questions`,
+          last_score: bank.last_score // Map the last_score from the backend
         }));
       },
       (error) => {
@@ -62,7 +64,7 @@ export class AppComponent implements OnInit {
 
   showExamTable() {
     this.loadExams();
-    this.selectedExamId = null;  
+    this.selectedExamId = null;
     this.showTable = true;
     this.isPracticeMode = false;
   }
@@ -74,7 +76,7 @@ export class AppComponent implements OnInit {
   }
 
   practiceExam(examId: number) {
-    this.selectedExamId = examId;  
+    this.selectedExamId = examId;
     this.showTable = false;
     this.isPracticeMode = true;
   }
@@ -83,9 +85,7 @@ export class AppComponent implements OnInit {
     if (confirm('Are you sure you want to delete this exam? This action cannot be undone.')) {
       this.http.delete(`http://127.0.0.1:8000/test_banks/${examId}`).subscribe(
         () => {
-          // Refresh the exam list after successful deletion
           this.loadExams();
-          // If the deleted exam was selected, clear the selection
           if (this.selectedExamId === examId) {
             this.selectedExamId = null;
           }

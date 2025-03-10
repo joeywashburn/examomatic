@@ -94,6 +94,8 @@ def validate_question_shuffle(original_options, shuffled_options, original_corre
 def get_test_banks():
     conn = sqlite3.connect("test_engine.db")
     cursor = conn.cursor()
+    
+    # Fetch test banks with their question count
     cursor.execute("""
         SELECT tb.id, tb.name, tb.exam_code, COUNT(q.id) as question_count 
         FROM test_banks tb 
@@ -101,7 +103,34 @@ def get_test_banks():
         GROUP BY tb.id, tb.name, tb.exam_code
     """)
     banks = cursor.fetchall()
-    result = [{"id": id, "name": name, "exam_code": exam_code, "question_count": count} for id, name, exam_code, count in banks]
+    
+    result = []
+    for id, name, exam_code, count in banks:
+        # Fetch the most recent exam result for this test bank
+        cursor.execute("""
+            SELECT score, total_questions 
+            FROM exam_results 
+            WHERE test_bank_id = ? 
+            ORDER BY timestamp DESC 
+            LIMIT 1
+        """, (id,))
+        last_result = cursor.fetchone()
+        
+        # Calculate the last score (percentage) if a result exists
+        last_score = None
+        if last_result:
+            score, total_questions = last_result
+            last_score = (score / total_questions * 100) if total_questions > 0 else 0
+        
+        # Add the test bank to the result with the last_score
+        result.append({
+            "id": id,
+            "name": name,
+            "exam_code": exam_code,
+            "question_count": count,
+            "last_score": last_score  # Add the last_score field (can be null if no results exist)
+        })
+    
     conn.close()
     return {"test_banks": result}
 
@@ -187,7 +216,9 @@ async def import_questions(file: UploadFile):
             exam_code = data.get('exam_code')
             questions = data.get('questions', [])
             if not exam_name or not exam_code or not questions:
-                raise HTTPException(status_code=400, detail="Invalid JSON format.")
+                raise HTTPException(status_code=400, detail="Invalid JSON format: 'exam_name', 'exam_code', or 'questions' missing.")
+
+            # Check if test bank exists, create it if not
             cursor.execute("SELECT id FROM test_banks WHERE name = ? OR exam_code = ?", (exam_name, exam_code))
             bank = cursor.fetchone()
             if not bank:
@@ -195,31 +226,54 @@ async def import_questions(file: UploadFile):
                 bank_id = cursor.lastrowid
             else:
                 bank_id = bank[0]
-            for q in questions:
-                correct_answer = q["correct_answer"]
-                if isinstance(correct_answer, list):
-                    correct_answer = ",".join(str(x) for x in correct_answer)
-                explanation = q.get("explanation")
-                if isinstance(explanation, list):
-                    explanation = " ".join(str(e) for e in explanation) if explanation else None
-                cursor.execute("""
-                    INSERT INTO questions (test_bank_id, question, correct_answer, explanation)
-                    VALUES (?, ?, ?, ?)
-                """, (bank_id, q["question"], correct_answer, explanation))
-                question_id = cursor.lastrowid
-                options = []
-                for letter in 'ABCDEFGHIJKLM':
-                    option_key = f"option_{letter.lower()}"
-                    if option_key in q and q[option_key] is not None:
-                        options.append((letter, q[option_key]))
-                for option_letter, option_text in options:
+
+            # Process each question with detailed error reporting
+            for index, q in enumerate(questions, start=1):  # Start counting at 1 for readability
+                try:
+                    # Validate correct_answer before insertion
+                    correct_answer = q.get("correct_answer")
+                    if correct_answer is None:
+                        raise ValueError(f"'correct_answer' is null or missing in question at position {index}")
+                    if isinstance(correct_answer, list):
+                        correct_answer = ",".join(str(x) for x in correct_answer)
+                    if not correct_answer:  # Check if it's an empty string after processing
+                        raise ValueError(f"'correct_answer' is empty in question at position {index}")
+
+                    explanation = q.get("explanation")
+                    if isinstance(explanation, list):
+                        explanation = " ".join(str(e) for e in explanation) if explanation else None
+
+                    # Insert question into the database
                     cursor.execute("""
-                        INSERT INTO question_options (question_id, option_letter, option_text)
-                        VALUES (?, ?, ?)
-                    """, (question_id, option_letter, option_text))
-        conn.commit()
-        conn.close()
-        return {"message": f"Successfully imported questions into {exam_name} ({exam_code})"}
+                        INSERT INTO questions (test_bank_id, question, correct_answer, explanation)
+                        VALUES (?, ?, ?, ?)
+                    """, (bank_id, q["question"], correct_answer, explanation))
+                    question_id = cursor.lastrowid
+
+                    # Insert options
+                    options = []
+                    for letter in 'ABCDEFGHIJKLM':
+                        option_key = f"option_{letter.lower()}"
+                        if option_key in q and q[option_key] is not None:
+                            options.append((letter, q[option_key]))
+                    for option_letter, option_text in options:
+                        cursor.execute("""
+                            INSERT INTO question_options (question_id, option_letter, option_text)
+                            VALUES (?, ?, ?)
+                        """, (question_id, option_letter, option_text))
+
+                except Exception as e:
+                    conn.rollback()  # Roll back any changes if an error occurs
+                    raise HTTPException(
+                        status_code=400,
+                        detail=f"Failed to process question at position {index}: {str(e)}. Problematic data: {json.dumps(q)}"
+                    )
+
+            conn.commit()
+            conn.close()
+            return {"message": f"Successfully imported questions into {exam_name} ({exam_code})"}
+        else:
+            raise HTTPException(status_code=400, detail="Unsupported file type. Please upload a JSON file.")
     except Exception as e:
         conn.close()
         raise HTTPException(status_code=400, detail=f"Failed to process file: {str(e)}")

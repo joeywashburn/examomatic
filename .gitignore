@@ -49,7 +49,7 @@ yarn-error.log*
 *.sqlite3
 
 # Exam files
-#exams/
+exams/
 
 # Logs
 logs/

@@ -24,16 +24,19 @@ def init_db(db_path):
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             test_bank_id INTEGER,
             question TEXT NOT NULL,
-            option_a TEXT NOT NULL,
-            option_b TEXT NOT NULL,
-            option_c TEXT,
-            option_d TEXT,
-            option_e TEXT,
-            option_f TEXT,
-            option_g TEXT,
             correct_answer TEXT NOT NULL,
             explanation TEXT,
             FOREIGN KEY (test_bank_id) REFERENCES test_banks(id)
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS question_options (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            question_id INTEGER,
+            option_letter TEXT NOT NULL,
+            option_text TEXT NOT NULL,
+            FOREIGN KEY (question_id) REFERENCES questions(id)
         )
     """)
 
@@ -72,33 +75,49 @@ def import_json(file_path, db_path):
 
     # Import questions
     for i, q in enumerate(questions, 1):
-        options = []
-        for letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G']:
-            option_key = f"option_{letter.lower()}"
-            options.append(q.get(option_key))  # None if missing
-
-        # Ensure exactly 7 options
-        while len(options) < 7:
-            options.append(None)
-
-        row = (
-            bank_id,
-            q["question"],
-            options[0], options[1], options[2], options[3], options[4], options[5], options[6],  # option_a to g
-            q["correct_answer"],
-            q.get("explanation")
-        )
-
-        logging.info(f"Importing question {i} (#{q['question_number']}): {row}")
         try:
+            # Validate and prepare correct_answer
+            correct_answer = q.get("correct_answer")
+            if correct_answer is None:
+                raise ValueError("'correct_answer' is null or missing")
+            if isinstance(correct_answer, list):
+                correct_answer = ",".join(str(x) for x in correct_answer)
+            if not correct_answer:
+                raise ValueError("'correct_answer' is empty")
+
+            explanation = q.get("explanation")
+            if isinstance(explanation, list):
+                explanation = " ".join(str(e) for e in explanation) if explanation else None
+
+            # Insert into questions table
             cursor.execute("""
-                INSERT INTO questions 
-                (test_bank_id, question, option_a, option_b, option_c, option_d, option_e, option_f, option_g, correct_answer, explanation)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, row)
-        except sqlite3.Error as e:
-            logging.error(f"Failed on question {i} (#{q['question_number']}): {e}")
-            logging.error(f"Problematic row: {row}")
+                INSERT INTO questions (test_bank_id, question, correct_answer, explanation)
+                VALUES (?, ?, ?, ?)
+            """, (bank_id, q["question"], correct_answer, explanation))
+            question_id = cursor.lastrowid
+
+            # Collect and insert options
+            options = []
+            for letter in 'ABCDEFGHIJ':
+                option_key = f"option_{letter.lower()}"
+                if option_key in q and q[option_key] is not None:
+                    options.append((letter, q[option_key]))
+
+            if not options:
+                raise ValueError("No valid options provided")
+
+            for option_letter, option_text in options:
+                cursor.execute("""
+                    INSERT INTO question_options (question_id, option_letter, option_text)
+                    VALUES (?, ?, ?)
+                """, (question_id, option_letter, option_text))
+
+            logging.info(f"Imported question {i} (#{q.get('question_number', 'N/A')}): {q['question']}")
+
+        except Exception as e:
+            logging.error(f"Failed on question {i} (#{q.get('question_number', 'N/A')}): {str(e)}")
+            logging.error(f"Problematic data: {json.dumps(q)}")
+            conn.rollback()
             conn.close()
             return
 

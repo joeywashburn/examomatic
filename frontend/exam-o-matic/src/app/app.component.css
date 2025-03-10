@@ -1,0 +1,20 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .last-score {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Ensure buttons are spaced correctly */
+  button {
+    margin-right: 5px;
+  }

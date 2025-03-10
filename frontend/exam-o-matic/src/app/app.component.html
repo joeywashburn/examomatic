@@ -1,40 +1,48 @@
 <div class="d-flex">
-  <app-exam-list (showExamList)="showExamTable()"></app-exam-list>  
+  <app-exam-list
+    [exams]="exams"
+    (selectExam)="selectExam($event)"
+    (practiceExam)="practiceExam($event)"
+    (deleteExam)="deleteExam($event)"
+    (showExamList)="showExamTable()"
+  ></app-exam-list>
 
-  <div class="container p-4">
-    <ng-container *ngIf="showTable">
-      <h2 class="text-primary">Available Exams</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Exam Code</th>
-            <th>Exam Name</th>
-            <th>Notes</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let exam of exams">
-            <td>{{ exam.exam_code }}</td>
-            <td>{{ exam.name }}</td>
-            <td>{{ exam.notes }}</td>
-            <td>
-              <button class="btn btn-success btn-sm me-2" (click)="selectExam(exam.id)">Start Exam</button>
-              <button class="btn btn-warning btn-sm me-2" (click)="practiceExam(exam.id)">Practice</button>
-              <button class="btn btn-danger btn-sm" (click)="deleteExam(exam.id)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </ng-container>
+  <div class="flex-grow-1 p-3" *ngIf="showTable">
+    <h2>AVAILABLE EXAMS</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>EXAM CODE</th>
+          <th>EXAM NAME</th>
+          <th>NOTES</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of exams">
+          <td>{{ exam.exam_code }}</td>
+          <td>{{ exam.name }}</td>
+          <td>{{ exam.notes }}</td>
+          <td>
+            <button class="btn btn-success btn-sm" (click)="selectExam(exam.id)">Start Exam</button>
+            <button class="btn btn-warning btn-sm" (click)="practiceExam(exam.id)">Practice</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteExam(exam.id)">Delete</button>
+            <span *ngIf="exam.last_score !== null" class="last-score ms-2">
+              Last Score: {{ exam.last_score | number: '1.1-1' }}%
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <app-exam-view 
-      *ngIf="selectedExamId" 
+  <div class="flex-grow-1 p-3" *ngIf="!showTable">
+    <app-exam-view
       [examId]="selectedExamId"
       [examName]="getSelectedExamName()"
       [examCode]="getSelectedExamCode()"
-      [practiceMode]="isPracticeMode"
-      [shuffleQuestions]="true">
-    </app-exam-view>
+      [isPracticeMode]="isPracticeMode"
+      (returnToTable)="showExamTable()"
+    ></app-exam-view>
   </div>
 </div>

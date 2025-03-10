@@ -32,10 +32,10 @@ interface ExamResult {
   imports: [CommonModule, FormsModule]
 })
 export class ExamViewComponent implements OnInit, AfterViewInit {
-  @Input() examId: number = 0;
+  @Input() examId: number | null = null; // Updated to allow null
   @Input() examName: string = '';
   @Input() examCode: string = '';
-  @Input() practiceMode: boolean = false;
+  @Input() isPracticeMode: boolean = false; // Renamed from practiceMode to match app.component.html
   @Input() shuffleQuestions: boolean = true;
 
   questions: Question[] = [];
@@ -65,6 +65,11 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
   loadQuestions() {
     this.loading = true;
     this.error = null;
+    if (!this.examId) {
+      this.error = 'No exam ID provided.';
+      this.loading = false;
+      return;
+    }
     this.http.get<any>(`http://127.0.0.1:8000/questions?test_bank_id=${this.examId}&shuffle=${this.shuffleQuestions}`)
       .subscribe(
         response => {
@@ -84,6 +89,10 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
   }
 
   loadExamHistory() {
+    if (!this.examId) {
+      console.warn('No exam ID for history load.');
+      return;
+    }
     this.http.get<any>(`http://127.0.0.1:8000/exam_history/${this.examId}`)
       .subscribe(
         response => {
@@ -174,6 +183,10 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
   }
 
   saveResult() {
+    if (!this.examId) {
+      console.error('Cannot save result: examId is null');
+      return;
+    }
     this.http.post('http://127.0.0.1:8000/exam_results', {
       test_bank_id: this.examId,
       score: this.score,
