@@ -8,8 +8,11 @@ interface Question {
   id: number;
   question: string;
   options: { [key: string]: string };
+  option_images: { [key: string]: string | null };
   correct_answer: string;
   explanation: string;
+  question_images: string[];
+  explanation_images: string[];
 }
 
 interface WrongAnswer {
@@ -24,6 +27,20 @@ interface ExamResult {
   percentage: number;
 }
 
+interface AnswerResponse {
+  correct: boolean;
+  correct_answer: string;
+  explanation: string;
+  explanation_images: string[];
+}
+
+interface ImagePart {
+  type: 'image';
+  src: string;
+}
+
+type TextPart = string | ImagePart;
+
 @Component({
   selector: 'app-exam-view',
   templateUrl: './exam-view.component.html',
@@ -32,10 +49,10 @@ interface ExamResult {
   imports: [CommonModule, FormsModule]
 })
 export class ExamViewComponent implements OnInit, AfterViewInit {
-  @Input() examId: number | null = null; // Updated to allow null
+  @Input() examId: number | null = null;
   @Input() examName: string = '';
   @Input() examCode: string = '';
-  @Input() isPracticeMode: boolean = false; // Renamed from practiceMode to match app.component.html
+  @Input() isPracticeMode: boolean = false;
   @Input() shuffleQuestions: boolean = true;
 
   questions: Question[] = [];
@@ -50,6 +67,8 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
   answerSubmitted: boolean = false;
   examHistory: ExamResult[] = [];
   private chart: Chart | undefined;
+  private readonly apiBaseUrl = 'http://127.0.0.1:8000';
+  answerResponse: AnswerResponse | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -70,7 +89,7 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
       this.loading = false;
       return;
     }
-    this.http.get<any>(`http://127.0.0.1:8000/questions?test_bank_id=${this.examId}&shuffle=${this.shuffleQuestions}`)
+    this.http.get<{ questions: Question[] }>(`${this.apiBaseUrl}/questions?test_bank_id=${this.examId}&shuffle=${this.shuffleQuestions}`)
       .subscribe(
         response => {
           console.log('API response:', response);
@@ -93,7 +112,7 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
       console.warn('No exam ID for history load.');
       return;
     }
-    this.http.get<any>(`http://127.0.0.1:8000/exam_history/${this.examId}`)
+    this.http.get<any>(`${this.apiBaseUrl}/exam_history/${this.examId}`)
       .subscribe(
         response => {
           this.examHistory = response.history || [];
@@ -121,7 +140,22 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
   }
 
   checkAnswer(): void {
-    this.answerSubmitted = true;
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    const answer = {
+      question_id: currentQuestion.id,
+      selected_answer: this.isMultipleChoice() ? this.selectedAnswers.join(',') : this.currentAnswer
+    };
+
+    this.http.post<AnswerResponse>(`${this.apiBaseUrl}/answer`, answer)
+      .subscribe({
+        next: (response) => {
+          this.answerResponse = response;
+          this.answerSubmitted = true;
+        },
+        error: (error) => {
+          console.error('Error checking answer:', error);
+        }
+      });
   }
 
   nextQuestion(): void {
@@ -146,6 +180,7 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
     this.selectedAnswers = [];
     this.currentAnswer = '';
     this.answerSubmitted = false;
+    this.answerResponse = null;
   
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
@@ -187,14 +222,14 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
       console.error('Cannot save result: examId is null');
       return;
     }
-    this.http.post('http://127.0.0.1:8000/exam_results', {
+    this.http.post(`${this.apiBaseUrl}/exam_results`, {
       test_bank_id: this.examId,
       score: this.score,
       total_questions: this.questions.length
     }).subscribe(
       () => {
         console.log('Result saved successfully');
-        this.loadExamHistory(); // Refresh history after saving
+        this.loadExamHistory();
       },
       error => console.error('Error saving result:', error)
     );
@@ -243,5 +278,80 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
         tension: 0.1
       }]
     };
+  }
+
+  // Type guard method to check if a TextPart is an ImagePart
+  isImagePart(part: TextPart): part is ImagePart {
+    return typeof part !== 'string' && 'type' in part && part.type === 'image';
+  }
+
+  parseTextWithImages(text: string, images: string[]): TextPart[] {
+    const parts: TextPart[] = [];
+    let remainingText = text;
+
+    const placeholderRegex = /\[image(\d+)\]/g;
+    let match;
+    let lastIndex = 0;
+
+    while ((match = placeholderRegex.exec(text)) !== null) {
+      const placeholder = match[0]; // e.g., [image1]
+      const imageIndex = parseInt(match[1], 10) - 1; // e.g., 0 for image1
+      const imageSrc = images[imageIndex];
+
+      if (match.index > lastIndex) {
+        parts.push(remainingText.substring(lastIndex, match.index));
+      }
+
+      if (imageSrc) {
+        parts.push({ type: 'image', src: imageSrc });
+      }
+
+      lastIndex = match.index + placeholder.length;
+    }
+
+    if (lastIndex < remainingText.length) {
+      parts.push(remainingText.substring(lastIndex));
+    }
+
+    return parts;
+  }
+
+  parseExplanationText(text: string, images: string[]): TextPart[] {
+    const parts: TextPart[] = [];
+    let remainingText = text;
+
+    const placeholderRegex = /\[explanation_image(\d+)\]/g;
+    let match;
+    let lastIndex = 0;
+
+    while ((match = placeholderRegex.exec(text)) !== null) {
+      const placeholder = match[0]; // e.g., [explanation_image1]
+      let imageIndex: number;
+      try {
+        imageIndex = parseInt(match[1], 10) - 1; // e.g., 0 for explanation_image1
+      } catch (e) {
+        console.error(`Invalid image index in placeholder ${placeholder}: ${e}`);
+        continue;
+      }
+      const imageSrc = images[imageIndex];
+
+      if (match.index > lastIndex) {
+        parts.push(remainingText.substring(lastIndex, match.index));
+      }
+
+      if (imageSrc) {
+        parts.push({ type: 'image', src: imageSrc });
+      } else {
+        console.warn(`No image found for placeholder ${placeholder} at index ${imageIndex}`);
+      }
+
+      lastIndex = match.index + placeholder.length;
+    }
+
+    if (lastIndex < remainingText.length) {
+      parts.push(remainingText.substring(lastIndex));
+    }
+
+    return parts;
   }
 }

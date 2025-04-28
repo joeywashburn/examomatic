@@ -18,7 +18,14 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h5>
-                <p class="card-text">{{ questions[currentQuestionIndex].question }}</p>
+                <div class="card-text">
+                    <ng-container *ngFor="let part of parseTextWithImages(questions[currentQuestionIndex].question, questions[currentQuestionIndex].question_images)">
+                        <span *ngIf="!isImagePart(part)">{{ part }}</span>
+                        <span *ngIf="isImagePart(part)" class="d-block">
+                            <img [src]="part.src" alt="Question Image" class="question-image" />
+                        </span>
+                    </ng-container>
+                </div>
 
                 <div class="list-group" *ngIf="questions[currentQuestionIndex].options as currentOptions; else noOptions">
                     <div *ngFor="let option of getAvailableOptions()" class="list-group-item">
@@ -36,6 +43,9 @@
                             }">
                                 {{ option }}) {{ currentOptions[option] || 'Option text missing' }}
                                 <span *ngIf="isPracticeMode && answerSubmitted && isAnswerCorrect(option)" class="text-success">✓</span>
+                                <div *ngIf="questions[currentQuestionIndex].option_images[option]" class="mt-2">
+                                    <img [src]="questions[currentQuestionIndex].option_images[option]" alt="Option Image" class="option-image" />
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -60,15 +70,20 @@
                     </button>
                 </div>
 
-                <div *ngIf="isPracticeMode && answerSubmitted" class="mt-3">
+                <div *ngIf="isPracticeMode && answerSubmitted && answerResponse" class="mt-3">
                     <div class="alert" [ngClass]="{
-                        'alert-success': isCurrentAnswerCorrect(),
-                        'alert-danger': !isCurrentAnswerCorrect()
+                        'alert-success': answerResponse.correct,
+                        'alert-danger': !answerResponse.correct
                     }">
-                        <strong>{{ isCurrentAnswerCorrect() ? 'Correct!' : 'Incorrect' }}</strong>
+                        <strong>{{ answerResponse.correct ? 'Correct!' : 'Incorrect' }}</strong>
                         <div class="mt-2">
                             <strong>Explanation:</strong><br>
-                            {{ questions[currentQuestionIndex].explanation || 'No explanation available' }}
+                            <ng-container *ngFor="let part of parseExplanationText(answerResponse.explanation, answerResponse.explanation_images)">
+                                <span *ngIf="!isImagePart(part)">{{ part }}</span>
+                                <span *ngIf="isImagePart(part)" class="d-block">
+                                    <img [src]="part.src" alt="Explanation Image" class="explanation-image" />
+                                </span>
+                            </ng-container>
                         </div>
                     </div>
                 </div>
