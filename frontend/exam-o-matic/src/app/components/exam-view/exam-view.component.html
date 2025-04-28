@@ -43,8 +43,8 @@
                             }">
                                 {{ option }}) {{ currentOptions[option] || 'Option text missing' }}
                                 <span *ngIf="isPracticeMode && answerSubmitted && isAnswerCorrect(option)" class="text-success">✓</span>
-                                <div *ngIf="questions[currentQuestionIndex].option_images[option]" class="mt-2">
-                                    <img [src]="questions[currentQuestionIndex].option_images[option]" alt="Option Image" class="option-image" />
+                                <div *ngIf="questions[currentQuestionIndex].option_images[option] && getOptionImageUrl(questions[currentQuestionIndex].option_images[option])" class="mt-2">
+                                    <img [src]="getOptionImageUrl(questions[currentQuestionIndex].option_images[option])!" alt="Option Image" class="option-image" />
                                 </div>
                             </label>
                         </div>

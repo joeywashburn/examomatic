@@ -303,7 +303,11 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
       }
 
       if (imageSrc) {
-        parts.push({ type: 'image', src: imageSrc });
+        // Prepend the backend base URL to the image path
+        const fullImageSrc = `${this.apiBaseUrl}${imageSrc}`;
+        parts.push({ type: 'image', src: fullImageSrc });
+      } else {
+        console.warn(`No image found for placeholder ${placeholder} at index ${imageIndex}`);
       }
 
       lastIndex = match.index + placeholder.length;
@@ -340,7 +344,9 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
       }
 
       if (imageSrc) {
-        parts.push({ type: 'image', src: imageSrc });
+        // Prepend the backend base URL to the image path
+        const fullImageSrc = `${this.apiBaseUrl}${imageSrc}`;
+        parts.push({ type: 'image', src: fullImageSrc });
       } else {
         console.warn(`No image found for placeholder ${placeholder} at index ${imageIndex}`);
       }
@@ -353,5 +359,11 @@ export class ExamViewComponent implements OnInit, AfterViewInit {
     }
 
     return parts;
+  }
+
+  // Helper method to get the full URL for option images
+  getOptionImageUrl(imagePath: string | null): string | null {
+    if (!imagePath) return null;
+    return `${this.apiBaseUrl}${imagePath}`;
   }
 }
