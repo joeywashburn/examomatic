@@ -1,13 +1,21 @@
 from fastapi import FastAPI, HTTPException, Query, UploadFile
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 import sqlite3
-import random
 import json
-import csv
+import random
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+import os
 
 app = FastAPI()
+
+# Create exams directory if it doesn't exist
+os.makedirs("exams", exist_ok=True)
+
+# Mount the exams directory to serve static files (images)
+app.mount("/exams", StaticFiles(directory="exams"), name="exams")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,8 +24,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Delete the existing database to reset with the new schema
+SQLITE_DB = "test_engine.db"
+if os.path.exists(SQLITE_DB):
+    os.remove(SQLITE_DB)
+
 def init_db():
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -32,19 +45,21 @@ def init_db():
         CREATE TABLE IF NOT EXISTS questions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             test_bank_id INTEGER,
-            question TEXT NOT NULL,
-            correct_answer TEXT NOT NULL,
+            question_text TEXT NOT NULL,
             explanation TEXT,
+            question_images TEXT,  -- Store as JSON string, e.g., '["image1.png", "image2.png"]'
+            explanation_images TEXT,  -- Fixed typo: was 'explanation crabs'
             FOREIGN KEY (test_bank_id) REFERENCES test_banks(id)
         )
     """)
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS question_options (
+        CREATE TABLE IF NOT EXISTS options (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             question_id INTEGER,
-            option_letter TEXT NOT NULL,
             option_text TEXT NOT NULL,
+            is_correct BOOLEAN NOT NULL DEFAULT FALSE,
+            image TEXT,  -- New field for option image
             FOREIGN KEY (question_id) REFERENCES questions(id)
         )
     """)
@@ -65,37 +80,31 @@ def init_db():
 
 init_db()
 
+class ExamResultRequest(BaseModel):
+    test_bank_id: int
+    score: int
+    total_questions: int
+    
 class Question(BaseModel):
-    question: str
-    option_a: str
-    option_b: str
-    option_c: Optional[str]
-    option_d: Optional[str]
-    option_e: Optional[str]
-    option_f: Optional[str]
-    option_g: Optional[str]
-    correct_answer: str
+    question_text: str
+    options: List[dict]
     explanation: Optional[str]
+    question_images: Optional[List[str]]
+    explanation_images: Optional[List[str]]
 
 class Answer(BaseModel):
     question_id: int
     selected_answer: str
 
-def validate_question_shuffle(original_options, shuffled_options, original_correct, new_correct):
-    original_correct_text = original_options[ord(original_correct) - ord('A')]
-    new_correct_text = shuffled_options[ord(new_correct) - ord('A')]
-    if original_correct_text != new_correct_text:
-        raise ValueError(f"Answer validation failed! Original correct answer '{original_correct_text}' does not match new correct answer '{new_correct_text}'")
-    if set(original_options) != set(shuffled_options):
-        raise ValueError("Answer validation failed! Not all options are present after shuffling")
-    return True
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Exam API. Visit /docs for API documentation."}
 
 @app.get("/test_banks")
 def get_test_banks():
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     
-    # Fetch test banks with their question count
     cursor.execute("""
         SELECT tb.id, tb.name, tb.exam_code, COUNT(q.id) as question_count 
         FROM test_banks tb 
@@ -106,29 +115,28 @@ def get_test_banks():
     
     result = []
     for id, name, exam_code, count in banks:
-        # Fetch the most recent exam result for this test bank
         cursor.execute("""
             SELECT score, total_questions 
             FROM exam_results 
             WHERE test_bank_id = ? 
             ORDER BY timestamp DESC 
-            LIMIT 1
+            LIMIT 3
         """, (id,))
-        last_result = cursor.fetchone()
+        last_results = cursor.fetchall()
         
-        # Calculate the last score (percentage) if a result exists
-        last_score = None
-        if last_result:
-            score, total_questions = last_result
-            last_score = (score / total_questions * 100) if total_questions > 0 else 0
+        last_three_scores = [
+            (score / total_questions * 100) if total_questions > 0 else 0
+            for score, total_questions in last_results
+        ]
+        while len(last_three_scores) < 3:
+            last_three_scores.append(None)
         
-        # Add the test bank to the result with the last_score
         result.append({
             "id": id,
             "name": name,
             "exam_code": exam_code,
             "question_count": count,
-            "last_score": last_score  # Add the last_score field (can be null if no results exist)
+            "last_three_scores": last_three_scores
         })
     
     conn.close()
@@ -136,7 +144,7 @@ def get_test_banks():
 
 @app.post("/test_banks")
 def add_test_bank(name: str, exam_code: str):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     try:
         cursor.execute("INSERT INTO test_banks (name, exam_code) VALUES (?, ?)", (name, exam_code))
@@ -149,64 +157,115 @@ def add_test_bank(name: str, exam_code: str):
 
 @app.get("/questions")
 def get_questions(test_bank_id: int, shuffle: bool = Query(False)):
-    conn = sqlite3.connect("test_engine.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT id FROM test_banks WHERE id = ?", (test_bank_id,))
-    if not cursor.fetchone():
+    try:
+        conn = sqlite3.connect(SQLITE_DB)
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT id, exam_code FROM test_banks WHERE id = ?", (test_bank_id,))
+        test_bank = cursor.fetchone()
+        if not test_bank:
+            conn.close()
+            raise HTTPException(status_code=404, detail="Test bank not found.")
+        exam_code = test_bank[1]
+        
+        cursor.execute("SELECT id, question_text, explanation, question_images, explanation_images FROM questions WHERE test_bank_id = ?", (test_bank_id,))
+        questions = cursor.fetchall()
+        
+        questions_list = []
+        for q_id, question_text, explanation, question_images, explanation_images in questions:
+            cursor.execute("SELECT id, option_text, is_correct, image FROM options WHERE question_id = ? ORDER BY id", (q_id,))
+            options = cursor.fetchall()
+            if not options:
+                continue
+            
+            fixed_letters = [chr(97 + i) for i in range(len(options))]
+            option_dict = {fixed_letters[i]: text for i, (opt_id, text, _, _) in enumerate(options)}
+            option_images = {fixed_letters[i]: image for i, (opt_id, _, _, image) in enumerate(options)}
+            is_correct_list = [bool(is_correct) for _, _, is_correct, _ in options]
+            
+            if shuffle:
+                indices = list(range(len(options)))
+                random.shuffle(indices)
+                shuffled_options = {fixed_letters[i]: options[indices[i]][1] for i in range(len(options))}
+                shuffled_option_images = {fixed_letters[i]: options[indices[i]][3] for i in range(len(options))}
+                shuffled_is_correct = [is_correct_list[indices[i]] for i in range(len(options))]
+            else:
+                shuffled_options = option_dict
+                shuffled_option_images = option_images
+                shuffled_is_correct = is_correct_list
+            
+            correct_answers = [fixed_letters[i] for i, is_correct in enumerate(shuffled_is_correct) if is_correct]
+            correct_answer = ",".join(correct_answers) if correct_answers else ""
+            
+            # Parse question_images and construct URLs
+            question_images_list = json.loads(question_images) if question_images else []
+            question_images_urls = [f"/exams/{exam_code}/images/{img}" if img else None for img in question_images_list]
+            
+            # Parse explanation_images and construct URLs
+            explanation_images_list = json.loads(explanation_images) if explanation_images else []
+            explanation_images_urls = [f"/exams/{exam_code}/images/{img}" if img else None for img in explanation_images_list]
+            
+            # Construct option image URLs
+            option_images_urls = {key: f"/exams/{exam_code}/images/{img}" if img else None for key, img in shuffled_option_images.items()}
+            
+            questions_list.append({
+                "id": q_id,
+                "question": question_text,
+                "options": shuffled_options,
+                "option_images": option_images_urls,
+                "correct_answer": correct_answer,
+                "explanation": explanation or "",
+                "question_images": question_images_urls,
+                "explanation_images": explanation_images_urls
+            })
+        
         conn.close()
-        raise HTTPException(status_code=404, detail="Test bank not found.")
-    cursor.execute("SELECT id, question, correct_answer, explanation FROM questions WHERE test_bank_id = ?", (test_bank_id,))
-    questions = cursor.fetchall()
-    print("Fetched questions:", questions)
-    questions_list = []
-    for q_id, question, correct_answer, explanation in questions:
-        cursor.execute("SELECT option_letter, option_text FROM question_options WHERE question_id = ? ORDER BY option_letter", (q_id,))
-        options = {row[0]: row[1] for row in cursor.fetchall()}
-        print(f"Options for question {q_id}: {options}")
-        questions_list.append({
-            "id": q_id,
-            "question": question,
-            "options": options,
-            "correct_answer": correct_answer,
-            "explanation": explanation
-        })
-    if shuffle:
-        random.shuffle(questions_list)
-        for q in questions_list:
-            opts = list(q["options"].items())
-            random.shuffle(opts)
-            q["options"] = dict(opts)
-            if ',' in q["correct_answer"]:
-                old_answers = q["correct_answer"].split(',')
-                new_answers = []
-                for old_ans in old_answers:
-                    for new_letter, text in opts:
-                        if text == q["options"][old_ans]:
-                            new_answers.append(new_letter)
-                            break
-                q["correct_answer"] = ",".join(sorted(new_answers))
-    print("Returning questions_list:", questions_list)
-    conn.close()
-    return {"questions": questions_list}
+        return {"questions": questions_list}
+    except sqlite3.Error as e:
+        conn.close()
+        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
+    except Exception as e:
+        conn.close()
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
 @app.post("/answer")
 def check_answer(answer: Answer):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
-    cursor.execute("SELECT correct_answer, explanation FROM questions WHERE id = ?", (answer.question_id,))
-    correct = cursor.fetchone()
-    if not correct:
+    cursor.execute("SELECT id, test_bank_id, explanation, explanation_images FROM questions WHERE id = ?", (answer.question_id,))
+    question = cursor.fetchone()
+    if not question:
         conn.close()
         raise HTTPException(status_code=404, detail="Question not found.")
-    correct_answers = set(correct[0].split(','))
-    selected = answer.selected_answer.upper()
+    
+    question_id, test_bank_id, explanation, explanation_images = question
+    
+    cursor.execute("SELECT id, is_correct FROM options WHERE question_id = ? ORDER BY id", (answer.question_id,))
+    options = cursor.fetchall()
+    fixed_letters = [chr(97 + i) for i in range(len(options))]
+    correct_indices = [fixed_letters[i] for i, (opt_id, is_correct) in enumerate(options) if is_correct]
+    correct_answer = ",".join(correct_indices) if correct_indices else ""
+    
+    cursor.execute("SELECT exam_code FROM test_banks WHERE id = ?", (test_bank_id,))
+    exam_code = cursor.fetchone()[0]
+    explanation_images_list = json.loads(explanation_images) if explanation_images else []
+    explanation_images_urls = [f"/exams/{exam_code}/images/{img}" if img else None for img in explanation_images_list]
+    
+    correct_answers = set(correct_answer.split(','))
+    selected = answer.selected_answer.lower()
     is_correct = selected in correct_answers
+    
     conn.close()
-    return {"correct": is_correct, "correct_answer": correct[0], "explanation": correct[1]}
+    return {
+        "correct": is_correct,
+        "correct_answer": correct_answer,
+        "explanation": explanation or "",
+        "explanation_images": explanation_images_urls
+    }
 
 @app.post("/import")
 async def import_questions(file: UploadFile):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     try:
         content = await file.read()
@@ -218,7 +277,6 @@ async def import_questions(file: UploadFile):
             if not exam_name or not exam_code or not questions:
                 raise HTTPException(status_code=400, detail="Invalid JSON format: 'exam_name', 'exam_code', or 'questions' missing.")
 
-            # Check if test bank exists, create it if not
             cursor.execute("SELECT id FROM test_banks WHERE name = ? OR exam_code = ?", (exam_name, exam_code))
             bank = cursor.fetchone()
             if not bank:
@@ -227,43 +285,41 @@ async def import_questions(file: UploadFile):
             else:
                 bank_id = bank[0]
 
-            # Process each question with detailed error reporting
-            for index, q in enumerate(questions, start=1):  # Start counting at 1 for readability
+            exam_image_dir = f"exams/{exam_code}/images"
+            os.makedirs(exam_image_dir, exist_ok=True)
+
+            for index, q in enumerate(questions, start=1):
                 try:
-                    # Validate correct_answer before insertion
-                    correct_answer = q.get("correct_answer")
-                    if correct_answer is None:
-                        raise ValueError(f"'correct_answer' is null or missing in question at position {index}")
-                    if isinstance(correct_answer, list):
-                        correct_answer = ",".join(str(x) for x in correct_answer)
-                    if not correct_answer:  # Check if it's an empty string after processing
-                        raise ValueError(f"'correct_answer' is empty in question at position {index}")
-
+                    question_text = q.get("question")
                     explanation = q.get("explanation")
-                    if isinstance(explanation, list):
-                        explanation = " ".join(str(e) for e in explanation) if explanation else None
+                    question_images = q.get("question_images")
+                    explanation_images = q.get("explanation_images")
+                    if not question_text:
+                        raise ValueError(f"'question' is empty or missing in question at position {index}")
 
-                    # Insert question into the database
+                    # Convert lists to JSON strings for storage
+                    question_images_json = json.dumps(question_images) if question_images else None
+                    explanation_images_json = json.dumps(explanation_images) if explanation_images else None
+
                     cursor.execute("""
-                        INSERT INTO questions (test_bank_id, question, correct_answer, explanation)
-                        VALUES (?, ?, ?, ?)
-                    """, (bank_id, q["question"], correct_answer, explanation))
+                        INSERT INTO questions (test_bank_id, question_text, explanation, question_images, explanation_images)
+                        VALUES (?, ?, ?, ?, ?)
+                    """, (bank_id, question_text, explanation, question_images_json, explanation_images_json))
                     question_id = cursor.lastrowid
 
-                    # Insert options
-                    options = []
-                    for letter in 'ABCDEFGHIJKLM':
-                        option_key = f"option_{letter.lower()}"
-                        if option_key in q and q[option_key] is not None:
-                            options.append((letter, q[option_key]))
-                    for option_letter, option_text in options:
-                        cursor.execute("""
-                            INSERT INTO question_options (question_id, option_letter, option_text)
-                            VALUES (?, ?, ?)
-                        """, (question_id, option_letter, option_text))
+                    options = q.get("options", [])
+                    for opt in options:
+                        option_text = opt.get("text")
+                        is_correct = bool(opt.get("is_correct", False))
+                        option_image = opt.get("image")
+                        if option_text:
+                            cursor.execute("""
+                                INSERT INTO options (question_id, option_text, is_correct, image)
+                                VALUES (?, ?, ?, ?)
+                            """, (question_id, option_text, is_correct, option_image))
 
                 except Exception as e:
-                    conn.rollback()  # Roll back any changes if an error occurs
+                    conn.rollback()
                     raise HTTPException(
                         status_code=400,
                         detail=f"Failed to process question at position {index}: {str(e)}. Problematic data: {json.dumps(q)}"
@@ -280,7 +336,7 @@ async def import_questions(file: UploadFile):
 
 @app.delete("/test_banks/{test_bank_id}")
 def delete_test_bank(test_bank_id: int):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     try:
         cursor.execute("DELETE FROM questions WHERE test_bank_id = ?", (test_bank_id,))
@@ -296,31 +352,54 @@ def delete_test_bank(test_bank_id: int):
         conn.close()
 
 @app.post("/exam_results")
-def save_exam_result(test_bank_id: int, score: int, total_questions: int):
-    conn = sqlite3.connect("test_engine.db")
+def save_exam_result(request: ExamResultRequest):
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     try:
         cursor.execute(
             "INSERT INTO exam_results (test_bank_id, score, total_questions) VALUES (?, ?, ?)",
-            (test_bank_id, score, total_questions)
+            (request.test_bank_id, request.score, request.total_questions)
         )
+
+        cursor.execute(
+            "SELECT COUNT(*) FROM exam_results WHERE test_bank_id = ?",
+            (request.test_bank_id,)
+        )
+        result_count = cursor.fetchone()[0]
+
+        if result_count > 3:
+            to_delete = result_count - 3
+            cursor.execute(
+                """
+                DELETE FROM exam_results
+                WHERE id IN (
+                    SELECT id FROM exam_results
+                    WHERE test_bank_id = ?
+                    ORDER BY timestamp ASC
+                    LIMIT ?
+                )
+                """,
+                (request.test_bank_id, to_delete)
+            )
+
         conn.commit()
         result_id = cursor.lastrowid
         conn.close()
         return {"id": result_id, "message": "Result saved successfully"}
     except sqlite3.Error as e:
+        conn.rollback()
         conn.close()
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/exam_results/{test_bank_id}")
 def get_exam_results(test_bank_id: int):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     cursor.execute("""
         SELECT score, total_questions, timestamp 
         FROM exam_results 
         WHERE test_bank_id = ? 
-        ORDER BY timestamp DESC
+        ORDER BY timestamp DESC 
         LIMIT 10
     """, (test_bank_id,))
     results = cursor.fetchall()
@@ -330,7 +409,7 @@ def get_exam_results(test_bank_id: int):
             {
                 "score": r[0],
                 "total_questions": r[1],
-                "timestamp": r[2].isoformat(),
+                "timestamp": str(r[2]),
                 "percentage": (r[0] / r[1] * 100) if r[1] > 0 else 0
             }
             for r in results
@@ -339,7 +418,7 @@ def get_exam_results(test_bank_id: int):
 
 @app.get("/exam_history/{test_bank_id}")
 def get_exam_history(test_bank_id: int):
-    conn = sqlite3.connect("test_engine.db")
+    conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
     cursor.execute("""
         SELECT score, total_questions, timestamp 
@@ -354,7 +433,7 @@ def get_exam_history(test_bank_id: int):
             {
                 "score": r[0],
                 "total_questions": r[1],
-                "timestamp": r[2].isoformat(),
+                "timestamp": str(r[2]),
                 "percentage": (r[0] / r[1] * 100) if r[1] > 0 else 0
             }
             for r in results

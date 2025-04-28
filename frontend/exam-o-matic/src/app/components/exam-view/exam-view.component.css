@@ -1,0 +1,17 @@
+.question-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .option-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .explanation-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }

@@ -1,3 +1,4 @@
+<!-- src/app/app.component.html -->
 <div class="d-flex">
   <app-exam-list
     [exams]="exams"
@@ -27,8 +28,8 @@
             <button class="btn btn-success btn-sm" (click)="selectExam(exam.id)">Start Exam</button>
             <button class="btn btn-warning btn-sm" (click)="practiceExam(exam.id)">Practice</button>
             <button class="btn btn-danger btn-sm" (click)="deleteExam(exam.id)">Delete</button>
-            <span *ngIf="exam.last_score !== null" class="last-score ms-2">
-              Last Score: {{ exam.last_score | number: '1.1-1' }}%
+            <span class="last-score ms-2">
+              Last Score: {{ exam.last_score !== null ? (exam.last_score | number:'1.1-1') + '%' : '*' }}%
             </span>
           </td>
         </tr>

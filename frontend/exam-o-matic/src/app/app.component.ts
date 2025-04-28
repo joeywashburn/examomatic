@@ -1,3 +1,4 @@
+// src/app/app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -9,7 +10,7 @@ interface TestBank {
   name: string;
   exam_code: string;
   question_count: number;
-  last_score: number | null; // Ensure this is defined
+  last_three_scores: (number | null)[];
 }
 
 @Component({
@@ -41,7 +42,7 @@ export class AppComponent implements OnInit {
           notes: bank.name === 'Default Exam'
             ? 'This is a sample exam.'
             : `Contains ${bank.question_count} questions`,
-          last_score: bank.last_score // Map the last_score from the backend
+          last_score: bank.last_three_scores[0] // Map the first score from last_three_scores
         }));
       },
       (error) => {
