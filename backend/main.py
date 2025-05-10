@@ -24,15 +24,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Delete the existing database to reset with the new schema
+# Remove the database deletion logic
 SQLITE_DB = "test_engine.db"
-if os.path.exists(SQLITE_DB):
-    os.remove(SQLITE_DB)
 
 def init_db():
     conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
 
+    # Create tables if they don't exist (safe for existing databases)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS test_banks (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,8 +46,8 @@ def init_db():
             test_bank_id INTEGER,
             question_text TEXT NOT NULL,
             explanation TEXT,
-            question_images TEXT,  -- Store as JSON string, e.g., '["image1.png", "image2.png"]'
-            explanation_images TEXT,  -- Fixed typo: was 'explanation crabs'
+            question_images TEXT,
+            explanation_images TEXT,
             FOREIGN KEY (test_bank_id) REFERENCES test_banks(id)
         )
     """)
@@ -59,7 +58,7 @@ def init_db():
             question_id INTEGER,
             option_text TEXT NOT NULL,
             is_correct BOOLEAN NOT NULL DEFAULT FALSE,
-            image TEXT,  -- New field for option image
+            image TEXT,
             FOREIGN KEY (question_id) REFERENCES questions(id)
         )
     """)
@@ -78,6 +77,7 @@ def init_db():
     conn.commit()
     conn.close()
 
+# Call init_db without deleting the database
 init_db()
 
 class ExamResultRequest(BaseModel):
@@ -183,8 +183,16 @@ def get_questions(test_bank_id: int, shuffle: bool = Query(False)):
             option_images = {fixed_letters[i]: image for i, (opt_id, _, _, image) in enumerate(options)}
             is_correct_list = [bool(is_correct) for _, _, is_correct, _ in options]
             
-            if shuffle:
+            # Check if this is a true/false question
+            is_true_false = (
+                len(options) == 2 and
+                {opt[1].lower() for opt in options} == {"true", "false"}
+            )
+            
+            # Shuffle options if requested, unless it's a true/false question
+            if shuffle and not is_true_false:
                 indices = list(range(len(options)))
+                random.seed(str(q_id))  # Use question_id as seed for consistent shuffling
                 random.shuffle(indices)
                 shuffled_options = {fixed_letters[i]: options[indices[i]][1] for i in range(len(options))}
                 shuffled_option_images = {fixed_letters[i]: options[indices[i]][3] for i in range(len(options))}
@@ -227,41 +235,96 @@ def get_questions(test_bank_id: int, shuffle: bool = Query(False)):
     except Exception as e:
         conn.close()
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
-
+    
 @app.post("/answer")
 def check_answer(answer: Answer):
     conn = sqlite3.connect(SQLITE_DB)
     cursor = conn.cursor()
-    cursor.execute("SELECT id, test_bank_id, explanation, explanation_images FROM questions WHERE id = ?", (answer.question_id,))
+    
+    # Fetch question details
+    cursor.execute("SELECT id, test_bank_id, question_text, explanation, explanation_images FROM questions WHERE id = ?", (answer.question_id,))
     question = cursor.fetchone()
     if not question:
         conn.close()
         raise HTTPException(status_code=404, detail="Question not found.")
     
-    question_id, test_bank_id, explanation, explanation_images = question
+    question_id, test_bank_id, question_text, explanation, explanation_images = question
+    print(f"Question {question_id}: {question_text}")
     
-    cursor.execute("SELECT id, is_correct FROM options WHERE question_id = ? ORDER BY id", (answer.question_id,))
+    # Fetch options
+    cursor.execute("SELECT id, option_text, is_correct FROM options WHERE question_id = ? ORDER BY id", (question_id,))
     options = cursor.fetchall()
-    fixed_letters = [chr(97 + i) for i in range(len(options))]
-    correct_indices = [fixed_letters[i] for i, (opt_id, is_correct) in enumerate(options) if is_correct]
-    correct_answer = ",".join(correct_indices) if correct_indices else ""
+    if not options:
+        conn.close()
+        raise HTTPException(status_code=404, detail="No options found for question.")
     
+    # Map options to letters (a, b, c, ...)
+    fixed_letters = [chr(97 + i) for i in range(len(options))]
+    option_details = [(opt[1], opt[2], fixed_letters[i], opt[0]) for i, opt in enumerate(options)]
+    print(f"Original options (text, is_correct, letter, option_id): {option_details}")
+    
+    # Check if this is a true/false question (to skip shuffling)
+    is_true_false = (
+        len(options) == 2 and
+        {opt[1].lower() for opt in options} == {"true", "false"}
+    )
+    
+    # Apply the same shuffling logic as /questions
+    is_correct_list = [bool(opt[2]) for opt in options]
+    if not is_true_false:  # Shuffle for multiple-choice questions
+        indices = list(range(len(options)))
+        random.seed(str(question_id))  # Use question_id as seed for consistent shuffling
+        random.shuffle(indices)
+        shuffled_options = [(options[indices[i]][1], is_correct_list[indices[i]], fixed_letters[i], options[indices[i]][0]) for i in range(len(options))]
+    else:
+        shuffled_options = option_details
+    
+    print(f"Shuffled options (text, is_correct, letter, option_id): {shuffled_options}")
+    
+    # Get correct answer letters based on shuffled order
+    correct_indices = [fixed_letters[i] for i in range(len(shuffled_options)) if shuffled_options[i][1]]
+    correct_answer = ",".join(correct_indices) if correct_indices else ""
+    print(f"Correct answer letters (shuffled): {correct_answer}")
+    
+    # Fetch exam code for image URLs
     cursor.execute("SELECT exam_code FROM test_banks WHERE id = ?", (test_bank_id,))
-    exam_code = cursor.fetchone()[0]
+    exam_code_result = cursor.fetchone()
+    if not exam_code_result:
+        conn.close()
+        raise HTTPException(status_code=404, detail="Test bank not found.")
+    exam_code = exam_code_result[0]
+    
+    # Parse explanation images
     explanation_images_list = json.loads(explanation_images) if explanation_images else []
     explanation_images_urls = [f"/exams/{exam_code}/images/{img}" if img else None for img in explanation_images_list]
     
-    correct_answers = set(correct_answer.split(','))
-    selected = answer.selected_answer.lower()
-    is_correct = selected in correct_answers
+    # Handle selected answer
+    selected = answer.selected_answer.strip() if answer.selected_answer else ""
+    print(f"Received selected_answer: '{selected}'")
     
-    conn.close()
-    return {
+    # Convert selected answer to lowercase set
+    selected_letters = set(selected.lower().split(",")) if selected else set()
+    correct_answers = set(correct_answer.split(",")) if correct_answer else set()
+    
+    # Remove empty strings
+    selected_letters.discard("")
+    print(f"Processed selected letters: {selected_letters}")
+    print(f"Correct answers: {correct_answers}")
+    
+    # Check if selected letters match correct answers exactly
+    is_correct = selected_letters == correct_answers and selected_letters != set()
+    print(f"Is correct: {is_correct}")
+    
+    response = {
         "correct": is_correct,
         "correct_answer": correct_answer,
         "explanation": explanation or "",
         "explanation_images": explanation_images_urls
     }
+    print(f"Response: {response}")
+    
+    conn.close()
+    return response
 
 @app.post("/import")
 async def import_questions(file: UploadFile):
