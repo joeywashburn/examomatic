@@ -1,33 +1,30 @@
 {
-  "exam_code": "CLF-C02",
-  "exam_name": "AWS Certified Cloud Practitioner",
+  "exam_name": "Mixed Questions Test",
+  "exam_code": "MIX-101",
   "questions": [
     {
-      "question": "What is the capital of France?",
-      "option_a": "Berlin",
-      "option_b": "Madrid",
-      "option_c": "Paris",
-      "option_d": "Rome",
-      "correct_answer": "C",
-      "explanation": "Paris is the capital and largest city of France. It has been the capital since 508 CE and is a major European city and global center for art, fashion, gastronomy, and culture. The city is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral."
+      "question": "This question has images. Starting image: [image1] Modified to: [image2] Choose the next step.",
+      "question_images": ["image1.png", "image2.png"],
+      "options": [
+        {"text": "Option A", "is_correct": false, "image": "choice_image1.png"},
+        {"text": "Option B", "is_correct": true, "image": "choice_image2.png"},
+        {"text": "Option C", "is_correct": false, "image": "choice_image3.png"},
+        {"text": "Option D", "is_correct": false, "image": "choice_image4.png"}
+      ],
+      "explanation": "Explanation with images: [explanation_image1] More details: [explanation_image2]",
+      "explanation_images": ["explanation_image1.png", "explanation_image2.png"]
     },
     {
-      "question": "Which planet is known as the Red Planet?",
-      "option_a": "Earth",
-      "option_b": "Mars",
-      "option_c": "Jupiter",
-      "option_d": "Venus",
-      "correct_answer": "B",
-      "explanation": "Mars is called the Red Planet because of the reddish color of its surface, which is due to the high concentration of iron oxide (rust) in its soil and atmosphere. It is the fourth planet from the Sun in our solar system and has been a major target for space exploration due to its potential for harboring past or present microbial life."
-    },
-    {
-      "question": "Who wrote 'To Kill a Mockingbird'?",
-      "option_a": "Harper Lee",
-      "option_b": "J.K. Rowling",
-      "option_c": "Mark Twain",
-      "option_d": "Ernest Hemingway",
-      "correct_answer": "A",
-      "explanation": "Harper Lee wrote 'To Kill a Mockingbird', which was published in 1960. The novel won the Pulitzer Prize and has become a classic of modern American literature. The story addresses issues of racial inequality and injustice in the American South through the eyes of young Scout Finch and her father, lawyer Atticus Finch."
+      "question": "This question has no images. What is the capital of France?",
+      "question_images": [],
+      "options": [
+        {"text": "Spain", "is_correct": false},
+        {"text": "Germany", "is_correct": false},
+        {"text": "France", "is_correct": true},
+        {"text": "Italy", "is_correct": false}
+      ],
+      "explanation": "The capital of France is Paris.",
+      "explanation_images": []
     }
   ]
 }
