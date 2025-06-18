@@ -10,24 +10,22 @@ Support for questions and options with images
 
 ## Prerequisites
 
-Python 3.8 or higher
-Node.js 18.x or higher
-npm (comes with Node.js)
+- Python 3.8 or higher
+- Node.js 18.x or higher
+- npm (comes with Node.js)
 
 ## Installation
 
 ### Clone the repository:
 
-```
+```bash
 git clone <repository-url>
 cd examomatic
 ```
-
-
-## Set up Python environment:
+### Set up Python environment:
 
 ### Create and activate a virtual environment
-```
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
@@ -35,39 +33,41 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 pip install -r requirements.txt
 ```
+### Set up Frontend:
 
-## Set up Frontend:
+### Install frontend dependencies
 
-## Install frontend dependencies
-```
+```bash
 cd frontend/exam-o-matic
 npm install
 cd ../..
 ```
-## Running the Application
 
-Start both services with one command:
+### Running the Application
 
-```
+- Start both services with one command:
+
+```bash
 chmod +x run.sh  # Make the script executable (only needed once)
 ./run.sh
 ```
-The script will start both the backend and frontend servers. If the default ports (4200 for frontend, 8000 for backend) are in use, the script will automatically find and use the next available ports. The actual URLs will be displayed when the services start.
+The script will start both the backend and frontend servers. If the default ports (4200 for frontend, 8000 for backend) are in use, the script will automatically find and use the next available ports.
+The actual URLs will be displayed when the services start.
 The script handles:
 
-Automatic port selection if default ports are in use
-Starting both services in the correct order
-Graceful shutdown of both services when you press Ctrl+C
+- Automatic port selection if default ports are in use
+- Starting both services in the correct order
+- Graceful shutdown of both services when you press Ctrl+C
 
 Press Ctrl+C to stop both services.
-### Screenshots
-### Practice Mode
-### Exam Mode
 
-## File Formats
-JSON Format
-Questions can be imported using JSON files. Here's the required format:
-```
+## File Format
+
+- JSON Format
+
+Questions can be imported using JSON files.
+Here's the required format:
+```json
 {
   "exam_name": "Mixed Questions Test",
   "exam_code": "MIX-101",
@@ -101,24 +101,25 @@ Questions can be imported using JSON files. Here's the required format:
 ```
 ### Required fields:
 
-exam_name: The display name of the exam
-exam_code: A unique identifier for the exam (e.g., "MIX-101", "CLF-C02")
-questions: An array of question objects, each containing:
-question: The question text
-question_images: Array of image filenames referenced in the question text (empty if none)
-options: Array of option objects, each with:
-text: Option text
-is_correct: Boolean indicating if the option is correct
-image: Optional image filename for the option (omit if none)
+- exam_name: The display name of the exam
+- exam_code: A unique identifier for the exam (e.g., "MIX-101", "CLF-C02")
+- questions: An array of question objects, each containing:
+- question: The question text
+- question_images: Array of image filenames referenced in the question text (empty if none)
+- options: Array of option objects, each with:
+- text: Option text
+- is_correct: Boolean indicating if the option is correct
+- image: Optional image filename for the option (omit if none)
 
 
-explanation: Explanation of the correct answer
-explanation_images: Array of image filenames referenced in the explanation (empty if none)
+- explanation: Explanation of the correct answer
+- explanation_images: Array of image filenames referenced in the explanation (empty if none)
 
 
 
-Multiple Answer Questions
+#### Multiple Answer Questions
 For questions with multiple correct answers, set is_correct to true for each correct option:
+```json
 {
   "exam_name": "AWS Certified Cloud Practitioner",
   "exam_code": "CLF-C02",
@@ -137,41 +138,17 @@ For questions with multiple correct answers, set is_correct to true for each cor
     }
   ]
 }
+```
+- Notes about multiple-answer questions:
 
-Notes about multiple-answer questions:
+-  Multiple options can have "is_correct": true
+- In the UI, these questions will show checkboxes instead of radio buttons
+- All correct options must be selected to get the question right
 
-Multiple options can have "is_correct": true
-In the UI, these questions will show checkboxes instead of radio buttons
-All correct options must be selected to get the question right
+### Project Structure
 
-Sample Files
-You can find example files in the data directory:
 
-data/sample_questions.json: Example JSON format
-
-Importing Questions
-You can import questions using JSON format:
-{
-  "exam_name": "Sample Exam",
-  "exam_code": "EXAM-001",
-  "questions": [
-    {
-      "question": "What is...",
-      "question_images": [],
-      "options": [
-        {"text": "First option", "is_correct": true},
-        {"text": "Second option", "is_correct": false},
-        {"text": "Third option", "is_correct": false},
-        {"text": "Fourth option", "is_correct": false}
-      ],
-      "explanation": "Explanation of the correct answer.",
-      "explanation_images": []
-    }
-  ]
-}
-
-Sample files are provided in the data directory.
-Project Structure
+```text
 examomatic/
 ├── backend/           # FastAPI backend
 │   └── main.py       # Main backend code
@@ -179,33 +156,41 @@ examomatic/
 ├── frontend/         # Angular frontend
 ├── requirements.txt  # Python dependencies
 └── run.sh           # Script to run both services
+```
 
-Contributing
+## Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.
-Creating Exam Files with AI
+
+## Creating Exam Files with AI
 You can leverage AI tools like Claude to help create high-quality exam questions. Here's an effective process:
 
-Gather Official Exam Objectives
+### Gather Official Exam Objectives
 
 Download the official exam objectives from the vendor's website
+
 These objectives typically include domain weightings (e.g., Domain 1: 20%, Domain 2: 30%, etc.)
 
 
-Generate Questions Using AI
+### Generate Questions Using AI
 
 Share the exam objectives with an AI assistant (like Claude)
+
 Ask it to analyze the objectives and domain weightings
+
 Request multiple-choice questions that align with the objectives and maintain the proper domain distribution
+
 For example: "Please create 65 multiple-choice questions based on these exam objectives, maintaining the specified domain weightings"
 
-
-Format the Questions
+### Format the Questions
 
 Ask the AI to format the questions in ExamOMatic's JSON format
-Use our sample questions as a template to ensure proper formatting
-The JSON structure should follow this format:
-```
 
+Use our sample questions as a template to ensure proper formatting
+
+The JSON structure should follow this format:
+
+```json
 {
   "exam_name": "Your Exam Name",
   "exam_code": "EXAM-001",
@@ -226,14 +211,15 @@ The JSON structure should follow this format:
 }
 ```
 
-Review and Import
+### Review and Import
 
 Review the generated questions for accuracy and quality
+
 Save the JSON content to a file
+
 Import the file using ExamOMatic's import feature
 
 
-
 This process helps create comprehensive practice exams that accurately reflect the real exam's content distribution and objectives.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+
