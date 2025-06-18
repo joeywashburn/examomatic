@@ -1,51 +1,57 @@
- ExamOMatic
+# ExamOMatic
 A simple exam practice application that allows you to import and practice exam questions.
-Features
 
+## Features
 Import questions from JSON files
 Multiple exam support
 Practice mode with immediate feedback
 Support for multiple choice questions
 Support for questions and options with images
 
-Prerequisites
+## Prerequisites
 
 Python 3.8 or higher
 Node.js 18.x or higher
 npm (comes with Node.js)
 
-Installation
+## Installation
 
-Clone the repository:
+### Clone the repository:
 
+```
 git clone <repository-url>
 cd examomatic
+```
 
 
-Set up Python environment:
+## Set up Python environment:
 
-# Create and activate a virtual environment
+### Create and activate a virtual environment
+```
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
-
-# Install Python dependencies
+```
+### Install Python dependencies
+```
 pip install -r requirements.txt
+```
 
+## Set up Frontend:
 
-Set up Frontend:
-
-# Install frontend dependencies
+## Install frontend dependencies
+```
 cd frontend/exam-o-matic
 npm install
 cd ../..
-
-Running the Application
+```
+## Running the Application
 
 Start both services with one command:
 
+```
 chmod +x run.sh  # Make the script executable (only needed once)
 ./run.sh
-
+```
 The script will start both the backend and frontend servers. If the default ports (4200 for frontend, 8000 for backend) are in use, the script will automatically find and use the next available ports. The actual URLs will be displayed when the services start.
 The script handles:
 
@@ -54,14 +60,14 @@ Starting both services in the correct order
 Graceful shutdown of both services when you press Ctrl+C
 
 Press Ctrl+C to stop both services.
-Screenshots
-Practice Mode
+### Screenshots
+### Practice Mode
+### Exam Mode
 
-Exam Mode
-
-File Formats
+## File Formats
 JSON Format
 Questions can be imported using JSON files. Here's the required format:
+```
 {
   "exam_name": "Mixed Questions Test",
   "exam_code": "MIX-101",
@@ -92,8 +98,8 @@ Questions can be imported using JSON files. Here's the required format:
     }
   ]
 }
-
-Required fields:
+```
+### Required fields:
 
 exam_name: The display name of the exam
 exam_code: A unique identifier for the exam (e.g., "MIX-101", "CLF-C02")
@@ -198,6 +204,7 @@ Format the Questions
 Ask the AI to format the questions in ExamOMatic's JSON format
 Use our sample questions as a template to ensure proper formatting
 The JSON structure should follow this format:
+```
 
 {
   "exam_name": "Your Exam Name",
@@ -217,7 +224,7 @@ The JSON structure should follow this format:
     }
   ]
 }
-
+```
 
 Review and Import
 
